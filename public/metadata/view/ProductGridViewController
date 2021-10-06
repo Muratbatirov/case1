@@ -1,0 +1,35 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "productgrid",
+        "designer|userClassName": "ProductGridViewController"
+    },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string"
+    },
+    "designerId": "3e2a2749-2689-4b0c-8315-190726977181",
+    "cn": [
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onDobavitProduct"
+            },
+            "configAlternates": {
+                "fn": "string"
+            },
+            "name": "onDobavitProduct",
+            "designerId": "bd36788e-d9d9-4dfa-874c-eeea9e34110b"
+        }
+    ]
+}

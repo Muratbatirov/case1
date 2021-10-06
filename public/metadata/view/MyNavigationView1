@@ -1,0 +1,40 @@
+{
+    "type": "Ext.navigation.View",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "mynavigationview1",
+        "designer|userClassName": "MyNavigationView1"
+    },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string"
+    },
+    "name": "MyNavigationView1",
+    "designerId": "8e46777c-0f93-4f27-8872-b2baff6ce02b",
+    "viewControllerInstanceId": "d0f1d7ae-10c3-4c3a-b12b-dd8d928e1bce",
+    "viewModelInstanceId": "a7da2028-da86-414f-80b1-edd285113c1e",
+    "cn": [
+        {
+            "type": "Ext.navigation.Bar",
+            "reference": {
+                "name": "navigationBar",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "docked": "top",
+                "hidden": true
+            },
+            "configAlternates": {
+                "docked": "string",
+                "hidden": "boolean"
+            },
+            "name": "MyNavigationBar",
+            "designerId": "2cdc4631-7f31-4549-84e4-261d56c1541d"
+        }
+    ]
+}

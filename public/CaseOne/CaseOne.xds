@@ -1,0 +1,65 @@
+{
+    "name": "CaseOne",
+    "settings": {
+        "cmd": {
+            "license": "commercial",
+            "cmdVersion": "7.3.0.19",
+            "frameworkVersion": "7.3.0.55"
+        },
+        "urlPrefixTemplate": "http://localhost:{port}/{path}",
+        "urlPrefix": "http://localhost:61578/",
+        "canvasControls": {
+            "viewportSize": {
+                "name": "Desktop (Auto Expand)",
+                "builtIn": true,
+                "height": null,
+                "width": null
+            },
+            "viewportOrientation": "portrait"
+        },
+        "exportPath": "",
+        "spacesToIndent": 4,
+        "sdkPath": "",
+        "lineEnding": "CRLF",
+        "genTimestamps": false,
+        "cacheBust": false,
+        "buildShouldOverwriteIndex": true,
+        "generateArchitectVersion": true
+    },
+    "xdsVersion": "4.2.9",
+    "xdsBuild": 443,
+    "schemaVersion": 1,
+    "upgradeVersion": 310000000001,
+    "framework": "modern73",
+    "viewOrderMap": {
+        "view": [
+            "86b9f40c-39ae-415f-82d8-d9300fd55c6a",
+            "5134f9a5-ea26-44cd-b731-e0c6026d43c0",
+            "d09b54ed-16af-4b23-83b0-c0cef0145d7e",
+            "329d9415-08bb-4381-8177-f493a5511f93",
+            "fa202e4f-7e3d-4ca0-9258-d0af8a9a2fe0",
+            "3d29b81a-d28f-4d17-9e7a-deaaaa63ed0d",
+            "f716c26f-4b08-48c6-946a-eccbfd8e4060",
+            "3fe9500a-c75b-44aa-a3a6-d1ea3c55161d",
+            "46dee94b-a346-49a1-947b-1a304524aa5c"
+        ],
+        "store": [
+            "16b6bc42-f42c-48c4-b5a0-e262a4519589",
+            "324c2aa4-f8e0-41b8-aced-2fda182a9b05"
+        ],
+        "controller": [
+            "11931cf1-77f9-460d-a0f4-a0df26c912d4"
+        ],
+        "model": [
+            "b9ade290-a0ff-4f23-9aa1-091eeae28dd4"
+        ],
+        "resource": [
+            "fb14ef20-9c7a-4391-bb1f-172a250ffa6f",
+            "29cb629e-f40f-425e-9874-1353e31f9492",
+            "b1c2573c-4159-4589-9551-1fae970f3d59"
+        ],
+        "app": [
+            "application"
+        ]
+    }
+}

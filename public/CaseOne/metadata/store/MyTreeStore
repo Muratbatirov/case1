@@ -1,0 +1,65 @@
+{
+    "type": "Ext.data.TreeStore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoLoad": true,
+        "designer|userAlias": "treestore1",
+        "designer|userClassName": "MyTreeStore",
+        "root": [
+            "",
+            "       { text: 'Kabinet',",
+            "       ",
+            "    }"
+        ],
+        "storeId": "MyTreeStore"
+    },
+    "configAlternates": {
+        "autoLoad": "boolean",
+        "designer|userAlias": "string",
+        "designer|userClassName": "string",
+        "root": "object",
+        "storeId": "string"
+    },
+    "name": "MyTreeStore",
+    "designerId": "324c2aa4-f8e0-41b8-aced-2fda182a9b05",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Rest",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "url": "koren"
+            },
+            "configAlternates": {
+                "url": "string"
+            },
+            "name": "MyRestProxy1",
+            "designerId": "14756f03-c32e-4df3-9609-4eb9e39ec371",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "rootProperty": "data"
+                    },
+                    "configAlternates": {
+                        "rootProperty": "string"
+                    },
+                    "name": "MyJsonReader1",
+                    "designerId": "b943d8d9-5c70-465e-909b-1ae98a9921e7"
+                }
+            ]
+        }
+    ]
+}

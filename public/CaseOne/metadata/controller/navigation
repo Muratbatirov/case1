@@ -1,0 +1,111 @@
+{
+    "type": "Ext.app.Controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "navigation",
+        "designer|userClassName": "navigation"
+    },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string"
+    },
+    "name": "MyController",
+    "designerId": "11931cf1-77f9-460d-a0f4-a0df26c912d4",
+    "cn": [
+        {
+            "type": "Ext.route.Route",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "category",
+                "implHandler": [
+                    "let workspace = this.getWorkspace();",
+                    "let leftmenu = this.getLeftMenu();",
+                    "",
+                    "workspace.add({",
+                    "    xtype: 'category'",
+                    "});",
+                    "leftmenu.add({",
+                    "    xtype: 'mytree'",
+                    "});"
+                ],
+                "name": "category",
+                "url": "category"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string",
+                "url": "string"
+            },
+            "name": "category",
+            "designerId": "c9d55fc9-15c6-4c39-92cf-2f61522c3da7"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "mainView",
+                "selector": "mainview"
+            },
+            "configAlternates": {
+                "ref": "string",
+                "selector": "string"
+            },
+            "name": "mainView",
+            "designerId": "c0c1cb94-ff87-4540-b3ef-cb295f1aa8da"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "getWorkspace",
+                "implHandler": [
+                    "return this.getMainView().getReferences().workspace;"
+                ]
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code"
+            },
+            "name": "getWorkspace",
+            "designerId": "e7864c61-20a4-48be-8d2b-2d88a1c43027"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "getLeftMenu",
+                "implHandler": [
+                    " return this.getMainView().getReferences().leftMenu",
+                    ";"
+                ]
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code"
+            },
+            "name": "getLeftMenu",
+            "designerId": "9600d1e6-3f27-4340-83e9-da20f21f9e34"
+        }
+    ]
+}

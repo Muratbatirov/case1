@@ -1,0 +1,141 @@
+{
+    "type": "Ext.app.Controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "navigation",
+        "designer|userClassName": "navigation"
+    },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string"
+    },
+    "name": "MyController",
+    "designerId": "11931cf1-77f9-460d-a0f4-a0df26c912d4",
+    "cn": [
+        {
+            "type": "Ext.route.Route",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "category",
+                "implHandler": [
+                    "let workspace = this.getWorkspace();",
+                    "",
+                    "",
+                    "workspace.add({",
+                    "    xtype: 'mytree'",
+                    "});",
+                    ""
+                ],
+                "name": "category",
+                "url": "category"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string",
+                "url": "string"
+            },
+            "name": "category",
+            "designerId": "c9d55fc9-15c6-4c39-92cf-2f61522c3da7"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "mainView",
+                "selector": "mainview"
+            },
+            "configAlternates": {
+                "ref": "string",
+                "selector": "string"
+            },
+            "name": "mainView",
+            "designerId": "c0c1cb94-ff87-4540-b3ef-cb295f1aa8da"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "getWorkspace",
+                "implHandler": [
+                    "return this.getMainView().getReferences().workspace;"
+                ]
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code"
+            },
+            "name": "getWorkspace",
+            "designerId": "e7864c61-20a4-48be-8d2b-2d88a1c43027"
+        },
+        {
+            "type": "Ext.route.Route",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "showtree",
+                "implHandler": [
+                    "let workspace = this.getWorkspace();",
+                    "let container = Ext.create({",
+                    "    xtype: 'panel',",
+                    "    title:\"Katalog tovarov\",",
+                    "    header:{",
+                    "      hidden:true",
+                    "    },",
+                    "    layout: 'hbox',",
+                    "    ",
+                    "       ",
+                    "",
+                    "",
+                    "   ",
+                    "",
+                    "",
+                    "});",
+                    "",
+                    "container.add({",
+                    "    xtype: 'categorytree',",
+                    "    flex:1",
+                    "",
+                    "});",
+                    "container.add({",
+                    "    xtype: 'productgrid',",
+                    "    flex:4",
+                    "",
+                    "});",
+                    "",
+                    " workspace.push(container);",
+                    ""
+                ],
+                "name": "catalogs",
+                "url": "catalogs"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string",
+                "url": "string"
+            },
+            "name": "showtree",
+            "designerId": "165938ce-d976-4829-b337-ad5011883687"
+        }
+    ]
+}

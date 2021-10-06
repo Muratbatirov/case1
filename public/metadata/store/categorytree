@@ -1,0 +1,94 @@
+{
+    "type": "Ext.data.TreeStore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoLoad": true,
+        "designer|userAlias": "categorytree",
+        "designer|userClassName": "categorytree",
+        "model": null,
+        "root": [
+            "{",
+            "    expanded: true,",
+            "    loaded: true,",
+            "    children: [{",
+            "        text: 'Категории',",
+            "        hash: 'catalogs',",
+            "        leaf: true",
+            "    }]",
+            "}"
+        ],
+        "storeId": "categorytree"
+    },
+    "configAlternates": {
+        "autoLoad": "boolean",
+        "designer|userAlias": "string",
+        "designer|userClassName": "string",
+        "root": "object",
+        "storeId": "string",
+        "model": "model"
+    },
+    "name": "leftMenu1",
+    "designerId": "2d7e3427-83c6-49ff-8f32-ad68987f1dd4",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Rest",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "url": "category"
+            },
+            "configAlternates": {
+                "url": "string"
+            },
+            "name": "MyRestProxy1",
+            "designerId": "4cbe50fe-cb35-4079-baef-523287e028b0",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "rootProperty": "children"
+                    },
+                    "configAlternates": {
+                        "rootProperty": "string"
+                    },
+                    "name": "MyJsonReader1",
+                    "designerId": "441ecdbc-33de-4083-9b27-92fcd4fda0cb"
+                }
+            ]
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onTreeStoreDataChangeD",
+                "implHandler": [
+                    "store.setRootVisible(false);"
+                ],
+                "name": "datachanged"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string"
+            },
+            "name": "onTreeStoreDataChangeD",
+            "designerId": "d1176a08-9031-4d9b-8ab2-0d04b939e94f"
+        }
+    ]
+}

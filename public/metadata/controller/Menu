@@ -1,0 +1,115 @@
+{
+    "type": "Ext.app.Controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "menu",
+        "designer|userClassName": "Menu"
+    },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string"
+    },
+    "name": "MyController",
+    "designerId": "d356b685-455c-41c1-80cc-26dcf7a41232",
+    "cn": [
+        {
+            "type": "fixedfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "init",
+                "implHandler": [
+                    "var me = this;",
+                    "",
+                    "me.control({",
+                    "            'mytoolbar button#catalogbutton': {",
+                    "                tap: me.onButtonTap",
+                    "            }});"
+                ]
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code"
+            },
+            "name": "init",
+            "designerId": "054ad041-7e20-4c67-9119-2ce31edd8261"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "button",
+                    "e",
+                    "options"
+                ],
+                "fn": "onButtonTap",
+                "implHandler": [
+                    "let workspace = this.getWorkContainer();",
+                    " workspace.add({",
+                    "            xtype: 'mytree',",
+                    "          width:300",
+                    "",
+                    "        });",
+                    ""
+                ]
+            },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "implHandler": "code"
+            },
+            "name": "onButtonTap",
+            "designerId": "d6358201-a4de-4581-b12a-9bbdc1812911"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "getWorkContainer",
+                "implHandler": [
+                    " return this.getMainView().getReferences().workspace;"
+                ]
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code"
+            },
+            "name": "getWorkContainer",
+            "designerId": "f732a315-7160-467d-8745-5072a618bac5"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "mainView",
+                "selector": "mainview"
+            },
+            "configAlternates": {
+                "ref": "string",
+                "selector": "string"
+            },
+            "name": "mainView",
+            "designerId": "f9777626-c1a4-4fef-a140-33f690dae76b"
+        }
+    ]
+}

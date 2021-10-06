@@ -1,0 +1,45 @@
+{
+    "type": "Ext.data.TreeStore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "leftMenu",
+        "designer|userClassName": "leftMenu",
+        "model": null,
+        "root": [
+            "{   text: 'Menu',",
+            "    expanded: true,",
+            "   ",
+            "    children: [{",
+            "        text: 'Каталог товаров',",
+            "        hash: 'catalogs',",
+            "        leaf: true",
+            "    },",
+            "    {",
+            "        text: 'Категории товаров',",
+            "        hash: 'catagories',",
+            "        leaf: true",
+            "    },",
+            "    {",
+            "        text: 'Список поставщиков',",
+            "        hash: 'supliers',",
+            "        leaf: true",
+            "    }]",
+            "}"
+        ],
+        "storeId": "leftMenu"
+    },
+    "configAlternates": {
+        "autoLoad": "boolean",
+        "designer|userAlias": "string",
+        "designer|userClassName": "string",
+        "root": "object",
+        "storeId": "string",
+        "model": "model"
+    },
+    "name": "MyTreeStore",
+    "designerId": "324c2aa4-f8e0-41b8-aced-2fda182a9b05"
+}

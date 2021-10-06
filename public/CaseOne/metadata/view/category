@@ -1,0 +1,70 @@
+{
+    "type": "Ext.Container",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "category",
+        "designer|userClassName": "category",
+        "layout": "hbox"
+    },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string",
+        "layout": "string"
+    },
+    "name": "MyContainer2",
+    "designerId": "329d9415-08bb-4381-8177-f493a5511f93",
+    "viewControllerInstanceId": "3d29b81a-d28f-4d17-9e7a-deaaaa63ed0d",
+    "viewModelInstanceId": "fa202e4f-7e3d-4ca0-9258-d0af8a9a2fe0",
+    "cn": [
+        {
+            "type": "Ext.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|flex": 1,
+                "title": "My Panel"
+            },
+            "configAlternates": {
+                "layout|flex": "number",
+                "title": "string"
+            },
+            "name": "MyPanel",
+            "designerId": "d6f4b97c-83dd-47b6-883f-0503a772f8ed"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onContainerPainted",
+                "implHandler": [
+                    "let store = Ext.getStore('Categories');",
+                    "",
+                    "if (!store.isLoaded()) {",
+                    "    store.load();",
+                    "}"
+                ],
+                "name": "painted",
+                "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string",
+                "scope": "string"
+            },
+            "name": "onContainerPainted",
+            "designerId": "af1d0b88-6128-4424-b250-defe2262080b"
+        }
+    ]
+}

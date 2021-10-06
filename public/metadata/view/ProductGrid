@@ -1,0 +1,190 @@
+{
+    "type": "Ext.grid.Grid",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "border": true,
+        "designer|userAlias": "productgrid",
+        "designer|userClassName": "ProductGrid",
+        "height": "100%",
+        "layout": "hbox",
+        "shadow": false,
+        "store": "productstore",
+        "width": "100%"
+    },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string",
+        "height": "auto",
+        "store": "store",
+        "width": "auto",
+        "border": "boolean",
+        "layout": "string",
+        "shadow": "boolean"
+    },
+    "name": "MyGrid",
+    "designerId": "e8c3b747-c1ec-4043-8991-fc83b637de34",
+    "viewControllerInstanceId": "3e2a2749-2689-4b0c-8315-190726977181",
+    "viewModelInstanceId": "5c0be29b-3629-4b6a-879a-eced8320cf4e",
+    "cn": [
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "category",
+                "docked": null,
+                "layout|flex": 2,
+                "text": "Kategoriya"
+            },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "docked": "string",
+                "text": "string",
+                "width": "auto",
+                "layout|flex": "number"
+            },
+            "name": "MyColumn",
+            "designerId": "5647779b-2926-4917-a264-89099877b183"
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "postavshik",
+                "docked": null,
+                "layout|flex": 2,
+                "text": "Postavshik"
+            },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "docked": "string",
+                "text": "string",
+                "width": "auto",
+                "layout|flex": "number"
+            },
+            "name": "MyColumn3",
+            "designerId": "2c68e694-1c02-4ef7-870e-99ee977277b7"
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "name",
+                "docked": null,
+                "layout|flex": 2,
+                "text": "Name"
+            },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "docked": "string",
+                "text": "string",
+                "width": "auto",
+                "layout|flex": "number"
+            },
+            "name": "MyColumn1",
+            "designerId": "eba65503-724d-4f9c-a72e-32a038c644ec"
+        },
+        {
+            "type": "Ext.grid.column.Number",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "price",
+                "docked": null,
+                "layout|flex": 1,
+                "text": "Price"
+            },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "docked": "string",
+                "text": "string",
+                "layout|flex": "number"
+            },
+            "name": "MyNumberColumn",
+            "designerId": "1a4d6baa-21c9-4398-9f07-015a3238a5ff"
+        },
+        {
+            "type": "Ext.grid.column.Number",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "quantity",
+                "docked": null,
+                "layout|flex": 1,
+                "text": "Kolichestvo"
+            },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "docked": "string",
+                "text": "string",
+                "width": "auto",
+                "layout|flex": "number"
+            },
+            "name": "MyNumberColumn1",
+            "designerId": "43918020-5d3c-4bef-84da-c4933b72682c"
+        },
+        {
+            "type": "Ext.grid.plugin.PagingToolbar",
+            "reference": {
+                "name": "plugins",
+                "type": "array"
+            },
+            "codeClass": null,
+            "name": "MyPagingToolbar",
+            "designerId": "4178ae18-2cd5-46dd-8f84-9ca895079edc"
+        },
+        {
+            "type": "Ext.Toolbar",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "border": true,
+                "docked": "top",
+                "items": [
+                    "{",
+                    "text: 'Добавить',",
+                    "                handler: 'onDobavitProduct'                        ",
+                    "                    }"
+                ]
+            },
+            "configAlternates": {
+                "items": "object",
+                "border": "boolean",
+                "docked": "string"
+            },
+            "name": "MyToolbar2",
+            "designerId": "e2150f4d-7592-41ac-b698-f140aa77f8f9",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "items",
+                    "type": "string"
+                }
+            ]
+        }
+    ]
+}

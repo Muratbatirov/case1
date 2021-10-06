@@ -1,0 +1,130 @@
+{
+    "type": "Ext.grid.Tree",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "border": true,
+        "designer|userAlias": "categorytree",
+        "designer|userClassName": "categorytree",
+        "height": "100%",
+        "hideHeaders": true,
+        "layout": "hbox",
+        "store": "categorytree",
+        "style": "border-right: 1px solid;",
+        "width": "100%"
+    },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string",
+        "height": "auto",
+        "store": "store",
+        "width": "auto",
+        "border": "boolean",
+        "hideHeaders": "boolean",
+        "layout": "string",
+        "style": "string"
+    },
+    "name": "MyTree",
+    "designerId": "ffc4198f-e260-4d9e-8978-a9b9982681ad",
+    "viewControllerInstanceId": "daa2137e-c021-4e44-874e-58cd173099de",
+    "viewModelInstanceId": "57115b54-f01b-4ab3-8330-08b92740100c",
+    "cn": [
+        {
+            "type": "Ext.grid.column.Tree",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "text",
+                "docked": null,
+                "hidden": false,
+                "layout|flex": 1,
+                "text": "Text",
+                "width": 300
+            },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "docked": "string",
+                "text": "string",
+                "width": "auto",
+                "hidden": "boolean",
+                "layout|flex": "number"
+            },
+            "name": "MyTreeColumn",
+            "designerId": "d31fbab2-1670-43e1-8fcc-3fa87b473f8f"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onCategoryTreeSelect",
+                "implHandler": [
+                    "if(selected[0].childNodes.length == 0){",
+                    "",
+                    "",
+                    "let store = Case.app.getStore('productstore');",
+                    "",
+                    "store.getProxy().setExtraParams({",
+                    "   'param':selected[0].data.text",
+                    "",
+                    "   });",
+                    "    store.load();",
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    "}"
+                ],
+                "name": "select",
+                "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string",
+                "scope": "string"
+            },
+            "name": "onCategoryTreeSelect",
+            "designerId": "514c1d2f-c978-485c-92ad-b44e7111d2bd"
+        },
+        {
+            "type": "Ext.Toolbar",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "docked": "top",
+                "items": [
+                    "{text: 'Показать все',",
+                    "handler: 'onShowAll'",
+                    "}"
+                ]
+            },
+            "configAlternates": {
+                "items": "object",
+                "docked": "string"
+            },
+            "name": "MyToolbar1",
+            "designerId": "bfdf5bb5-a332-4af5-9239-9c9a95168334",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "items",
+                    "type": "string"
+                }
+            ]
+        }
+    ]
+}

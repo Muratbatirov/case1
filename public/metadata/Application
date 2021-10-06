@@ -1,0 +1,41 @@
+{
+    "type": "Ext.app.Application",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "controllers": [
+            "navigation",
+            "Menu"
+        ],
+        "models": [
+            "Category",
+            "productmodel"
+        ],
+        "name": "Case",
+        "stores": [
+            "Categories",
+            "leftMenu",
+            "categorytree",
+            "productstore"
+        ],
+        "views": [
+            "MyToolbar",
+            "mynestedlist",
+            "ProductGrid",
+            "categorytree",
+            "MyNavigationView1"
+        ]
+    },
+    "configAlternates": {
+        "controllers": "typedarray",
+        "models": "typedarray",
+        "name": "string",
+        "stores": "typedarray",
+        "views": "typedarray"
+    },
+    "name": "Application",
+    "designerId": "application"
+}

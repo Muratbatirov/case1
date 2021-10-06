@@ -1,0 +1,23 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "data": [
+            "{",
+            "    test: 'Test'",
+            "}"
+        ],
+        "designer|userAlias": "mainview",
+        "designer|userClassName": "mainviewViewModel"
+    },
+    "configAlternates": {
+        "data": "object",
+        "designer|userAlias": "string",
+        "designer|userClassName": "string"
+    },
+    "designerId": "5134f9a5-ea26-44cd-b731-e0c6026d43c0"
+}

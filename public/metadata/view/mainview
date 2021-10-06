@@ -1,0 +1,135 @@
+{
+    "type": "Ext.Container",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|initialView": true,
+        "designer|userAlias": "mainview",
+        "designer|userClassName": "mainview",
+        "layout": "hbox"
+    },
+    "configAlternates": {
+        "designer|initialView": "boolean",
+        "designer|userAlias": "string",
+        "designer|userClassName": "string",
+        "title": "string",
+        "layout": "string"
+    },
+    "designerId": "86b9f40c-39ae-415f-82d8-d9300fd55c6a",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "it",
+            "type": "string"
+        }
+    ],
+    "viewControllerInstanceId": "d09b54ed-16af-4b23-83b0-c0cef0145d7e",
+    "viewModelInstanceId": "5134f9a5-ea26-44cd-b731-e0c6026d43c0",
+    "cn": [
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onPanelPainted",
+                "implHandler": [
+                    ""
+                ],
+                "name": "painted",
+                "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string",
+                "scope": "string"
+            },
+            "name": "onPanelPainted",
+            "designerId": "cd70231a-2701-4b2b-b60f-f830be1b6888"
+        },
+        {
+            "type": "Ext.list.Tree",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|uiInterfaceName": "nav",
+                "height": "100%",
+                "reference": "leftMenuTree",
+                "store": "leftMenu",
+                "style": [
+                    "{background: '#37517e'}"
+                ],
+                "ui": [
+                    "nav"
+                ],
+                "width": "300px"
+            },
+            "configAlternates": {
+                "designer|uiInterfaceName": "string",
+                "height": "auto",
+                "reference": "string",
+                "store": "store",
+                "ui": "typedarray",
+                "width": "auto",
+                "style": "object"
+            },
+            "name": "MyTreeList",
+            "designerId": "10557947-f92a-4464-aa93-96df1ec2a667",
+            "cn": [
+                {
+                    "type": "viewcontrollereventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onTreelistItemClick",
+                        "implHandler": [
+                            "this.redirectTo(info.node.data.hash);",
+                            ""
+                        ],
+                        "name": "itemclick",
+                        "scope": "me"
+                    },
+                    "configAlternates": {
+                        "fn": "string",
+                        "implHandler": "code",
+                        "name": "string",
+                        "scope": "string"
+                    },
+                    "name": "onTreelistItemClick",
+                    "designerId": "ee96650f-b221-48b3-80eb-1a642f6aef74"
+                }
+            ]
+        },
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|flex": 1,
+                "reference": "workspace"
+            },
+            "configAlternates": {
+                "layout|flex": "number",
+                "reference": "string"
+            },
+            "name": "mynavigationview1",
+            "designerId": "9e763dc8-b294-4cae-b47a-003a3a977b01",
+            "masterInstanceId": "8e46777c-0f93-4f27-8872-b2baff6ce02b"
+        }
+    ]
+}

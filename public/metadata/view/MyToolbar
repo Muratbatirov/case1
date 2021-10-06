@@ -1,0 +1,64 @@
+{
+    "type": "Ext.Toolbar",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "mytoolbar",
+        "designer|userClassName": "MyToolbar",
+        "docked": "left"
+    },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string",
+        "docked": "string"
+    },
+    "name": "MyToolbar",
+    "designerId": "9c09973e-ae43-42c1-96aa-af5e1ce29d98",
+    "viewControllerInstanceId": "caa8b375-bc9c-40b5-b16e-a07f04f98faa",
+    "viewModelInstanceId": "21abfa29-7d37-4932-84ad-2171f9b7aa24",
+    "cn": [
+        {
+            "type": "Ext.Button",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "iconCls": "x-fa fa-list",
+                "itemId": "catalogbutton"
+            },
+            "configAlternates": {
+                "iconCls": "string",
+                "itemId": "string"
+            },
+            "name": "MyButton",
+            "designerId": "1e809e19-cd45-4fec-9813-7349d918b096",
+            "cn": [
+                {
+                    "type": "viewcontrollereventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onCatalogbuttonTap",
+                        "name": "tap",
+                        "scope": "me"
+                    },
+                    "configAlternates": {
+                        "fn": "string",
+                        "name": "string",
+                        "scope": "string"
+                    },
+                    "name": "onCatalogbuttonTap",
+                    "designerId": "69daa919-5b99-4560-af5c-e9c6dba7447d"
+                }
+            ]
+        }
+    ]
+}

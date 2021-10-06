@@ -1,0 +1,50 @@
+{
+    "type": "Ext.grid.Tree",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "mytree",
+        "designer|userClassName": "mytree",
+        "height": "100%",
+        "store": "MyTreeStore",
+        "width": "100%"
+    },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string",
+        "height": "auto",
+        "store": "store",
+        "width": "auto"
+    },
+    "name": "MyTree",
+    "designerId": "f716c26f-4b08-48c6-946a-eccbfd8e4060",
+    "viewControllerInstanceId": "46dee94b-a346-49a1-947b-1a304524aa5c",
+    "viewModelInstanceId": "3fe9500a-c75b-44aa-a3a6-d1ea3c55161d",
+    "cn": [
+        {
+            "type": "Ext.grid.column.Tree",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "text",
+                "docked": null,
+                "text": "Text",
+                "width": 159
+            },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "docked": "string",
+                "text": "string",
+                "width": "auto"
+            },
+            "name": "MyTreeColumn",
+            "designerId": "67a31f21-ef75-4d47-9298-f19f66e24597"
+        }
+    ]
+}
