@@ -56,7 +56,7 @@ if($request->param!='false' and $request->param ){
             ->join('categories', 'categories.id', '=', 'products.category_id' )
             ->join('postavshiks', 'postavshiks.id', '=', 'products.postavshik_id' )
             
-            ->select( 'products.id','categories.name AS category', 'postavshiks.name AS postavshik', 'products.name as name', 'products.price','products.quantity'  )->where('categories.name', $request->param)->skip($request->start)->take(10)
+            ->select( 'products.id','categories.name AS category', 'postavshiks.name AS postavshik', 'products.name as name', 'products.price','products.quantity'  )->where('categories.name', $request->param)->skip($request->start)->take($request->limit)
             
                 ->get()->toArray();
  $productscount = DB::table('products')
@@ -75,6 +75,10 @@ if($request->param!='false' and $request->param ){
 
           
 
+
+
+
+
             
  
       
@@ -86,7 +90,7 @@ if($request->param!='false' and $request->param ){
             ->join('categories', 'categories.id', '=', 'products.category_id' )
             ->join('postavshiks', 'postavshiks.id', '=', 'products.postavshik_id' )
             
-            ->select( 'products.id','categories.name AS category', 'postavshiks.name AS postavshik', 'products.name as name', 'products.price','products.quantity'  )->skip($request->start)->take(10)
+            ->select( 'products.id','categories.name AS category', 'postavshiks.name AS postavshik', 'products.name as name', 'products.price','products.quantity'  )->skip($request->start)->take($request->limit)
             
                 ->get()->toArray();
  $productscount = DB::table('products')

@@ -8,7 +8,11 @@
     "userConfig": {
         "data": [
             "{",
-            "    test: 'Test'",
+            "    test: 'Test',",
+            "    widthcontainer: '250px',",
+            "    skrit: false,",
+            "    micro:false",
+            "   ",
             "}"
         ],
         "designer|userAlias": "mainview",

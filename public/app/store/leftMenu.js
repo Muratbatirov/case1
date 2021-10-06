@@ -29,16 +29,19 @@ Ext.define('Case.store.leftMenu', {
                     {
                         text: 'Каталог товаров',
                         hash: 'catalogs',
+                        iconCls: 'x-fa fa-clipboard-list',
                         leaf: true
                     },
                     {
                         text: 'Категории товаров',
                         hash: 'catagories',
+                        iconCls: 'x-fa fa-sitemap',
                         leaf: true
                     },
                     {
                         text: 'Список поставщиков',
                         hash: 'supliers',
+                        iconCls: 'x-fa fa-list',
                         leaf: true
                     }
                 ]

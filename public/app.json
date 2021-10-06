@@ -54,6 +54,9 @@
          "exclude": [
             "fashion"
          ]
+      },
+      {
+         "path": "resources/custom.css"
       }
    ],
    "loader": {
@@ -111,7 +114,8 @@
       {
          "path": "resources",
          "output": "shared"
-      }
+      },
+      "resources/custom.css"
    ],
    "archivePath": "archive",
    "slicer": null,

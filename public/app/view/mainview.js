@@ -22,6 +22,7 @@ Ext.define('Case.view.mainview', {
         'Case.view.mainviewViewController',
         'Case.view.MyNavigationView1',
         'Ext.list.Tree',
+        'Ext.Button',
         'Ext.navigation.View'
     ],
 
@@ -36,18 +37,56 @@ Ext.define('Case.view.mainview', {
     },
     items: [
         {
-            xtype: 'treelist',
-            reference: 'leftMenuTree',
-            height: '100%',
-            style: {
-                background: '#37517e'
+            xtype: 'container',
+            layout: 'vbox',
+            bind: {
+                width: '{widthcontainer}'
             },
-            ui: 'nav',
-            width: '300px',
-            store: 'leftMenu',
-            listeners: {
-                itemclick: 'onTreelistItemClick'
-            }
+            items: [
+                {
+                    xtype: 'treelist',
+                    reference: 'leftMenuTree',
+                    cls: 'treecls',
+                    flex: 2,
+                    style: {
+                        background: '#37517e'
+                    },
+                    ui: 'nav',
+                    width: '250px',
+                    expanderFirst: false,
+                    store: 'leftMenu',
+                    bind: {
+                        micro: '{micro}'
+                    },
+                    listeners: {
+                        itemclick: 'onTreelistItemClick'
+                    }
+                },
+                {
+                    xtype: 'container',
+                    flex: 1,
+                    style: {
+                        background: '#37517e'
+                    },
+                    docked: 'bottom',
+                    padding: '0 0 5 0',
+                    layout: {
+                        type: 'hbox',
+                        align: 'end'
+                    },
+                    items: [
+                        {
+                            xtype: 'button',
+                            flex: 1,
+                            iconCls: 'x-fa fa-bars',
+                            text: 'skrivat menu',
+                            listeners: {
+                                tap: 'onButtonTapMenu'
+                            }
+                        }
+                    ]
+                }
+            ]
         },
         {
             xtype: 'mynavigationview1',

@@ -18,7 +18,10 @@ Ext.define('Case.view.mainviewViewModel', {
     alias: 'viewmodel.mainview',
 
     data: {
-        test: 'Test'
+        test: 'Test',
+        widthcontainer: '250px',
+        skrit: false,
+        micro: false
     }
 
 });

@@ -1,0 +1,18 @@
+
+.treecls .x-treelist-item-text{
+color:white !important;
+    padding-left: 20px  !important;
+    font-size: 100%;
+}
+.treecls .x-treelist-item-icon{
+  color:white !important;
+    
+ 
+ 
+}
+.x-treelist-nav .x-treelist-toolstrip{
+     background-color: #37517e!important;
+}
+.x-treelist-nav .x-treelist-item-tool {
+    color:white;
+}

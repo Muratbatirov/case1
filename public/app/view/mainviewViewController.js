@@ -24,6 +24,21 @@ Ext.define('Case.view.mainviewViewController', {
     onTreelistItemClick: function(sender, info, eOpts) {
         this.redirectTo(info.node.data.hash);
 
+    },
+
+    onButtonTapMenu: function(button, e, eOpts) {
+        if(this.getViewModel().get('skrit')==false){
+
+
+            this.getViewModel().set('widthcontainer','50px');
+            this.getViewModel().set('skrit',true);
+            this.getViewModel().set('micro',true);
+
+        }else{
+            this.getViewModel().set('widthcontainer','250px');
+            this.getViewModel().set('skrit',false);
+            this.getViewModel().set('micro',false);
+        }
     }
 
 });

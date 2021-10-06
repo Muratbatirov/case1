@@ -54,61 +54,184 @@
             "designerId": "cd70231a-2701-4b2b-b60f-f830be1b6888"
         },
         {
-            "type": "Ext.list.Tree",
+            "type": "Ext.Container",
             "reference": {
                 "name": "items",
                 "type": "array"
             },
             "codeClass": null,
             "userConfig": {
-                "designer|uiInterfaceName": "nav",
-                "height": "100%",
-                "reference": "leftMenuTree",
-                "store": "leftMenu",
-                "style": [
-                    "{background: '#37517e'}"
-                ],
-                "ui": [
-                    "nav"
-                ],
-                "width": "300px"
+                "layout": "vbox",
+                "width": [
+                    "{widthcontainer}"
+                ]
             },
             "configAlternates": {
-                "designer|uiInterfaceName": "string",
-                "height": "auto",
-                "reference": "string",
-                "store": "store",
-                "ui": "typedarray",
-                "width": "auto",
-                "style": "object"
+                "width": "binding",
+                "layout": "string"
             },
-            "name": "MyTreeList",
-            "designerId": "10557947-f92a-4464-aa93-96df1ec2a667",
+            "name": "MyContainer",
+            "designerId": "b734baa8-50f9-4e6b-8037-d487511f7b65",
             "cn": [
                 {
-                    "type": "viewcontrollereventbinding",
+                    "type": "Ext.list.Tree",
                     "reference": {
-                        "name": "listeners",
+                        "name": "items",
                         "type": "array"
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "fn": "onTreelistItemClick",
-                        "implHandler": [
-                            "this.redirectTo(info.node.data.hash);",
+                        "cls": [
+                            "treecls"
+                        ],
+                        "designer|uiInterfaceName": "nav",
+                        "expanderFirst": false,
+                        "flex": 2,
+                        "micro": [
+                            "{micro}"
+                        ],
+                        "reference": "leftMenuTree",
+                        "store": "leftMenu",
+                        "style": [
+                            "{background: '#37517e'}",
                             ""
                         ],
-                        "name": "itemclick",
-                        "scope": "me"
+                        "ui": [
+                            "nav"
+                        ],
+                        "width": "250px"
                     },
                     "configAlternates": {
-                        "fn": "string",
-                        "implHandler": "code",
-                        "name": "string",
-                        "scope": "string"
+                        "designer|uiInterfaceName": "string",
+                        "height": "auto",
+                        "reference": "string",
+                        "store": "store",
+                        "ui": "typedarray",
+                        "width": "auto",
+                        "style": "object",
+                        "micro": "binding",
+                        "cls": "typedarray",
+                        "expanderFirst": "boolean",
+                        "flex": "number"
                     },
-                    "name": "onTreelistItemClick",
-                    "designerId": "ee96650f-b221-48b3-80eb-1a642f6aef74"
+                    "name": "MyTreeList",
+                    "designerId": "10557947-f92a-4464-aa93-96df1ec2a667",
+                    "cn": [
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onTreelistItemClick",
+                                "implHandler": [
+                                    "this.redirectTo(info.node.data.hash);",
+                                    ""
+                                ],
+                                "name": "itemclick",
+                                "scope": "me"
+                            },
+                            "configAlternates": {
+                                "fn": "string",
+                                "implHandler": "code",
+                                "name": "string",
+                                "scope": "string"
+                            },
+                            "name": "onTreelistItemClick",
+                            "designerId": "ee96650f-b221-48b3-80eb-1a642f6aef74"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.Container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "container|align": "end",
+                        "docked": "bottom",
+                        "layout": "hbox",
+                        "layout|flex": 1,
+                        "padding": "0 0 5 0",
+                        "style": [
+                            "{",
+                            "                                background: '#37517e'",
+                            "                            }"
+                        ]
+                    },
+                    "configAlternates": {
+                        "style": "object",
+                        "container|align": "string",
+                        "docked": "string",
+                        "layout": "string",
+                        "layout|flex": "number",
+                        "padding": "auto"
+                    },
+                    "name": "MyContainer1",
+                    "designerId": "37d6170d-bad1-44cf-9ef0-c034cc8b77d3",
+                    "cn": [
+                        {
+                            "type": "Ext.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "iconCls": "x-fa fa-bars",
+                                "layout|flex": 1,
+                                "text": "skrivat menu"
+                            },
+                            "configAlternates": {
+                                "iconCls": "string",
+                                "layout|flex": "number",
+                                "text": "string"
+                            },
+                            "name": "MyButton1",
+                            "designerId": "013c0787-9565-4848-9313-2833742b4e5d",
+                            "cn": [
+                                {
+                                    "type": "viewcontrollereventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onButtonTapMenu",
+                                        "implHandler": [
+                                            "if(this.getViewModel().get('skrit')==false){",
+                                            "",
+                                            "",
+                                            "this.getViewModel().set('widthcontainer','50px');",
+                                            "this.getViewModel().set('skrit',true);",
+                                            "    this.getViewModel().set('micro',true);",
+                                            "    ",
+                                            "}else{",
+                                            "    this.getViewModel().set('widthcontainer','250px');",
+                                            "this.getViewModel().set('skrit',false);",
+                                            "     this.getViewModel().set('micro',false);",
+                                            "}"
+                                        ],
+                                        "name": "tap",
+                                        "scope": "me"
+                                    },
+                                    "configAlternates": {
+                                        "fn": "string",
+                                        "implHandler": "code",
+                                        "name": "string",
+                                        "scope": "string"
+                                    },
+                                    "name": "onButtonTapMenu",
+                                    "designerId": "a755c0c6-0cb3-4144-816a-219634166ecc"
+                                }
+                            ]
+                        }
+                    ]
                 }
             ]
         },

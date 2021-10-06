@@ -21,24 +21,27 @@ Ext.define('Case.view.categorytreeViewController', {
 
                     let store1 = Case.app.getStore('productstore');
          store1.getProxy().setExtraParams({
-                        'param':false
+                        'param':false,
+
 
                     });
 
-                    store1.load();
+                    store1.loadPage(1);
     },
 
     onCategoryTreeSelect: function(dataview, selected, eOpts) {
-        if(selected[0].childNodes.length == 0){
+        if(selected[0].childNodes.length === 0){
 
 
             let store = Case.app.getStore('productstore');
 
             store.getProxy().setExtraParams({
-                'param':selected[0].data.text
+                'param':selected[0].data.text,
+
+
 
             });
-            store.load();
+            store.loadPage(1);
 
 
 

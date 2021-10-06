@@ -145,16 +145,6 @@
             "designerId": "43918020-5d3c-4bef-84da-c4933b72682c"
         },
         {
-            "type": "Ext.grid.plugin.PagingToolbar",
-            "reference": {
-                "name": "plugins",
-                "type": "array"
-            },
-            "codeClass": null,
-            "name": "MyPagingToolbar",
-            "designerId": "4178ae18-2cd5-46dd-8f84-9ca895079edc"
-        },
-        {
             "type": "Ext.Toolbar",
             "reference": {
                 "name": "items",
@@ -185,6 +175,22 @@
                     "type": "string"
                 }
             ]
+        },
+        {
+            "type": "Ext.dataview.plugin.ListPaging",
+            "reference": {
+                "name": "plugins",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "autoPaging": true
+            },
+            "configAlternates": {
+                "autoPaging": "boolean"
+            },
+            "name": "MyListPagingPlugin",
+            "designerId": "4b6ca1bd-add5-4d0f-b6da-e9cae7493f4a"
         }
     ]
 }

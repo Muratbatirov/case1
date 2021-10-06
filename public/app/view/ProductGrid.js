@@ -21,8 +21,8 @@ Ext.define('Case.view.ProductGrid', {
         'Case.view.ProductGridViewModel',
         'Case.view.ProductGridViewController',
         'Ext.grid.column.Number',
-        'Ext.grid.plugin.PagingToolbar',
-        'Ext.Toolbar'
+        'Ext.Toolbar',
+        'Ext.dataview.plugin.ListPaging'
     ],
 
     controller: 'productgrid',
@@ -68,11 +68,6 @@ Ext.define('Case.view.ProductGrid', {
             text: 'Kolichestvo'
         }
     ],
-    plugins: [
-        {
-            type: 'gridpagingtoolbar'
-        }
-    ],
     items: [
         {
             xtype: 'toolbar',
@@ -82,6 +77,12 @@ Ext.define('Case.view.ProductGrid', {
             },
             border: true,
             docked: 'top'
+        }
+    ],
+    plugins: [
+        {
+            autoPaging: true,
+            type: 'listpaging'
         }
     ]
 

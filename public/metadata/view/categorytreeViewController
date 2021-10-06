@@ -28,11 +28,12 @@
                     "",
                     "            let store1 = Case.app.getStore('productstore');",
                     " store1.getProxy().setExtraParams({",
-                    "                'param':false",
+                    "                'param':false,",
+                    "",
                     "",
                     "            });",
-                    "            ",
-                    "            store1.load();"
+                    "",
+                    "            store1.loadPage(1);"
                 ]
             },
             "configAlternates": {
