@@ -19,7 +19,9 @@ Ext.define('Case.model.productmodel', {
 
     requires: [
         'Ext.data.field.String',
-        'Ext.data.field.Integer'
+        'Ext.data.field.Integer',
+        'Ext.data.proxy.Rest',
+        'Ext.data.reader.Json'
     ],
 
 
@@ -47,7 +49,19 @@ Ext.define('Case.model.productmodel', {
         {
             type: 'string',
             name: 'opisanie'
+        },
+        {
+            type: 'int',
+            name: 'category_id'
         }
-    ]
+    ],
+    proxy: {
+        type: 'rest',
+        url: '/productlist',
+        reader: {
+            type: 'json',
+            rootProperty: 'data'
+        }
+    }
 
 });

@@ -22,13 +22,30 @@ Ext.define('Case.view.ProductGrid', {
         'Case.view.ProductGridViewController',
         'Ext.grid.column.Number',
         'Ext.Toolbar',
-        'Ext.dataview.plugin.ListPaging'
+        'Ext.Button',
+        'Ext.dataview.plugin.ListPaging',
+        'Ext.grid.column.Boolean'
     ],
+
+    config: {
+        toolContextMenu: {
+            xtype: 'menu',
+            anchor: true,
+            separator: true,
+            minWidth: 150,
+            autoHide: false,
+            viewModel: {
+                
+            },
+            cls: 'round-context-menu'
+        }
+    },
 
     controller: 'productgrid',
     viewModel: {
         type: 'productgrid'
     },
+    reference: 'productgrid',
     border: true,
     height: '100%',
     shadow: false,
@@ -37,6 +54,17 @@ Ext.define('Case.view.ProductGrid', {
     store: 'productstore',
 
     columns: [
+        {
+            xtype: 'gridcolumn',
+            flex: 0.5,
+            cell: {
+                cls: 'erg-tool-margin-0',
+                tools: {
+                    margin: 0,
+                    menu: 'onMenuClick'
+                }
+            }
+        },
         {
             xtype: 'gridcolumn',
             flex: 2,
@@ -66,17 +94,28 @@ Ext.define('Case.view.ProductGrid', {
             flex: 1,
             dataIndex: 'quantity',
             text: 'Kolichestvo'
+        },
+        {
+            xtype: 'booleancolumn',
+            width: 80,
+            text: 'MyBooleanColumn'
         }
     ],
     items: [
         {
             xtype: 'toolbar',
-            items: {
-                text: 'Добавить',
-                handler: 'onDobavitProduct'
-            },
             border: true,
-            docked: 'top'
+            docked: 'top',
+            items: [
+                {
+                    xtype: 'button',
+                    cls: 'createButton',
+                    text: 'Добавить',
+                    listeners: {
+                        tap: 'onDobavitProduct'
+                    }
+                }
+            ]
         }
     ],
     plugins: [

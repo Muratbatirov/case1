@@ -18,3 +18,4 @@ Route::get('/', function () {
 });
 Route::get('/category/root',[CategoryCantroller::class, 'categories']);
 Route::get('/productlist',[CategoryCantroller::class, 'productlist']);
+Route::post('/productlist/delete',[CategoryCantroller::class, 'productlistdelete']);

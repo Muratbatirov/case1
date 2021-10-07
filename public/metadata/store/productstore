@@ -24,41 +24,5 @@
         "remoteSort": "boolean"
     },
     "name": "MyStore",
-    "designerId": "40f1340a-adb2-40b9-bc9a-6314351934e9",
-    "cn": [
-        {
-            "type": "Ext.data.proxy.Rest",
-            "reference": {
-                "name": "proxy",
-                "type": "object"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "url": "/productlist"
-            },
-            "configAlternates": {
-                "url": "string"
-            },
-            "name": "MyRestProxy2",
-            "designerId": "5f270802-387d-4fe0-a008-e9bfcb6cf100",
-            "cn": [
-                {
-                    "type": "Ext.data.reader.Json",
-                    "reference": {
-                        "name": "reader",
-                        "type": "object"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "rootProperty": "data"
-                    },
-                    "configAlternates": {
-                        "rootProperty": "string"
-                    },
-                    "name": "MyJsonReader2",
-                    "designerId": "33419768-5e3c-4abf-a0d8-30b85242009b"
-                }
-            ]
-        }
-    ]
+    "designerId": "40f1340a-adb2-40b9-bc9a-6314351934e9"
 }

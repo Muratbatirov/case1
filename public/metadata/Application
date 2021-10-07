@@ -26,7 +26,8 @@
             "mynestedlist",
             "ProductGrid",
             "categorytree",
-            "MyNavigationView1"
+            "MyNavigationView1",
+            "MyDialog"
         ]
     },
     "configAlternates": {

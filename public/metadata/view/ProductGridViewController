@@ -23,13 +23,104 @@
             },
             "codeClass": null,
             "userConfig": {
-                "fn": "onDobavitProduct"
+                "designer|params": [
+                    "grid",
+                    "context"
+                ],
+                "fn": "onMenuClick",
+                "implHandler": [
+                    "var me = this;",
+                    "console.log(me);",
+                    "",
+                    "  var  vm = me.getViewModel();",
+                    "",
+                    "   var menu = Ext.create({xtype:'menu',",
+                    "                         anchor: true,});",
+                    "      ",
+                    "   Ext.apply({ownerCmp: me}, me.toolContextMenu);",
+                    "",
+                    "menu.add([{",
+                    "      text: 'EDIT',",
+                    "      iconCls: 'x-fa fa-edit',",
+                    "      handler: 'editProduct',",
+                    "    scope:me",
+                    "  },",
+                    "  {",
+                    "      text: 'DELETE',",
+                    "      iconCls: 'x-fa crimson fa-trash',",
+                    "      handler: 'deleteProduct',",
+                    "       scope:me",
+                    "  }]);",
+                    "me.getViewModel().set('crecord', context.record);",
+                    "menu.autoFocus = !context.event.pointerType;",
+                    "menu.showBy(context.tool.el, 'l50-r50?');"
+                ]
             },
             "configAlternates": {
-                "fn": "string"
+                "designer|params": "typedarray",
+                "fn": "string",
+                "implHandler": "code"
             },
-            "name": "onDobavitProduct",
-            "designerId": "bd36788e-d9d9-4dfa-874c-eeea9e34110b"
+            "name": "onMenuClick",
+            "designerId": "7820fd71-e643-4664-b890-a37ef29fb4ca"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "editProduct",
+                "implHandler": [
+                    "",
+                    "",
+                    "",
+                    ""
+                ]
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code"
+            },
+            "name": "editProduct",
+            "designerId": "7b23660f-8326-4a58-aaf4-d7e96984dc38"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "deleteProduct",
+                "implHandler": [
+                    "console.log(this.getViewModel().get('crecord'));",
+                    "var recordId= this.getViewModel().get('crecord').data.id;",
+                    "//let store = Case.app.getStore('productstore');",
+                    "Ext.Ajax.request({",
+                    "     url: 'productlist/delete',",
+                    "     params:{recordid:recordId}, ",
+                    "     success: function(response, opts) {",
+                    "          console.log(Case.app.getStore('productstore').findRecord('id',recordId));",
+                    "         Case.app.getStore('productstore').findRecord('id',recordId).drop();",
+                    "         ",
+                    "     },",
+                    "",
+                    "     failure: function(response, opts) {",
+                    "         console.log('server-side failure with status code ' + response.status);",
+                    "     }",
+                    " });"
+                ]
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code"
+            },
+            "name": "deleteProduct",
+            "designerId": "78f83bc3-94b3-4e7c-ac39-f1a7decc8f91"
         }
     ]
 }

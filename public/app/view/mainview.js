@@ -90,8 +90,8 @@ Ext.define('Case.view.mainview', {
         },
         {
             xtype: 'mynavigationview1',
-            flex: 1,
-            reference: 'workspace'
+            reference: 'workspace',
+            flex: 1
         }
     ]
 

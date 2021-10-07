@@ -30,24 +30,24 @@ Ext.define('Case.view.categorytreeViewController', {
     },
 
     onCategoryTreeSelect: function(dataview, selected, eOpts) {
-        if(selected[0].childNodes.length === 0){
-
-
-            let store = Case.app.getStore('productstore');
-
-            store.getProxy().setExtraParams({
-                'param':selected[0].data.text,
 
 
 
-            });
-            store.loadPage(1);
+        let store = Case.app.getStore('productstore');
+
+        store.getProxy().setExtraParams({
+            'param':selected[0].data.text,
+
+
+
+        });
+        store.loadPage(1);
 
 
 
 
 
-        }
+
     }
 
 });

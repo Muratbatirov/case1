@@ -53,6 +53,7 @@ Ext.define('Case.view.categorytree', {
         {
             xtype: 'toolbar',
             items: {
+                xtype: 'button',
                 text: 'Показать все',
                 handler: 'onShowAll'
             },

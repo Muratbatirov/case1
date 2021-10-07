@@ -1,7 +1,7 @@
 
 .treecls .x-treelist-item-text{
 color:white !important;
-    padding-left: 20px  !important;
+   
     font-size: 100%;
 }
 .treecls .x-treelist-item-icon{
@@ -15,4 +15,41 @@ color:white !important;
 }
 .x-treelist-nav .x-treelist-item-tool {
     color:white;
+}
+.x-treelist-highlight-path .x-treelist-item-over > * > * > .x-treelist-item-icon {
+    color: blue!important;
+    color: var(--color)!important;
+    transition: color 0.5s!important;
+}
+
+.x-treelist-highlight-path .x-treelist-item-over > * > * > .x-treelist-item-text {
+    color:blue!important;
+    color: var(--color)!important;
+    transition: color 0.5s;
+}
+
+.x-treelist-highlight-path .x-treelist-item-over > * > * > .x-treelist-item-expander {
+    color: #111!important;
+    color: var(--color);
+    transition: color 0.5s;
+}
+
+.x-treelist-row-over {
+    background-color: rgba(63,156,239,0.75)!important;
+    background-color: rgba(63,156,239,0.75)!important;
+}
+
+.x-treelist-row-over > * > .x-treelist-item-icon {
+    color: white!important;
+    color: var(--color);
+    transition: color 0.5s;
+}
+:root{
+    --hovered-background-color: #add9f3;
+    --selected-background-color: #add9f3;
+}
+.createButton {
+    background-color: #28b862!important;
+    border-color: #28b862!important;
+    color: #fff!important;
 }

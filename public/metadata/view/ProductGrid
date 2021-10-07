@@ -11,8 +11,20 @@
         "designer|userClassName": "ProductGrid",
         "height": "100%",
         "layout": "hbox",
+        "reference": "productgrid",
         "shadow": false,
         "store": "productstore",
+        "toolContextMenu": [
+            "{",
+            "  xtype: 'menu',",
+            "  anchor: true,",
+            "  separator: true,",
+            "  minWidth: 150,",
+            "  autoHide: false,",
+            "  viewModel: {},",
+            "  cls: 'round-context-menu'",
+            "}"
+        ],
         "width": "100%"
     },
     "configAlternates": {
@@ -23,13 +35,60 @@
         "width": "auto",
         "border": "boolean",
         "layout": "string",
-        "shadow": "boolean"
+        "shadow": "boolean",
+        "toolContextMenu": "object",
+        "reference": "string"
     },
     "name": "MyGrid",
     "designerId": "e8c3b747-c1ec-4043-8991-fc83b637de34",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "toolContextMenu",
+            "type": "string"
+        },
+        {
+            "group": "(Custom Properties)",
+            "name": "cell",
+            "type": "string"
+        },
+        {
+            "group": "(Custom Properties)",
+            "name": "dddd",
+            "type": "string"
+        }
+    ],
     "viewControllerInstanceId": "3e2a2749-2689-4b0c-8315-190726977181",
     "viewModelInstanceId": "5c0be29b-3629-4b6a-879a-eced8320cf4e",
     "cn": [
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "cell": [
+                    "{",
+                    "    cls: 'erg-tool-margin-0',",
+                    "  tools: {",
+                    "      margin: 0,",
+                    "      menu: 'onMenuClick'",
+                    "  }",
+                    "}"
+                ],
+                "docked": null,
+                "layout|flex": 0.5
+            },
+            "configAlternates": {
+                "cell": "object",
+                "docked": "string",
+                "layout|flex": "number"
+            },
+            "name": "MyColumn",
+            "designerId": "3592cfbb-85d6-4bd5-995e-f4caa59487c5"
+        },
         {
             "type": "Ext.grid.column.Column",
             "reference": {
@@ -50,8 +109,8 @@
                 "width": "auto",
                 "layout|flex": "number"
             },
-            "name": "MyColumn",
-            "designerId": "5647779b-2926-4917-a264-89099877b183"
+            "name": "MyColumn2",
+            "designerId": "6ce591b4-74c8-4d80-b330-54e2881ff368"
         },
         {
             "type": "Ext.grid.column.Column",
@@ -153,13 +212,7 @@
             "codeClass": null,
             "userConfig": {
                 "border": true,
-                "docked": "top",
-                "items": [
-                    "{",
-                    "text: 'Добавить',",
-                    "                handler: 'onDobavitProduct'                        ",
-                    "                    }"
-                ]
+                "docked": "top"
             },
             "configAlternates": {
                 "items": "object",
@@ -173,6 +226,115 @@
                     "group": "(Custom Properties)",
                     "name": "items",
                     "type": "string"
+                }
+            ],
+            "cn": [
+                {
+                    "type": "Ext.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "cls": [
+                            "createButton"
+                        ],
+                        "text": "Добавить"
+                    },
+                    "configAlternates": {
+                        "cls": "typedarray",
+                        "text": "string"
+                    },
+                    "name": "MyButton2",
+                    "designerId": "93168f0e-5d17-46a1-893a-289b78fffb80",
+                    "cn": [
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onDobavitProduct",
+                                "implHandler": [
+                                    "let ell = document.getElementsByClassName(\"x-navigationview\");",
+                                    "let workspase= button.up('mainview').lookupReference('workspace');",
+                                    "let widthcalculate = ell[0].offsetWidth;",
+                                    "let heightcalculate = ell[0].offsetHeight;",
+                                    "",
+                                    "console.log(widthcalculate);",
+                                    "let dialogproduct = Ext.create({",
+                                    "    docked:'top',",
+                                    "     xtype: 'dialog',",
+                                    "    right: 0,",
+                                    "    shadow:false,",
+                                    "zIndex:100,",
+                                    "     title: 'Dialog',",
+                                    "",
+                                    "        width:widthcalculate,",
+                                    "    height:heightcalculate,",
+                                    "     showAnimation:'slide',",
+                                    "",
+                                    "     html: 'Content<br>goes<br>here',",
+                                    "",
+                                    "     buttons: {",
+                                    "         ok: function () {  // standard button (see below)",
+                                    "             dialogproduct.destroy();",
+                                    "              closedialog.destroy();",
+                                    "         }",
+                                    "     }",
+                                    " });",
+                                    "let closedialog = Ext.create({",
+                                    "    docked:'top',",
+                                    "     xtype: 'dialog',",
+                                    "    right: widthcalculate,",
+                                    "",
+                                    "   top:100,",
+                                    "",
+                                    "    zIndex:100,",
+                                    "minWidth:'50px',",
+                                    "       width: '60px',",
+                                    "    height:'60px',",
+                                    "",
+                                    "     showAnimation:'slide',",
+                                    "style: 'border-radius: 50% 0% 0% 50%; color:rgba(63,156,239,0.75)!important;',",
+                                    "",
+                                    "    ",
+                                    "    items: [{",
+                                    "        xtype: 'button',",
+                                    "         iconCls: 'x-fa fa-times',",
+                                    "       style: 'padding:  0 0 20px 0',",
+                                    "        listeners: {",
+                                    "                                tap: function () {  ",
+                                    "             closedialog.destroy();",
+                                    "                                     dialogproduct.destroy();",
+                                    "                                    ",
+                                    "         }",
+                                    "                            }",
+                                    "    }]",
+                                    "",
+                                    " });",
+                                    "",
+                                    "closedialog.show();",
+                                    " dialogproduct.show();",
+                                    "",
+                                    ""
+                                ],
+                                "name": "tap",
+                                "scope": "me"
+                            },
+                            "configAlternates": {
+                                "fn": "string",
+                                "implHandler": "code",
+                                "name": "string",
+                                "scope": "string"
+                            },
+                            "name": "onDobavitProduct",
+                            "designerId": "a74ce24b-3a82-4afc-8e9e-b08e400bb3b5"
+                        }
+                    ]
                 }
             ]
         },
@@ -191,6 +353,26 @@
             },
             "name": "MyListPagingPlugin",
             "designerId": "4b6ca1bd-add5-4d0f-b6da-e9cae7493f4a"
+        },
+        {
+            "type": "Ext.grid.column.Boolean",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "docked": null,
+                "text": "MyBooleanColumn",
+                "width": 80
+            },
+            "configAlternates": {
+                "docked": "string",
+                "text": "string",
+                "width": "auto"
+            },
+            "name": "MyBooleanColumn",
+            "designerId": "2cb97893-8410-4df8-963b-d6747490fe3a"
         }
     ]
 }

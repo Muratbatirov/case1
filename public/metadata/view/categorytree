@@ -68,7 +68,7 @@
             "userConfig": {
                 "fn": "onCategoryTreeSelect",
                 "implHandler": [
-                    "if(selected[0].childNodes.length === 0){",
+                    "",
                     "",
                     "",
                     "let store = Case.app.getStore('productstore');",
@@ -85,7 +85,7 @@
                     "",
                     "",
                     "",
-                    "}"
+                    ""
                 ],
                 "name": "select",
                 "scope": "me"
@@ -109,7 +109,9 @@
             "userConfig": {
                 "docked": "top",
                 "items": [
-                    "{text: 'Показать все',",
+                    "{xtype: 'button',",
+                    " ",
+                    "text: 'Показать все',",
                     "handler: 'onShowAll'",
                     "}"
                 ]

@@ -35,7 +35,8 @@ Ext.application({
         'mynestedlist',
         'ProductGrid',
         'categorytree',
-        'MyNavigationView1'
+        'MyNavigationView1',
+        'MyDialog'
     ],
     controllers: [
         'navigation',

@@ -29,8 +29,8 @@
             "configAlternates": {
                 "name": "string"
             },
-            "name": "MyString1",
-            "designerId": "9eb30161-f8b4-474d-beae-60d24fbfd484"
+            "name": "MyString",
+            "designerId": "5d020625-04af-4c19-b5da-479db0dd9e79"
         },
         {
             "type": "Ext.data.field.String",
@@ -111,6 +111,56 @@
             },
             "name": "MyString3",
             "designerId": "fcfc6117-392b-4646-8a6a-7bb76f96f5f3"
+        },
+        {
+            "type": "Ext.data.field.Integer",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "category_id"
+            },
+            "configAlternates": {
+                "name": "string"
+            },
+            "name": "MyInteger3",
+            "designerId": "39a0f635-c7c7-4585-b9cf-c0e467b5aa82"
+        },
+        {
+            "type": "Ext.data.proxy.Rest",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "url": "/productlist"
+            },
+            "configAlternates": {
+                "url": "string"
+            },
+            "name": "MyRestProxy2",
+            "designerId": "f2192b69-9397-4796-9ff5-207c7505702d",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "rootProperty": "data"
+                    },
+                    "configAlternates": {
+                        "rootProperty": "string"
+                    },
+                    "name": "MyJsonReader2",
+                    "designerId": "33419768-5e3c-4abf-a0d8-30b85242009b"
+                }
+            ]
         }
     ]
 }
