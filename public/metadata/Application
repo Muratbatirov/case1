@@ -12,14 +12,23 @@
         ],
         "models": [
             "Category",
-            "productmodel"
+            "productmodel",
+            "categoryComboModel",
+            "postavshikcombo",
+            "categoryEditCombo"
         ],
         "name": "Case",
         "stores": [
             "Categories",
             "leftMenu",
             "categorytree",
-            "productstore"
+            "productstore",
+            "postavshikComboStore",
+            "categoryComboStore",
+            "categoryedittree",
+            "categoryEditCombo",
+            "categoryEditComboLitle",
+            "podcategory"
         ],
         "views": [
             "MyToolbar",
@@ -27,7 +36,12 @@
             "ProductGrid",
             "categorytree",
             "MyNavigationView1",
-            "MyDialog"
+            "DialogEditProduct",
+            "categoriesContainer",
+            "dialogeditcategory",
+            "editcategorytree",
+            "dialogAddCategory",
+            "DialogAddProduct"
         ]
     },
     "configAlternates": {

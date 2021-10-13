@@ -1,0 +1,243 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "editcategorytree",
+        "designer|userClassName": "editcategorytreeViewController"
+    },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string"
+    },
+    "designerId": "034a4251-c8f1-4655-aad8-8163c5b913cd",
+    "cn": [
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "grid",
+                    "context"
+                ],
+                "fn": "onMenuClick",
+                "implHandler": [
+                    "var me = this;",
+                    "",
+                    "",
+                    "  var  vm = me.getViewModel();",
+                    "console.log(me);",
+                    "",
+                    "   var menu = Ext.create({xtype:'menu',",
+                    "                         anchor: true,});",
+                    "",
+                    "   Ext.apply({ownerCmp: me}, me.toolContextMenu);",
+                    "",
+                    "menu.add([{",
+                    "      text: 'EDIT',",
+                    "      iconCls: 'x-fa fa-edit',",
+                    "      handler: 'editCategory',",
+                    "    scope:me",
+                    "  },",
+                    "  {",
+                    "      text: 'DELETE',",
+                    "      iconCls: 'x-fa crimson fa-trash',",
+                    "      handler: 'deleteCategory',",
+                    "       scope:me",
+                    "  }]);",
+                    "",
+                    "me.getViewModel().set('crecordtree', context.record);",
+                    "menu.autoFocus = !context.event.pointerType;",
+                    "menu.showBy(context.tool.el, 'l50-r50?');"
+                ]
+            },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "implHandler": "code"
+            },
+            "name": "onMenuClick",
+            "designerId": "5edc6efa-c56c-4d0b-96c6-4b0b6a5abf60"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "editCategory",
+                "implHandler": [
+                    " var me= this;",
+                    "",
+                    "",
+                    "        let dialog=Ext.create({",
+                    "           xtype: 'dialogeditcategory'});",
+                    "",
+                    "        var categoryrecord=  this.getViewModel().get('crecordtree');",
+                    "console.log(categoryrecord);",
+                    "",
+                    "        let editcombostore= Case.app.getStore('categoryEditCombo');",
+                    "",
+                    "        editcombostore.addListener({",
+                    "            load: me.oneditstore,",
+                    "            scope:me",
+                    "",
+                    "        });",
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    "        let ell = document.getElementsByClassName(\"x-navigationview\");",
+                    "",
+                    "        let widthcalculate = ell[0].offsetWidth;",
+                    "        let heightcalculate = ell[0].offsetHeight;",
+                    "        dialog.setConfig('width',widthcalculate);",
+                    "",
+                    "        dialog.setConfig('height',heightcalculate);",
+                    "        dialog.setConfig('buttons',{",
+                    "                      ok: function () {",
+                    "",
+                    "",
+                    "                        dialog.destroy();",
+                    "",
+                    "                       }",
+                    "                   });",
+                    "",
+                    "",
+                    "",
+                    "        dialog.down('formpanel').setViewModel({data:{crecordtree:categoryrecord}});",
+                    "",
+                    "        dialog.show();",
+                    ""
+                ]
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code"
+            },
+            "name": "editCategory",
+            "designerId": "6be0d80d-2c12-4815-b109-834e6b76d6ff"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "deleteCategory",
+                "implHandler": [
+                    "",
+                    "var crecord= this.getViewModel().get('crecordtree');",
+                    "//let store = Case.app.getStore('productstore');",
+                    "Ext.Ajax.request({",
+                    "     url: 'categorylist/delete',",
+                    "     params:{id:crecord.data.id},",
+                    "     success: function(response, opts) {",
+                    "        if(response.responseText=='true'){",
+                    "            Case.app.getStore('categoryedittree').findRecord('id',crecord.data.id).drop();",
+                    "        }else{",
+                    "           Ext.Msg.alert(\"Ошибка\" , response.responseText);",
+                    "       }",
+                    "       ",
+                    "",
+                    "     },",
+                    "",
+                    "     failure: function(response, opts) {",
+                    "         Ext.Msg.alert(\"Ошибка\" , response.responseText);",
+                    "     }",
+                    " });"
+                ]
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code"
+            },
+            "name": "deleteCategory",
+            "designerId": "41bd9d40-565c-476f-ad13-03a98b44332a"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "thiss",
+                    "records",
+                    "successful",
+                    "operation",
+                    "eOpts"
+                ],
+                "fn": "oneditstore",
+                "implHandler": [
+                    " var me= this;",
+                    "",
+                    "",
+                    "",
+                    "",
+                    "        var categoryrecord= me.getViewModel().get('crecordtree').data.id;",
+                    "        console.log(categoryrecord);",
+                    "        var arr =[];",
+                    "",
+                    "        arr=records;",
+                    "console.log(arr);",
+                    "function recurse(rec,  categoryrec) {",
+                    "        if(rec) {",
+                    "        rec.forEach(function(item, i, rec) {",
+                    "",
+                    "                               if((item.data.id)&&item.data.id==categoryrec){",
+                    "                                   delete rec[i];",
+                    "                               }",
+                    "                        if((item.data.parent_id)&&item.data.parent_id==categoryrec){",
+                    "",
+                    "",
+                    "                         delete rec[i];",
+                    "                          recurse(rec,item.data.id);",
+                    "",
+                    "",
+                    "                        }",
+                    "",
+                    "",
+                    "",
+                    "                });}",
+                    "    }",
+                    "",
+                    "",
+                    "",
+                    "",
+                    "recurse(arr,categoryrecord );",
+                    "arrnew=[{\"id\":0,\"parent_id\":null,\"category\":\"Нет\",\"parentcategory\":\"null\",\"level\":0}];",
+                    " arr.forEach(function(item, i, arr) {",
+                    "    arrnew.push(item.data);",
+                    "",
+                    " });",
+                    "thiss.setData(arrnew);",
+                    "",
+                    ""
+                ]
+            },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "implHandler": "code"
+            },
+            "name": "oneditstore",
+            "designerId": "48af1fb1-08ba-4e4d-993d-ede376c49349"
+        }
+    ]
+}

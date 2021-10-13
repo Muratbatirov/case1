@@ -1,0 +1,94 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "categoryComboModel",
+        "validators": [
+            " {",
+            "        category: [",
+            "            { type: 'presence', message: 'This field is mandatory'},",
+            "            { type: 'length', min: 2, max: 45}",
+            "        ], ",
+            "        id:[{ type: 'presence', message: 'This field is mandatory'},]",
+            "    }"
+        ]
+    },
+    "configAlternates": {
+        "designer|userClassName": "string",
+        "validators": "array"
+    },
+    "name": "MyModel",
+    "designerId": "2fba20ac-9897-4120-988f-7b592c83be19",
+    "cn": [
+        {
+            "type": "Ext.data.field.Integer",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "id"
+            },
+            "configAlternates": {
+                "name": "string"
+            },
+            "name": "MyInteger2",
+            "designerId": "c3e0e096-2598-495e-adaa-0a84909a48c5"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "category"
+            },
+            "configAlternates": {
+                "name": "string"
+            },
+            "name": "MyString1",
+            "designerId": "6c4e58d3-dc45-4905-af85-e9b21f9b1ce6"
+        },
+        {
+            "type": "Ext.data.proxy.Rest",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "url": "/categorycombo"
+            },
+            "configAlternates": {
+                "url": "string"
+            },
+            "name": "MyRestProxy3",
+            "designerId": "7c0f8ac3-e0ed-495f-ab61-6c57eec594df",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "rootProperty": "data"
+                    },
+                    "configAlternates": {
+                        "rootProperty": "string"
+                    },
+                    "name": "MyJsonReader3",
+                    "designerId": "70955020-1416-4410-a337-af1b5bc93f01"
+                }
+            ]
+        }
+    ]
+}

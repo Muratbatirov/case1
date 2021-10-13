@@ -15,6 +15,23 @@
 
 Ext.define('Case.view.ProductGridViewModel', {
     extend: 'Ext.app.ViewModel',
-    alias: 'viewmodel.productgrid'
+    alias: 'viewmodel.productgrid',
+
+    requires: [
+        'Ext.data.Store'
+    ],
+
+    data: {
+        crecord: null
+    },
+
+    stores: {
+        categorycombo: {
+            model: 'Case.model.categoryComboModel'
+        },
+        postavshikcombo: {
+            model: 'Case.model.postavshikcombo'
+        }
+    }
 
 });

@@ -21,29 +21,23 @@ Ext.define('Case.controller.navigation', {
         'Ext.route.Route'
     ],
 
+    views: [
+        'dialogeditcategory'
+    ],
+
     routes: {
-        'category': {
-            name: 'category',
-            action: 'category'
-        },
         'catalogs': {
             name: 'catalogs',
             action: 'showtree'
-        }
+        },
+        'categories': 'showCategoriesPage',
+        'categories/edit': 'categoryedit'
     },
 
     refs: {
-        mainView: 'mainview'
-    },
-
-    category: function() {
-        let workspace = this.getWorkspace();
-
-
-        workspace.add({
-            xtype: 'mytree'
-        });
-
+        mainView: 'mainview',
+        editCategory: 'dialogeditcategory',
+        categoryContainer: 'categoriescontainer'
     },
 
     getWorkspace: function() {
@@ -73,6 +67,7 @@ Ext.define('Case.controller.navigation', {
             flex:1
 
         });
+
         container.add({
             xtype: 'productgrid',
             flex:4
@@ -80,6 +75,164 @@ Ext.define('Case.controller.navigation', {
         });
 
          workspace.push(container);
+
+    },
+
+    showCategoriesPage: function() {
+         let workspace = this.getWorkspace();
+
+
+                 workspace.push({xtype:'categoriescontainer'});
+    },
+
+    categoryedit: function() {
+        var me= this;
+        if(me.getWorkspace().getActiveItem()){
+           console.log('if');
+        }else{
+            me.getWorkspace().push({xtype:'categoriescontainer'});
+        }
+        //me.getWorkspace().push({xtype:'categoriescontainer'});
+        let dialog=Ext.create({
+           xtype: 'dialogeditcategory'});
+        let categorycontainer =me.getCategoryContainer();
+
+        var categoryrecord= categorycontainer.getViewModel().get('crecordtree');
+        console.log(categorycontainer);
+        let podstore= Case.app.getStore('podcategory');
+        let editcombostore= Case.app.getStore('categoryEditCombo');
+
+        editcombostore.addListener({
+            load: me.oneditstore,
+            scope:me
+
+        });
+
+        podstore.addListener({
+            load: me.onstoreload,
+            scope:me
+
+        });
+        podstore.load();
+        console.log(podstore);
+        ///var me = this;
+
+        let ell = document.getElementsByClassName("x-navigationview");
+
+        let widthcalculate = ell[0].offsetWidth;
+        let heightcalculate = ell[0].offsetHeight;
+        dialog.setConfig('width',widthcalculate);
+
+        dialog.setConfig('height',heightcalculate);
+        dialog.setConfig('buttons',{
+                      ok: function () {
+                          Ext.History.back();
+
+                        dialog.destroy();
+
+                       }
+                   });
+
+
+
+        dialog.down('formpanel').setViewModel({data:{crecordtree:categoryrecord}});
+
+        dialog.show();
+
+
+    },
+
+    onstoreload: function(thiss, records, successful, operation, eOpts) {
+        var me= this;
+
+        let categorycontainer =me.getCategoryContainer();
+
+        var element =[];
+        var categoryrecord= categorycontainer.getViewModel().get('crecordtree').data.id;
+        console.log(categoryrecord);
+        var arr =[];
+
+
+        this.recurse(records,categoryrecord,arr,me);
+
+        arrnew=[];
+                 arr.forEach(function(item, i, arr) {
+                    arrnew.push(item.data);
+
+                 });
+        console.log(arrnew);
+        thiss.setData(arr);
+
+
+    },
+
+    recurse: function(rec, categoryrec, arr, mee) {
+        if(rec) {
+        rec.forEach(function(item, i, records) {
+
+                        if(item.data.id==categoryrec){
+                         item.data.expanded=true;
+                          arr.push(item);
+
+
+                        }
+            if(item.childNodes){
+                           mee.recurse(item.childNodes,categoryrec,arr,mee);}
+
+
+
+                });}
+    },
+
+    oneditstore: function(thiss, records, successful, operation, eOpts) {
+         var me= this;
+
+                let categorycontainer =me.getCategoryContainer();
+                console.log(records);
+                var element =[];
+                var categoryrecord= categorycontainer.getViewModel().get('crecordtree').data.id;
+                console.log(categoryrecord);
+                var arr =[];
+
+                arr=records;
+        console.log(arr);
+        function recurse(rec,  categoryrec) {
+                if(rec) {
+                rec.forEach(function(item, i, rec) {
+
+                                       if((item.data.id)&&item.data.id==categoryrec){
+                                           delete rec[i];
+                                       }
+                                if((item.data.parent_id)&&item.data.parent_id==categoryrec){
+
+
+                                 delete rec[i];
+                                  recurse(rec,item.data.id);
+
+
+                                }
+
+
+
+                        });}
+            }
+
+
+
+
+        recurse(arr,categoryrecord );
+        arrnew=[];
+         arr.forEach(function(item, i, arr) {
+            arrnew.push(item.data);
+
+         });
+        thiss.setData(arrnew);
+
+        console.log(thiss.getData());
+
+
+
+
 
     }
 

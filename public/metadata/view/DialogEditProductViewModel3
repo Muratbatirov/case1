@@ -1,0 +1,18 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "dialogaddproduct",
+        "designer|userClassName": "DialogEditProductViewModel3"
+    },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string"
+    },
+    "name": "DialogEditProductViewModel3",
+    "designerId": "848d7cb7-b682-4b8b-8b6e-e969b9cef17c"
+}

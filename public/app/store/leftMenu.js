@@ -34,7 +34,7 @@ Ext.define('Case.store.leftMenu', {
                     },
                     {
                         text: 'Категории товаров',
-                        hash: 'catagories',
+                        hash: 'categories',
                         iconCls: 'x-fa fa-sitemap',
                         leaf: true
                     },

@@ -129,6 +129,22 @@
             "designerId": "39a0f635-c7c7-4585-b9cf-c0e467b5aa82"
         },
         {
+            "type": "Ext.data.field.Integer",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "postavshik_id"
+            },
+            "configAlternates": {
+                "name": "string"
+            },
+            "name": "MyInteger5",
+            "designerId": "cfb970eb-0a82-44a2-b7e1-a2572fc00811"
+        },
+        {
             "type": "Ext.data.proxy.Rest",
             "reference": {
                 "name": "proxy",

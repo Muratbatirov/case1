@@ -1,0 +1,20 @@
+{
+    "type": "Ext.data.Store",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "categoryComboStore",
+        "model": "categoryComboModel",
+        "storeId": "categoryComboStore"
+    },
+    "configAlternates": {
+        "designer|userClassName": "string",
+        "model": "model",
+        "storeId": "string"
+    },
+    "name": "editProductComboStore1",
+    "designerId": "ef7969e5-f06a-47a2-94c4-6d574c7ccbc2"
+}

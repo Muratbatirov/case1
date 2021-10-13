@@ -26,7 +26,18 @@ Ext.define('Case.view.categorytreeViewController', {
 
                     });
 
-                    store1.loadPage(1);
+                    store1.loadPage(1,{
+                           callback: function(records, operation, success) {
+                             Case.app.getStore('productstore').getProxy().setExtraParams({
+
+
+
+                });
+
+              }}
+
+
+                                   );
     },
 
     onCategoryTreeSelect: function(dataview, selected, eOpts) {
@@ -41,7 +52,16 @@ Ext.define('Case.view.categorytreeViewController', {
 
 
         });
-        store.loadPage(1);
+        store.loadPage(1,{
+            callback: function(records, operation, success) {
+
+                Case.app.getStore('productstore').getProxy().setExtraParams({
+
+
+
+                });
+            }
+        });
 
 
 

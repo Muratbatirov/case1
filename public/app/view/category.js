@@ -20,7 +20,8 @@ Ext.define('Case.view.category', {
     requires: [
         'Case.view.categoryViewModel',
         'Case.view.categoryViewController',
-        'Ext.Panel'
+        'Ext.Panel',
+        'Ext.field.ComboBox'
     ],
 
     controller: 'category',
@@ -34,6 +35,13 @@ Ext.define('Case.view.category', {
             xtype: 'panel',
             flex: 1,
             title: 'My Panel'
+        },
+        {
+            xtype: 'combobox',
+            label: 'Field',
+            bind: {
+                value: 'dddd'
+            }
         }
     ],
     listeners: {

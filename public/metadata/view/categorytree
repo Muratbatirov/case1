@@ -25,10 +25,18 @@
         "border": "boolean",
         "hideHeaders": "boolean",
         "layout": "string",
-        "style": "string"
+        "style": "string",
+        "toolContextMenu": "object"
     },
     "name": "MyTree",
     "designerId": "ffc4198f-e260-4d9e-8978-a9b9982681ad",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "toolContextMenu",
+            "type": "string"
+        }
+    ],
     "viewControllerInstanceId": "daa2137e-c021-4e44-874e-58cd173099de",
     "viewModelInstanceId": "57115b54-f01b-4ab3-8330-08b92740100c",
     "cn": [
@@ -79,7 +87,16 @@
                     "",
                     "",
                     "   });",
-                    "    store.loadPage(1);",
+                    "    store.loadPage(1,{",
+                    "                   callback: function(records, operation, success) {",
+                    "",
+                    "          Case.app.getStore('productstore').getProxy().setExtraParams({",
+                    "",
+                    "",
+                    "",
+                    "                });",
+                    "}",
+                    "    });",
                     "",
                     "",
                     "",

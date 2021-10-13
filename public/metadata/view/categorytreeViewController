@@ -33,7 +33,18 @@
                     "",
                     "            });",
                     "",
-                    "            store1.loadPage(1);"
+                    "            store1.loadPage(1,{",
+                    "                   callback: function(records, operation, success) {",
+                    "                     Case.app.getStore('productstore').getProxy().setExtraParams({",
+                    "          ",
+                    "",
+                    "",
+                    "        });  ",
+                    "        ",
+                    "      }}",
+                    "                           ",
+                    "                           ",
+                    "                           );"
                 ]
             },
             "configAlternates": {

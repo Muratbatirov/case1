@@ -1,0 +1,110 @@
+{
+    "type": "Ext.grid.Tree",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|uiInterfaceName": "round",
+        "designer|userAlias": "editcategorytree",
+        "designer|userClassName": "editcategorytree",
+        "height": "100%",
+        "layout": "hbox",
+        "reference": "treecategory",
+        "store": "categoryedittree",
+        "toolContextMenu": [
+            "{",
+            "  xtype: 'menu',",
+            "  anchor: true,",
+            "  separator: true,",
+            "  minWidth: 150,",
+            "  autoHide: false,",
+            "  viewModel: {},",
+            "  cls: 'round-context-menu'",
+            "}"
+        ],
+        "ui": "round",
+        "width": "100%"
+    },
+    "configAlternates": {
+        "toolContextMenu": "object",
+        "designer|uiInterfaceName": "string",
+        "height": "auto",
+        "layout": "string",
+        "reference": "string",
+        "store": "store",
+        "ui": "string",
+        "width": "auto",
+        "viewModel": "object",
+        "designer|userAlias": "string",
+        "designer|userClassName": "string"
+    },
+    "name": "MyTree",
+    "designerId": "48d368e7-5686-405e-807c-949d341f98d9",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "toolContextMenu",
+            "type": "string"
+        }
+    ],
+    "viewControllerInstanceId": "034a4251-c8f1-4655-aad8-8163c5b913cd",
+    "viewModelInstanceId": "0db2852a-f6c1-4758-9626-d837cebcb801",
+    "cn": [
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "cell": [
+                    "{",
+                    "    cls: 'erg-tool-margin-0',",
+                    "  tools: {",
+                    "      margin: 0,",
+                    "      menu: 'onMenuClick'",
+                    "  }",
+                    "}"
+                ],
+                "docked": null,
+                "layout|flex": 1,
+                "text": "MyColumn4",
+                "width": 80
+            },
+            "configAlternates": {
+                "cell": "object",
+                "docked": "string",
+                "layout|flex": "number",
+                "text": "string",
+                "width": "auto"
+            },
+            "name": "MyColumn4",
+            "designerId": "7a4f29ad-6011-4f61-8126-d184159194d2"
+        },
+        {
+            "type": "Ext.grid.column.Tree",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "text",
+                "docked": null,
+                "layout|flex": 6,
+                "width": 159
+            },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "docked": "string",
+                "layout|flex": "number",
+                "width": "auto"
+            },
+            "name": "MyTreeColumn1",
+            "designerId": "3bea6a6f-e677-49f2-977f-0f5e1ea69e01"
+        }
+    ]
+}

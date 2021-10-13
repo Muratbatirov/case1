@@ -46,8 +46,36 @@ Ext.define('Case.view.ProductGridViewController', {
     },
 
     editProduct: function() {
+        var categoryrecord= this.getViewModel().get('crecord');
+        console.log(categoryrecord.data.postavshik_id);
 
+        var me = this;
 
+        let ell = document.getElementsByClassName("x-navigationview");
+
+        let widthcalculate = ell[0].offsetWidth;
+        let heightcalculate = ell[0].offsetHeight;
+
+        console.log(widthcalculate);
+        let dialogProductEdit = Ext.create({
+           xtype: 'dialogEditProduct',
+            right: 0,
+            shadow:false,
+            zIndex:0,
+            width:widthcalculate,
+                    height:heightcalculate,
+                    showAnimation:'slide',
+        buttons: {
+                        ok: function () {  // standard button (see below)
+                            dialogProductEdit.destroy();
+
+                        }
+                    }
+
+        });
+
+        dialogProductEdit.down('formpanel').setViewModel({data:{crecord:categoryrecord}});
+        dialogProductEdit.show();
 
 
     },
@@ -71,69 +99,48 @@ Ext.define('Case.view.ProductGridViewController', {
          });
     },
 
+    saveFormEditProduct: function() {
+          var me = this,
+                    form = me.lookupReference('form');
+          form.submit({ url: 'PostMyData/To', method:
+                       'Post', success: function(form,result,data) {
+                           Ext.Msg.alert("Данные успешно сохранены");
+
+                       },
+                       failure: function() { Ext.Msg.alert("error"); } });
+    },
+
     onDobavitProduct: function(button, e, eOpts) {
+        var categoryrecord= this.getViewModel().get('crecord');
+        console.log(categoryrecord);
+
+        var me = this;
+
         let ell = document.getElementsByClassName("x-navigationview");
-        let workspase= button.up('mainview').lookupReference('workspace');
+
         let widthcalculate = ell[0].offsetWidth;
         let heightcalculate = ell[0].offsetHeight;
 
         console.log(widthcalculate);
-        let dialogproduct = Ext.create({
-            docked:'top',
-            xtype: 'dialog',
+        let dialogProductEdit = Ext.create({
+            xtype: 'dialogaddproduct',
             right: 0,
             shadow:false,
-            zIndex:100,
-            title: 'Dialog',
-
+            zIndex:0,
             width:widthcalculate,
             height:heightcalculate,
             showAnimation:'slide',
-
-            html: 'Content<br>goes<br>here',
-
             buttons: {
                 ok: function () {  // standard button (see below)
-                    dialogproduct.destroy();
-                    closedialog.destroy();
+                    dialogProductEdit.destroy();
+
                 }
             }
-        });
-        let closedialog = Ext.create({
-            docked:'top',
-            xtype: 'dialog',
-            right: widthcalculate,
-
-            top:100,
-
-            zIndex:100,
-            minWidth:'50px',
-            width: '60px',
-            height:'60px',
-
-            showAnimation:'slide',
-            style: 'border-radius: 50% 0% 0% 50%; color:rgba(63,156,239,0.75)!important;',
-
-
-            items: [{
-                xtype: 'button',
-                iconCls: 'x-fa fa-times',
-                style: 'padding:  0 0 20px 0',
-                listeners: {
-                    tap: function () {
-                        closedialog.destroy();
-                        dialogproduct.destroy();
-
-                    }
-                }
-            }]
 
         });
 
-        closedialog.show();
-        dialogproduct.show();
-
-
+        dialogProductEdit.down('formpanel').setViewModel({data:{crecord:categoryrecord}});
+        dialogProductEdit.show();
     }
 
 });

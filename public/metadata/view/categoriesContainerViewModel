@@ -6,12 +6,16 @@
     },
     "codeClass": null,
     "userConfig": {
-        "designer|userAlias": "mydialog",
-        "designer|userClassName": "MyDialogViewModel"
+        "data": [
+            "{crecordtree:null}"
+        ],
+        "designer|userAlias": "categoriescontainer",
+        "designer|userClassName": "categoriesContainerViewModel"
     },
     "configAlternates": {
+        "data": "object",
         "designer|userAlias": "string",
         "designer|userClassName": "string"
     },
-    "designerId": "dd6bbcd2-6e12-4f09-a3fd-2504360e98f3"
+    "designerId": "a2929e2a-eb9b-4ba9-a215-4ac296c26e4e"
 }

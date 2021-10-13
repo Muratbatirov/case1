@@ -22,13 +22,22 @@ Ext.Loader.setConfig({
 Ext.application({
     models: [
         'Category',
-        'productmodel'
+        'productmodel',
+        'categoryComboModel',
+        'postavshikcombo',
+        'categoryEditCombo'
     ],
     stores: [
         'Categories',
         'leftMenu',
         'categorytree',
-        'productstore'
+        'productstore',
+        'postavshikComboStore',
+        'categoryComboStore',
+        'categoryedittree',
+        'categoryEditCombo',
+        'categoryEditComboLitle',
+        'podcategory'
     ],
     views: [
         'MyToolbar',
@@ -36,7 +45,12 @@ Ext.application({
         'ProductGrid',
         'categorytree',
         'MyNavigationView1',
-        'MyDialog'
+        'DialogEditProduct',
+        'categoriesContainer',
+        'dialogeditcategory',
+        'editcategorytree',
+        'dialogAddCategory',
+        'DialogAddProduct'
     ],
     controllers: [
         'navigation',

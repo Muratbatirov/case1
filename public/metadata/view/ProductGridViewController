@@ -74,8 +74,36 @@
             "userConfig": {
                 "fn": "editProduct",
                 "implHandler": [
+                    "var categoryrecord= this.getViewModel().get('crecord');",
+                    "console.log(categoryrecord.data.postavshik_id);",
                     "",
+                    "var me = this;",
                     "",
+                    "let ell = document.getElementsByClassName(\"x-navigationview\");",
+                    "",
+                    "let widthcalculate = ell[0].offsetWidth;",
+                    "let heightcalculate = ell[0].offsetHeight;",
+                    "",
+                    "console.log(widthcalculate);",
+                    "let dialogProductEdit = Ext.create({",
+                    "   xtype: 'dialogEditProduct',",
+                    "    right: 0,",
+                    "    shadow:false,",
+                    "    zIndex:0,",
+                    "    width:widthcalculate,",
+                    "            height:heightcalculate,",
+                    "            showAnimation:'slide',",
+                    "buttons: {",
+                    "                ok: function () {  // standard button (see below)",
+                    "                    dialogProductEdit.destroy();",
+                    "",
+                    "                }",
+                    "            }",
+                    "",
+                    "});",
+                    "",
+                    "dialogProductEdit.down('formpanel').setViewModel({data:{crecord:categoryrecord}});",
+                    "dialogProductEdit.show();",
                     "",
                     ""
                 ]
@@ -121,6 +149,33 @@
             },
             "name": "deleteProduct",
             "designerId": "78f83bc3-94b3-4e7c-ac39-f1a7decc8f91"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "saveFormEditProduct",
+                "implHandler": [
+                    "  var me = this,",
+                    "            form = me.lookupReference('form');",
+                    "  form.submit({ url: 'PostMyData/To', method: ",
+                    "               'Post', success: function(form,result,data) { ",
+                    "                   Ext.Msg.alert(\"Данные успешно сохранены\");",
+                    "               ",
+                    "               }, ",
+                    "               failure: function() { Ext.Msg.alert(\"error\"); } });"
+                ]
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code"
+            },
+            "name": "saveFormEditProduct",
+            "designerId": "ff70722a-9232-432f-894c-b738e0d42813"
         }
     ]
 }

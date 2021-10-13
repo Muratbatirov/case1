@@ -1,0 +1,388 @@
+{
+    "type": "Ext.Dialog",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "dialogaddproduct",
+        "designer|userClassName": "DialogAddProduct",
+        "docked": "right",
+        "title": "My Dialog"
+    },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string",
+        "docked": "string",
+        "showAnimation": "string",
+        "title": "string",
+        "width": "auto"
+    },
+    "name": "DialogEditProduct1",
+    "designerId": "7d2ab36e-ee58-4aec-991b-a2f821769d89",
+    "viewControllerInstanceId": "78c0338f-5a90-42b4-9152-0eeb9b22e8fa",
+    "viewModelInstanceId": "848d7cb7-b682-4b8b-8b6e-e969b9cef17c",
+    "cn": [
+        {
+            "type": "Ext.form.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "itemId": "myformpanel",
+                "reference": "form"
+            },
+            "configAlternates": {
+                "viewModel": "object",
+                "itemId": "string",
+                "reference": "string"
+            },
+            "name": "MyFormPanel",
+            "designerId": "47f81fd8-6b0d-4f3e-8902-a8d424ff3a88",
+            "cn": [
+                {
+                    "type": "Ext.field.Container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout": "hbox"
+                    },
+                    "configAlternates": {
+                        "layout": "string"
+                    },
+                    "name": "MyFieldContainer",
+                    "designerId": "63282b42-0ed1-4a51-8912-d7355b98d996",
+                    "cn": [
+                        {
+                            "type": "Ext.field.ComboBox",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "autoLoadOnValue": true,
+                                "displayField": "category",
+                                "editable": false,
+                                "flex": 1,
+                                "label": "Категория",
+                                "modelValidation": true,
+                                "picker": "floated",
+                                "required": true,
+                                "store": "categoryComboStore",
+                                "validators": [
+                                    " {",
+                                    "        category: [",
+                                    "            { type: 'presence', message: 'This field is mandatory'},",
+                                    "            { type: 'length', min: 2, max: 45}",
+                                    "        ], ",
+                                    "        id:[{ type: 'presence', message: 'This field is mandatory'},]",
+                                    "    }"
+                                ],
+                                "value": [
+                                    "{crecord.category_id}"
+                                ],
+                                "valueField": "id"
+                            },
+                            "configAlternates": {
+                                "value": "binding",
+                                "flex": "number",
+                                "autoLoadOnValue": "boolean",
+                                "displayField": "datafield",
+                                "editable": "boolean",
+                                "label": "string",
+                                "picker": "string",
+                                "store": "store",
+                                "valueField": "datafield",
+                                "validators": "object",
+                                "modelValidation": "boolean",
+                                "required": "boolean"
+                            },
+                            "name": "MyComboBox1",
+                            "designerId": "aec9f147-71b9-43d7-a7ac-fa38f71a330c",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "flex",
+                                    "type": "string"
+                                }
+                            ],
+                            "cn": [
+                                {
+                                    "type": "Ext.XTemplate",
+                                    "reference": {
+                                        "name": "itemTpl",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|displayName": "itemTpl",
+                                        "implHandler": [
+                                            ""
+                                        ]
+                                    },
+                                    "configAlternates": {
+                                        "designer|displayName": "string",
+                                        "implHandler": "code"
+                                    },
+                                    "name": "itemTpl",
+                                    "designerId": "28a14c02-dee0-4fc3-bf4e-2b60fca349c0"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.field.ComboBox",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "autoLoadOnValue": true,
+                                "displayField": "postavshik",
+                                "editable": false,
+                                "flex": 1,
+                                "label": "Поставщик",
+                                "picker": "floated",
+                                "required": true,
+                                "store": "postavshikComboStore",
+                                "value": [
+                                    "{crecord.postavshik_id}"
+                                ],
+                                "valueField": "id"
+                            },
+                            "configAlternates": {
+                                "value": "binding",
+                                "flex": "number",
+                                "autoLoadOnValue": "boolean",
+                                "label": "string",
+                                "picker": "string",
+                                "store": "store",
+                                "valueField": "datafield",
+                                "displayField": "datafield",
+                                "editable": "boolean",
+                                "required": "boolean"
+                            },
+                            "name": "MyComboBox3",
+                            "designerId": "9f198886-3b96-45d7-a0a8-b41312cdd53b",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "flex",
+                                    "type": "string"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "label": "Название продукта",
+                        "name": "name",
+                        "required": true,
+                        "value": [
+                            "{crecord.name}"
+                        ]
+                    },
+                    "configAlternates": {
+                        "value": "binding",
+                        "label": "string",
+                        "name": "string",
+                        "required": "boolean"
+                    },
+                    "name": "MyTextField",
+                    "designerId": "e2de3cf2-d6db-4574-bb83-af7df7341aa5"
+                },
+                {
+                    "type": "Ext.field.Number",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "label": "Цена",
+                        "name": "price",
+                        "required": true,
+                        "value": [
+                            "{crecord.price}"
+                        ]
+                    },
+                    "configAlternates": {
+                        "value": "binding",
+                        "label": "string",
+                        "name": "string",
+                        "required": "boolean"
+                    },
+                    "name": "MyNumberField",
+                    "designerId": "b5ab6915-03b6-4e1a-9849-498c74c518c6"
+                },
+                {
+                    "type": "Ext.field.Number",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "label": "Количество",
+                        "name": "quantity",
+                        "required": true,
+                        "value": [
+                            "{crecord.quantity}"
+                        ]
+                    },
+                    "configAlternates": {
+                        "value": "binding",
+                        "label": "string",
+                        "name": "string",
+                        "required": "boolean"
+                    },
+                    "name": "MyNumberField1",
+                    "designerId": "863e3209-0972-4977-8a5f-115f387d1fe8"
+                },
+                {
+                    "type": "Ext.field.TextArea",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "label": "Описания товара",
+                        "name": "opisanie",
+                        "required": true,
+                        "value": [
+                            "{crecord.opisanie}"
+                        ]
+                    },
+                    "configAlternates": {
+                        "value": "binding",
+                        "label": "string",
+                        "name": "string",
+                        "required": "boolean"
+                    },
+                    "name": "MyTextArea",
+                    "designerId": "2ac24b13-e0d7-46e2-964e-77c11170ccf2"
+                },
+                {
+                    "type": "Ext.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "cls": [
+                            "createButton"
+                        ],
+                        "margin": "10 0 0 0 ",
+                        "text": "Сохранить"
+                    },
+                    "configAlternates": {
+                        "cls": "typedarray",
+                        "margin": "auto",
+                        "text": "string"
+                    },
+                    "name": "MyButton3",
+                    "designerId": "e8067904-60f2-4ae8-8dc5-91de2d47e5c8",
+                    "cn": [
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onButtonTapProduct",
+                                "implHandler": [
+                                    "var me =  this,",
+                                    "    refs = me.getReferences();",
+                                    "var crecord = button.up('formpanel').getViewModel().get('crecord');",
+                                    "",
+                                    "",
+                                    "if (refs.form.validate()) {",
+                                    "",
+                                    "    let store = Case.app.getStore('productstore');",
+                                    "  ",
+                                    "        Ext.Ajax.request({",
+                                    "            url: 'productlist/add',",
+                                    "            params:{category_id:crecord.category_id,",
+                                    "                    postavshik_id:crecord.postavshik_id,",
+                                    "                    name:crecord.name,",
+                                    "                    price:crecord.price,",
+                                    "                    quantity:crecord.quantity,",
+                                    "                    opisanie:crecord.opisanie",
+                                    "                   },",
+                                    "            success: function(response, opts) {",
+                                    "",
+                                    "                store.load();",
+                                    "                Ext.Msg.alert(\"Masege\" , \"Dannie uspeshno soxraneni\");",
+                                    "",
+                                    "            },",
+                                    "",
+                                    "            failure: function(response, opts) {",
+                                    "                Ext.Msg.alert(\"Ошибка\" , \"Poprobuyte esho raz\");",
+                                    "            }",
+                                    "        });",
+                                    "}",
+                                    ""
+                                ],
+                                "name": "tap"
+                            },
+                            "configAlternates": {
+                                "fn": "string",
+                                "implHandler": "code",
+                                "name": "string",
+                                "scope": "string"
+                            },
+                            "name": "onButtonTapProduct",
+                            "designerId": "177fbda9-3b49-4694-908d-7f2f3beec621"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onDialogBeforeShow",
+                "implHandler": [
+                    "let me = this,",
+                    "    refs = me.getReferences(),",
+                    "    vm = me.getViewModel();",
+                    "",
+                    "refs.form.validate();"
+                ],
+                "name": "beforeshow",
+                "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string",
+                "scope": "string"
+            },
+            "name": "onDialogBeforeShow",
+            "designerId": "5384ca36-c3f1-4e66-8c95-85827c4eb2cd"
+        }
+    ]
+}

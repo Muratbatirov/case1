@@ -1,0 +1,161 @@
+{
+    "type": "Ext.Container",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "categoriescontainer",
+        "designer|userClassName": "categoriesContainer",
+        "layout": "hbox"
+    },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string",
+        "layout": "string"
+    },
+    "name": "MyContainer2",
+    "designerId": "3e436cc8-7a9c-4a6c-ae7b-b1f219a9bca0",
+    "viewControllerInstanceId": "6924151e-1212-417b-9a08-4381c2bede2f",
+    "viewModelInstanceId": "a2929e2a-eb9b-4ba9-a215-4ac296c26e4e",
+    "cn": [
+        {
+            "type": "Ext.Container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|flex": 1,
+                "reference": "innercontainer"
+            },
+            "configAlternates": {
+                "layout|flex": "number",
+                "reference": "string"
+            },
+            "name": "MyContainer2",
+            "designerId": "a43544c6-df68-4fd4-9eb1-db0abda7df01",
+            "cn": [
+                {
+                    "type": "linkedinstance",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "name": "editcategorytree1",
+                    "designerId": "01f44d02-0b36-44da-a489-66fb59a0bff7",
+                    "masterInstanceId": "48d368e7-5686-405e-807c-949d341f98d9"
+                }
+            ]
+        },
+        {
+            "type": "Ext.Toolbar",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "docked": "top"
+            },
+            "configAlternates": {
+                "docked": "string"
+            },
+            "name": "MyToolbar3",
+            "designerId": "3c6094ba-9e27-43cd-be72-bb153cdeaad7",
+            "cn": [
+                {
+                    "type": "Ext.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "cls": [
+                            "createButton"
+                        ],
+                        "text": "Добавить"
+                    },
+                    "configAlternates": {
+                        "cls": "typedarray",
+                        "text": "string"
+                    },
+                    "name": "MyButton4",
+                    "designerId": "61d24558-b13e-41b8-839c-5574e2a6965f",
+                    "cn": [
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onDobavitCategory",
+                                "implHandler": [
+                                    " var me= this;",
+                                    "",
+                                    "",
+                                    "        let dialog=Ext.create({",
+                                    "           xtype: 'dialogaddcategory'});",
+                                    "",
+                                    "        var categoryrecord=  this.getViewModel().get('crecordtree');",
+                                    "console.log(categoryrecord);",
+                                    "",
+                                    "        let editcombostore= Case.app.getStore('categoryEditCombo');",
+                                    "",
+                                    "        editcombostore.addListener({",
+                                    "            load: me.oneditstore,",
+                                    "            scope:me",
+                                    "",
+                                    "        });",
+                                    "",
+                                    "",
+                                    "",
+                                    "",
+                                    "",
+                                    "",
+                                    "        let ell = document.getElementsByClassName(\"x-navigationview\");",
+                                    "",
+                                    "        let widthcalculate = ell[0].offsetWidth;",
+                                    "        let heightcalculate = ell[0].offsetHeight;",
+                                    "        dialog.setConfig('width',widthcalculate);",
+                                    "",
+                                    "        dialog.setConfig('height',heightcalculate);",
+                                    "        dialog.setConfig('buttons',{",
+                                    "                      ok: function () {",
+                                    "",
+                                    "",
+                                    "                        dialog.destroy();",
+                                    "",
+                                    "                       }",
+                                    "                   });",
+                                    "",
+                                    "",
+                                    "",
+                                    "        dialog.down('formpanel').setViewModel({data:{crecordtree:categoryrecord}});",
+                                    "",
+                                    "        dialog.show();"
+                                ],
+                                "name": "tap",
+                                "scope": "me"
+                            },
+                            "configAlternates": {
+                                "fn": "string",
+                                "implHandler": "code",
+                                "name": "string",
+                                "scope": "string"
+                            },
+                            "name": "onDobavitCategory",
+                            "designerId": "629fc12f-71c6-4328-9cd0-1aa361484957"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

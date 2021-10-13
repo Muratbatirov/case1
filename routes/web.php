@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CategoryCantroller;
+use App\Http\Controllers\PostavshikCantroller;
+use App\Http\Controllers\ProductCantroller;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,4 +20,14 @@ Route::get('/', function () {
 });
 Route::get('/category/root',[CategoryCantroller::class, 'categories']);
 Route::get('/productlist',[CategoryCantroller::class, 'productlist']);
+Route::get('/categoryeditcombo',[CategoryCantroller::class, 'categoryeditcombo']);
 Route::post('/productlist/delete',[CategoryCantroller::class, 'productlistdelete']);
+Route::post('/productlist/add',[ProductCantroller::class, 'productadd']);
+Route::get('/categorycombo',[CategoryCantroller::class, 'categorycombo']);
+Route::get('/postavshikcombo',[PostavshikCantroller::class, 'postavshikcombo']);
+Route::post('/categorylist/update',[CategoryCantroller::class, 'categoryupdate']);
+Route::post('/categorylist/delete',[CategoryCantroller::class, 'categorydelete']);
+Route::post('/categorylist/add',[CategoryCantroller::class, 'categoryadd']);
+
+//Route::post('/productlist/edit',[ProductCantroller::class, 'productlistedit']);
+Route::put('/productlist/{id}',[ProductCantroller::class, 'productlistedit']);

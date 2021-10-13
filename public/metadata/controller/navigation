@@ -7,45 +7,19 @@
     "codeClass": null,
     "userConfig": {
         "designer|userAlias": "navigation",
-        "designer|userClassName": "navigation"
+        "designer|userClassName": "navigation",
+        "views": [
+            "dialogeditcategory"
+        ]
     },
     "configAlternates": {
         "designer|userAlias": "string",
-        "designer|userClassName": "string"
+        "designer|userClassName": "string",
+        "views": "typedarray"
     },
     "name": "MyController",
     "designerId": "11931cf1-77f9-460d-a0f4-a0df26c912d4",
     "cn": [
-        {
-            "type": "Ext.route.Route",
-            "reference": {
-                "name": "items",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "fn": "category",
-                "implHandler": [
-                    "let workspace = this.getWorkspace();",
-                    "",
-                    "",
-                    "workspace.add({",
-                    "    xtype: 'mytree'",
-                    "});",
-                    ""
-                ],
-                "name": "category",
-                "url": "category"
-            },
-            "configAlternates": {
-                "fn": "string",
-                "implHandler": "code",
-                "name": "string",
-                "url": "string"
-            },
-            "name": "category",
-            "designerId": "c9d55fc9-15c6-4c39-92cf-2f61522c3da7"
-        },
         {
             "type": "controllerref",
             "reference": {
@@ -102,11 +76,11 @@
                     "      hidden:true",
                     "    },",
                     "    layout: 'hbox',",
-                    "    ",
-                    "       ",
                     "",
                     "",
-                    "   ",
+                    "",
+                    "",
+                    "",
                     "",
                     "",
                     "});",
@@ -116,6 +90,7 @@
                     "    flex:1",
                     "",
                     "});",
+                    "",
                     "container.add({",
                     "    xtype: 'productgrid',",
                     "    flex:4",
@@ -136,6 +111,307 @@
             },
             "name": "showtree",
             "designerId": "165938ce-d976-4829-b337-ad5011883687"
+        },
+        {
+            "type": "Ext.route.Route",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "showCategoriesPage",
+                "implHandler": [
+                    " let workspace = this.getWorkspace();",
+                    "",
+                    "",
+                    "         workspace.push({xtype:'categoriescontainer'});"
+                ],
+                "url": "categories"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code",
+                "url": "string"
+            },
+            "name": "showCategoriesPage",
+            "designerId": "e259bed6-2de3-4344-bed0-17dfefa998ef"
+        },
+        {
+            "type": "Ext.route.Route",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "categoryedit",
+                "implHandler": [
+                    "var me= this;",
+                    "if(me.getWorkspace().getActiveItem()){",
+                    "   console.log('if');",
+                    "}else{",
+                    "    me.getWorkspace().push({xtype:'categoriescontainer'});",
+                    "}",
+                    "//me.getWorkspace().push({xtype:'categoriescontainer'});",
+                    "let dialog=Ext.create({",
+                    "   xtype: 'dialogeditcategory'});",
+                    "let categorycontainer =me.getCategoryContainer();",
+                    "",
+                    "var categoryrecord= categorycontainer.getViewModel().get('crecordtree');",
+                    "console.log(categorycontainer);",
+                    "let podstore= Case.app.getStore('podcategory');",
+                    "let editcombostore= Case.app.getStore('categoryEditCombo');",
+                    "",
+                    "editcombostore.addListener({",
+                    "    load: me.oneditstore,",
+                    "    scope:me",
+                    "",
+                    "});",
+                    "",
+                    "podstore.addListener({",
+                    "    load: me.onstoreload,",
+                    "    scope:me",
+                    "",
+                    "});",
+                    "podstore.load();",
+                    "console.log(podstore);",
+                    "///var me = this;",
+                    "",
+                    "let ell = document.getElementsByClassName(\"x-navigationview\");",
+                    "",
+                    "let widthcalculate = ell[0].offsetWidth;",
+                    "let heightcalculate = ell[0].offsetHeight;",
+                    "dialog.setConfig('width',widthcalculate);",
+                    "",
+                    "dialog.setConfig('height',heightcalculate);",
+                    "dialog.setConfig('buttons',{",
+                    "              ok: function () {",
+                    "                  Ext.History.back();",
+                    "",
+                    "                dialog.destroy();",
+                    "",
+                    "               }",
+                    "           });",
+                    "",
+                    "",
+                    "",
+                    "dialog.down('formpanel').setViewModel({data:{crecordtree:categoryrecord}});",
+                    "",
+                    "dialog.show();",
+                    "",
+                    ""
+                ],
+                "url": "categories/edit"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code",
+                "url": "string"
+            },
+            "name": "categoryedit",
+            "designerId": "f75ac0c3-e409-4986-b191-3d57dc54cff1"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "editCategory",
+                "selector": "dialogeditcategory"
+            },
+            "configAlternates": {
+                "ref": "string",
+                "selector": "string"
+            },
+            "name": "editCategory",
+            "designerId": "2a2f23f3-e80a-4f0f-b0c2-87052a2a014d"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "ref": "categoryContainer",
+                "selector": "categoriescontainer"
+            },
+            "configAlternates": {
+                "ref": "string",
+                "selector": "string"
+            },
+            "name": "categoryContainer",
+            "designerId": "fdc707e9-a27b-4f2c-b2c8-75cbd2e2e0c5"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "thiss",
+                    "records",
+                    "successful",
+                    "operation",
+                    "eOpts"
+                ],
+                "fn": "onstoreload",
+                "implHandler": [
+                    "var me= this;",
+                    "",
+                    "let categorycontainer =me.getCategoryContainer();",
+                    "",
+                    "var element =[];",
+                    "var categoryrecord= categorycontainer.getViewModel().get('crecordtree').data.id;",
+                    "console.log(categoryrecord);",
+                    "var arr =[];",
+                    "",
+                    "",
+                    "this.recurse(records,categoryrecord,arr,me);",
+                    "",
+                    "arrnew=[];",
+                    "         arr.forEach(function(item, i, arr) {",
+                    "            arrnew.push(item.data);",
+                    "",
+                    "         });",
+                    "console.log(arrnew);",
+                    "thiss.setData(arr);",
+                    "",
+                    ""
+                ]
+            },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "implHandler": "code"
+            },
+            "name": "onstoreload",
+            "designerId": "91993551-cd3c-4a66-9656-9eff3ad90123"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "rec",
+                    "categoryrec",
+                    "arr",
+                    "mee"
+                ],
+                "fn": "recurse",
+                "implHandler": [
+                    "if(rec) {",
+                    "rec.forEach(function(item, i, records) {",
+                    "",
+                    "                if(item.data.id==categoryrec){",
+                    "                 item.data.expanded=true;",
+                    "                  arr.push(item);",
+                    "",
+                    "",
+                    "                }",
+                    "    if(item.childNodes){",
+                    "                   mee.recurse(item.childNodes,categoryrec,arr,mee);}",
+                    "",
+                    "",
+                    "",
+                    "        });}"
+                ]
+            },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "implHandler": "code"
+            },
+            "name": "recurse",
+            "designerId": "2b357a38-d2b0-4821-8262-9c412d9c8aca"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "thiss",
+                    "records",
+                    "successful",
+                    "operation",
+                    "eOpts"
+                ],
+                "fn": "oneditstore",
+                "implHandler": [
+                    " var me= this;",
+                    "",
+                    "        let categorycontainer =me.getCategoryContainer();",
+                    "        console.log(records);",
+                    "        var element =[];",
+                    "        var categoryrecord= categorycontainer.getViewModel().get('crecordtree').data.id;",
+                    "        console.log(categoryrecord);",
+                    "        var arr =[];",
+                    "",
+                    "        arr=records;",
+                    "console.log(arr);",
+                    "function recurse(rec,  categoryrec) {",
+                    "        if(rec) {",
+                    "        rec.forEach(function(item, i, rec) {",
+                    "                          ",
+                    "                               if((item.data.id)&&item.data.id==categoryrec){",
+                    "                                   delete rec[i];",
+                    "                               }",
+                    "                        if((item.data.parent_id)&&item.data.parent_id==categoryrec){",
+                    "",
+                    "",
+                    "                         delete rec[i];",
+                    "                          recurse(rec,item.data.id);",
+                    "",
+                    "",
+                    "                        }",
+                    "",
+                    "",
+                    "",
+                    "                });}",
+                    "    }",
+                    "",
+                    "",
+                    "",
+                    "",
+                    "recurse(arr,categoryrecord );",
+                    "arrnew=[];",
+                    " arr.forEach(function(item, i, arr) {",
+                    "    arrnew.push(item.data);",
+                    "    ",
+                    " });",
+                    "thiss.setData(arrnew);",
+                    "",
+                    "console.log(thiss.getData());",
+                    "",
+                    "",
+                    "",
+                    "",
+                    ""
+                ]
+            },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "implHandler": "code"
+            },
+            "name": "oneditstore",
+            "designerId": "6b42dabc-b1fb-4dea-a372-bb4ea2021334"
         }
     ]
 }

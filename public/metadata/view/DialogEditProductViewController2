@@ -6,12 +6,13 @@
     },
     "codeClass": null,
     "userConfig": {
-        "designer|userAlias": "mydialog",
-        "designer|userClassName": "MyDialogViewController"
+        "designer|userAlias": "dialogaddcategory",
+        "designer|userClassName": "DialogEditProductViewController2"
     },
     "configAlternates": {
         "designer|userAlias": "string",
         "designer|userClassName": "string"
     },
-    "designerId": "0e5619c2-2e5e-420d-94e5-c6d4cc5b8546"
+    "name": "DialogEditProductViewController2",
+    "designerId": "4d5a601b-fbf0-4cc6-8574-fdef5a89be1f"
 }

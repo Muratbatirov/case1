@@ -1,0 +1,45 @@
+{
+    "type": "Ext.data.Store",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "categoryEditCombo",
+        "model": "categoryEditCombo",
+        "storeId": "categoryEditCombo"
+    },
+    "configAlternates": {
+        "designer|userClassName": "string",
+        "model": "model",
+        "storeId": "string"
+    },
+    "name": "categoryComboStore1",
+    "designerId": "fc958b80-8f3d-46fa-a7e6-89c4335c669e",
+    "cn": [
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onStoreDataChangeD",
+                "implHandler": [
+                    " //store.add({\"id\":0,\"parent_id\":null,\"category\":\"Нет\",\"parentcategory\":\"null\",\"level\":0});",
+                    "   //     store.sort('id', 'ASC');"
+                ],
+                "name": "datachanged"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string"
+            },
+            "name": "onStoreDataChangeD",
+            "designerId": "673decf7-e0d3-4977-81ae-a2f5d379ebe1"
+        }
+    ]
+}

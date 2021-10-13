@@ -53,6 +53,10 @@ Ext.define('Case.model.productmodel', {
         {
             type: 'int',
             name: 'category_id'
+        },
+        {
+            type: 'int',
+            name: 'postavshik_id'
         }
     ],
     proxy: {

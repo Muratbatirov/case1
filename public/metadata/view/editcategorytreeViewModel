@@ -1,0 +1,21 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "data": [
+            "{crecordtree:null}"
+        ],
+        "designer|userAlias": "editcategorytree",
+        "designer|userClassName": "editcategorytreeViewModel"
+    },
+    "configAlternates": {
+        "data": "object",
+        "designer|userAlias": "string",
+        "designer|userClassName": "string"
+    },
+    "designerId": "0db2852a-f6c1-4758-9626-d837cebcb801"
+}

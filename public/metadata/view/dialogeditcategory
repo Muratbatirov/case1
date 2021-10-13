@@ -1,0 +1,309 @@
+{
+    "type": "Ext.Dialog",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "dialogeditcategory",
+        "designer|userClassName": "dialogeditcategory",
+        "hideAnimation": "slideOut",
+        "hideOnMaskTap": true,
+        "layout": "hbox",
+        "reference": "editCategoryDialog",
+        "right": 0,
+        "showAnimation": "slide",
+        "title": "My Dialog"
+    },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string",
+        "docked": "string",
+        "showAnimation": "string",
+        "title": "string",
+        "width": "auto",
+        "layout": "string",
+        "reference": "string",
+        "right": "auto",
+        "hideAnimation": "string",
+        "hideOnMaskTap": "boolean"
+    },
+    "name": "DialogEditProduct1",
+    "designerId": "a9946f2e-52f5-4d03-9d64-53a19dd8aeb4",
+    "viewControllerInstanceId": "0613e93b-0588-4c12-a1a4-d9f3b6ac9af8",
+    "viewModelInstanceId": "ec53468d-f335-4c93-ad83-c498afe468f7",
+    "cn": [
+        {
+            "type": "Ext.form.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "itemId": "myformpanel",
+                "layout|flex": 1,
+                "reference": "form"
+            },
+            "configAlternates": {
+                "viewModel": "object",
+                "itemId": "string",
+                "reference": "string",
+                "layout|flex": "number"
+            },
+            "name": "MyFormPanel",
+            "designerId": "1e4d6aff-8b5c-4f77-a8c0-64e410c2352a",
+            "cn": [
+                {
+                    "type": "Ext.field.Container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout": "hbox"
+                    },
+                    "configAlternates": {
+                        "layout": "string"
+                    },
+                    "name": "MyFieldContainer",
+                    "designerId": "3777a539-04b7-4141-b714-d77b22ce2699",
+                    "cn": [
+                        {
+                            "type": "Ext.field.ComboBox",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "autoLoadOnValue": true,
+                                "displayField": "category",
+                                "editable": false,
+                                "flex": 1,
+                                "label": "Надкатегория(\"нет\" для корневых категории)",
+                                "picker": "floated",
+                                "store": "categoryEditCombo",
+                                "value": [
+                                    "{crecordtree.parent_id}"
+                                ],
+                                "valueField": "id"
+                            },
+                            "configAlternates": {
+                                "value": "binding",
+                                "flex": "number",
+                                "autoLoadOnValue": "boolean",
+                                "displayField": "datafield",
+                                "editable": "boolean",
+                                "label": "string",
+                                "picker": "string",
+                                "store": "store",
+                                "valueField": "datafield"
+                            },
+                            "name": "MyComboBox1",
+                            "designerId": "6a3b86bd-7701-420a-a602-08ea113c113e",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "flex",
+                                    "type": "string"
+                                }
+                            ],
+                            "cn": [
+                                {
+                                    "type": "Ext.XTemplate",
+                                    "reference": {
+                                        "name": "itemTpl",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|displayName": "itemTpl",
+                                        "implHandler": [
+                                            "<p>{[''.padStart(6*values.level, \"-\") + values.category]}</p>"
+                                        ]
+                                    },
+                                    "configAlternates": {
+                                        "definitions": "array",
+                                        "designer|displayName": "string",
+                                        "implHandler": "code"
+                                    },
+                                    "name": "itemTpl",
+                                    "designerId": "80044ef2-1947-4ad1-b47a-2c82bc55bfe0"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "flex": 1,
+                                "label": "Название категории",
+                                "name": "name",
+                                "required": true,
+                                "value": [
+                                    "{crecordtree.text}"
+                                ]
+                            },
+                            "configAlternates": {
+                                "value": "binding",
+                                "label": "string",
+                                "name": "string",
+                                "required": "boolean",
+                                "flex": "number"
+                            },
+                            "name": "MyTextField1",
+                            "designerId": "7f4d4e3f-21c0-463e-907e-9d39dcfe7b38",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "flex",
+                                    "type": "string"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.Container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "height": "300px",
+                        "layout": "hbox"
+                    },
+                    "configAlternates": {
+                        "height": "auto",
+                        "layout": "string"
+                    },
+                    "name": "MyContainer3",
+                    "designerId": "ec1101eb-749b-45dc-9c88-76c21558e41f",
+                    "cn": [
+                        {
+                            "type": "Ext.Component",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": 1
+                            },
+                            "configAlternates": {
+                                "layout|flex": "number"
+                            },
+                            "name": "MyComponent",
+                            "designerId": "6111ec9d-b884-4327-83f6-abc615386cfe"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "cls": [
+                            "createButton"
+                        ],
+                        "flex": 1,
+                        "margin": "10 0 0 0 ",
+                        "text": "Сохранить"
+                    },
+                    "configAlternates": {
+                        "cls": "typedarray",
+                        "margin": "auto",
+                        "text": "string",
+                        "flex": "number"
+                    },
+                    "name": "MyButton3",
+                    "designerId": "d2f2bb93-cdda-4255-9082-89787f8d021b",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "flex",
+                            "type": "string"
+                        }
+                    ],
+                    "cn": [
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onButtonTap",
+                                "implHandler": [
+                                    "var me =  this;",
+                                    "console.log(button.up('formpanel').getViewModel().get('crecordtree'));",
+                                    "",
+                                    "var crecord= button.up('formpanel').getViewModel().get('crecordtree');",
+                                    "",
+                                    "Ext.Ajax.request({",
+                                    "     url: 'categorylist/update',",
+                                    "     params:{recordid:crecord.data.id,parent_id:crecord.data.parent_id,name:crecord.data.text},",
+                                    "     success: function(response, opts) {",
+                                    "",
+                                    "        Case.app.getStore('categoryedittree').load();",
+                                    "          Case.app.getStore('categorytree').load();",
+                                    "         Ext.Msg.alert(\"Masege\" , \"Dannie uspeshno soxraneni\");",
+                                    "",
+                                    "     },",
+                                    "",
+                                    "     failure: function(response, opts) {",
+                                    "        Ext.Msg.alert(\"Ошибка\" , \"Poprobuyte esho raz\");",
+                                    "     }",
+                                    " });",
+                                    "//",
+                                    "//var rec = button.up('formpanel').getViewModel().get('crecord').data;",
+                                    "//let store = Case.app.getStore('productstore');",
+                                    "",
+                                    "//Case.app.getStore('productstore').findRecord('id',recordId).save({",
+                                    "  //  failure: function(record, operation) {",
+                                    "",
+                                    "    //    Ext.Msg.alert(\"Ошибка\" , \"Poprobuyte esho raz\");",
+                                    "    //},",
+                                    "  //  success: function(record, operation) {",
+                                    "      //  Ext.ComponentQuery.query('productgrid')[0].refresh();",
+                                    "     //   Ext.Msg.alert(\"Masege\" , \"Dannie uspeshno soxraneni\");",
+                                    "",
+                                    "   // },",
+                                    "   // callback: function(record, operation, success) {",
+                                    "        // do something whether the save succeeded or failed",
+                                    "   // }",
+                                    "//}      );",
+                                    "",
+                                    "",
+                                    "",
+                                    ""
+                                ],
+                                "name": "tap"
+                            },
+                            "configAlternates": {
+                                "fn": "string",
+                                "implHandler": "code",
+                                "name": "string",
+                                "scope": "string"
+                            },
+                            "name": "onButtonTap",
+                            "designerId": "b9272811-27d6-4662-bbc2-2ca91cde963a"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

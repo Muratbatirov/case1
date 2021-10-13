@@ -45,7 +45,6 @@ Ext.define('Case.view.ProductGrid', {
     viewModel: {
         type: 'productgrid'
     },
-    reference: 'productgrid',
     border: true,
     height: '100%',
     shadow: false,

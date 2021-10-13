@@ -6,12 +6,54 @@
     },
     "codeClass": null,
     "userConfig": {
+        "data": [
+            "{crecord:null}"
+        ],
         "designer|userAlias": "productgrid",
         "designer|userClassName": "ProductGridViewModel"
     },
     "configAlternates": {
         "designer|userAlias": "string",
-        "designer|userClassName": "string"
+        "designer|userClassName": "string",
+        "data": "object"
     },
-    "designerId": "5c0be29b-3629-4b6a-879a-eced8320cf4e"
+    "designerId": "5c0be29b-3629-4b6a-879a-eced8320cf4e",
+    "cn": [
+        {
+            "type": "Ext.data.Store",
+            "reference": {
+                "name": "stores",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "model": "categoryComboModel",
+                "name": "categorycombo"
+            },
+            "configAlternates": {
+                "model": "model",
+                "name": "string"
+            },
+            "name": "MyStore",
+            "designerId": "2a461134-968b-47c4-9b9e-197e28ae54b7"
+        },
+        {
+            "type": "Ext.data.Store",
+            "reference": {
+                "name": "stores",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "model": "postavshikcombo",
+                "name": "postavshikcombo"
+            },
+            "configAlternates": {
+                "model": "model",
+                "name": "string"
+            },
+            "name": "MyStore1",
+            "designerId": "a1d9cc1c-96c5-4841-9803-ec80b5992af1"
+        }
+    ]
 }

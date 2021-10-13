@@ -1,0 +1,92 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "categoriescontainer",
+        "designer|userClassName": "categoriesContainerViewController"
+    },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string"
+    },
+    "designerId": "6924151e-1212-417b-9a08-4381c2bede2f",
+    "cn": [
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "editCategory",
+                "implHandler": [
+                    "",
+                    "this.redirectTo('categories/edit');",
+                    "",
+                    ""
+                ]
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code"
+            },
+            "name": "editCategory",
+            "designerId": "e6dd1fb1-8fee-41f9-b377-303960686dfe"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "thiss",
+                    "records",
+                    "successful",
+                    "operation",
+                    "eOpts"
+                ],
+                "fn": "oneditstore",
+                "implHandler": [
+                    "var me= this;",
+                    "",
+                    "",
+                    "",
+                    "",
+                    "       // var categoryrecord= me.down('editcategorytree').getViewModel().get('crecordtree').data.id;",
+                    "      //  console.log(categoryrecord);",
+                    "       var arr =[];",
+                    "",
+                    "       arr=records;",
+                    "//console.log(arr);",
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    "//recurse(arr,categoryrecord );",
+                    "var arrnew=[{\"id\":0,\"parent_id\":null,\"category\":\"Нет\",\"parentcategory\":\"null\",\"level\":0}];",
+                    " arr.forEach(function(item, i, arr) {",
+                    "    arrnew.push(item.data);",
+                    "",
+                    " });",
+                    "thiss.setData(arrnew);"
+                ]
+            },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "implHandler": "code"
+            },
+            "name": "oneditstore",
+            "designerId": "741189d9-cb9c-48a1-b58e-f3a938c692b1"
+        }
+    ]
+}

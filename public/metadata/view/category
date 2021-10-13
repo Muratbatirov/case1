@@ -65,6 +65,26 @@
             },
             "name": "onContainerPainted",
             "designerId": "af1d0b88-6128-4424-b250-defe2262080b"
+        },
+        {
+            "type": "Ext.field.ComboBox",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "label": "Field",
+                "value": [
+                    "dddd"
+                ]
+            },
+            "configAlternates": {
+                "value": "binding",
+                "label": "string"
+            },
+            "name": "MyComboBox",
+            "designerId": "258b65bc-549c-4fa1-be9f-39ba90140e1d"
         }
     ]
 }
