@@ -1,0 +1,502 @@
+{
+    "type": "Ext.grid.Grid",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "defaults": [
+            "{flex:1}"
+        ],
+        "designer|userAlias": "eploeegrid",
+        "designer|userClassName": "EploeeGrid",
+        "height": "100%",
+        "layout": "hbox",
+        "store": "EmploeeStore",
+        "toolContextMenu": [
+            "{xtype: 'menu',",
+            "            anchor: true,",
+            "            separator: true,",
+            "            minWidth: 150,",
+            "            autoHide: false,",
+            "            viewModel: {",
+            "                ",
+            "            },",
+            "            cls: 'round-context-menu'}"
+        ],
+        "width": "100%"
+    },
+    "configAlternates": {
+        "toolContextMenu": "object",
+        "defaults": "object",
+        "designer|userAlias": "string",
+        "designer|userClassName": "string",
+        "height": "auto",
+        "layout": "string",
+        "store": "store",
+        "width": "auto"
+    },
+    "name": "MyGrid",
+    "designerId": "e81c149a-639d-4b0e-b9a9-c92e5042d332",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "toolContextMenu",
+            "type": "string"
+        }
+    ],
+    "viewControllerInstanceId": "f3d7e484-0ce3-4e45-8273-9bde90ef8185",
+    "viewModelInstanceId": "021d308c-ea17-4c29-a938-8ac09821fe8a",
+    "cn": [
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "cell": [
+                    "{",
+                    "                cls: 'erg-tool-margin-0',",
+                    "                tools: {",
+                    "                    margin: 0,",
+                    "                    menu: 'onMenuClick'",
+                    "                }",
+                    "            }"
+                ],
+                "docked": null,
+                "width": "30px"
+            },
+            "configAlternates": {
+                "cell": "object",
+                "docked": "string",
+                "width": "auto"
+            },
+            "name": "MyColumn16",
+            "designerId": "7465d611-059e-4697-937a-a2bf2b32baae"
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "surname",
+                "docked": null,
+                "summary": "count",
+                "text": "Фамилия"
+            },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "docked": "string",
+                "summary": "string",
+                "text": "string"
+            },
+            "name": "MyColumn5",
+            "designerId": "51c1d51c-01de-463c-a3a0-cc1e2507305d",
+            "cn": [
+                {
+                    "type": "fixedfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|params": [
+                            "value",
+                            "context"
+                        ],
+                        "fn": "summaryRenderer",
+                        "implHandler": [
+                            "",
+                            "return `На странице ${value} из ${context.store.totalCount}`;"
+                        ]
+                    },
+                    "configAlternates": {
+                        "designer|params": "typedarray",
+                        "fn": "string",
+                        "implHandler": "code"
+                    },
+                    "name": "summaryRenderer",
+                    "designerId": "433f7199-c66b-4c4b-bfd8-f87af31d7fb0"
+                }
+            ]
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "name",
+                "docked": null,
+                "text": "Имя"
+            },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "docked": "string",
+                "text": "string",
+                "width": "auto"
+            },
+            "name": "MyColumn6",
+            "designerId": "4d29d4d8-aa75-4ade-91bb-e10cb9971acf"
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "patronymic",
+                "docked": null,
+                "text": "Отчество"
+            },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "docked": "string",
+                "text": "string",
+                "width": "auto"
+            },
+            "name": "MyColumn7",
+            "designerId": "408aa1d4-252c-4f35-a4f7-5732b0f6eee7"
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "direction",
+                "docked": null,
+                "text": "Направления"
+            },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "docked": "string",
+                "text": "string",
+                "width": "auto"
+            },
+            "name": "MyColumn12",
+            "designerId": "9554af66-09e4-4a9e-950f-f4bcc486c703"
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "gender",
+                "docked": null,
+                "text": "Пол"
+            },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "docked": "string",
+                "text": "string",
+                "width": "auto"
+            },
+            "name": "MyColumn8",
+            "designerId": "42de288b-a83a-4afc-841a-04d06f216bbb"
+        },
+        {
+            "type": "Ext.grid.column.Date",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "birthdate",
+                "docked": null,
+                "text": "Дата рождения"
+            },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "docked": "string",
+                "text": "string"
+            },
+            "name": "MyDateColumn1",
+            "designerId": "a5c92170-ec5a-4281-b525-280a4bdf6b3f"
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "phonenum",
+                "docked": null,
+                "text": "Контактный телефон"
+            },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "docked": "string",
+                "text": "string",
+                "width": "auto"
+            },
+            "name": "MyColumn9",
+            "designerId": "4767bede-a786-4cc4-86ff-499ef1328de5"
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "passportnum",
+                "docked": null,
+                "text": "Серия и номер паспорта"
+            },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "docked": "string",
+                "text": "string",
+                "width": "auto"
+            },
+            "name": "MyColumn10",
+            "designerId": "0b0528b0-9ce9-4cbf-83e2-dab54fc6f4ba"
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "position",
+                "docked": null,
+                "text": "Должность"
+            },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "docked": "string",
+                "text": "string",
+                "width": "auto"
+            },
+            "name": "MyColumn11",
+            "designerId": "89cb2b53-3232-453b-b0a8-f424fa58a65e"
+        },
+        {
+            "type": "Ext.grid.column.Number",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "wages",
+                "docked": null,
+                "text": "Зарплата"
+            },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "docked": "string",
+                "text": "string"
+            },
+            "name": "MyNumberColumn2",
+            "designerId": "01bf76e1-ca66-4e45-8c61-7f60de4f8ad6",
+            "cn": [
+                {
+                    "type": "fixedfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|params": [
+                            "value",
+                            "context"
+                        ],
+                        "fn": "summaryRenderer",
+                        "implHandler": [
+                            "return ' ';"
+                        ]
+                    },
+                    "configAlternates": {
+                        "designer|params": "typedarray",
+                        "fn": "string",
+                        "implHandler": "code"
+                    },
+                    "name": "summaryRenderer",
+                    "designerId": "7cfa4b31-00ed-457a-82f6-21ea9fbea931"
+                }
+            ]
+        },
+        {
+            "type": "Ext.grid.column.Check",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "dismissed",
+                "disabled": true,
+                "docked": null,
+                "editable": false,
+                "text": "Уволен"
+            },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "disabled": "boolean",
+                "docked": "string",
+                "editable": "boolean",
+                "text": "string"
+            },
+            "name": "MyCheckColumn",
+            "designerId": "8888f433-9eac-45a2-8012-ebe97cd9e984"
+        },
+        {
+            "type": "Ext.grid.column.Date",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "comedate",
+                "docked": null,
+                "text": "Дата приёма на работу"
+            },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "docked": "string",
+                "text": "string"
+            },
+            "name": "MyDateColumn",
+            "designerId": "375cdc1a-d9b1-4019-b078-e49eb2c5e9fe"
+        },
+        {
+            "type": "Ext.grid.column.Date",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "exitdate",
+                "docked": null,
+                "text": "Дата увольнения"
+            },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "docked": "string",
+                "text": "string",
+                "width": "auto"
+            },
+            "name": "MyDateColumn2",
+            "designerId": "157f19b0-2b15-4bda-ba4f-b861d4b83d3a"
+        },
+        {
+            "type": "Ext.dataview.plugin.ListPaging",
+            "reference": {
+                "name": "plugins",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "autoPaging": true
+            },
+            "configAlternates": {
+                "autoPaging": "boolean"
+            },
+            "name": "MyListPagingPlugin1",
+            "designerId": "80dacbe4-dc10-435b-b9d1-62d5c755cba8"
+        },
+        {
+            "type": "Ext.Toolbar",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "docked": "bottom"
+            },
+            "configAlternates": {
+                "docked": "string"
+            },
+            "name": "MyToolbar4",
+            "designerId": "aadf3507-db0a-4fbb-8387-3a9225b1dd14"
+        },
+        {
+            "type": "Ext.grid.plugin.Summary",
+            "reference": {
+                "name": "plugins",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "docked": null
+            },
+            "configAlternates": {
+                "docked": "string"
+            },
+            "name": "MySummary",
+            "designerId": "70fa602e-3d46-4b56-836a-cff8369a9a74"
+        },
+        {
+            "type": "Ext.Toolbar",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "docked": "top",
+                "title": "Список сотрудников"
+            },
+            "configAlternates": {
+                "docked": "string",
+                "title": "string"
+            },
+            "name": "MyToolbar6",
+            "designerId": "bb68ee49-1072-48d3-b84e-12093b97a40a"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onGridChilddoubletap",
+                "implHandler": [
+                    "this.getViewModel().set('crecord', location.record);",
+                    "",
+                    "this.editEmploee();"
+                ],
+                "name": "childdoubletap",
+                "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string",
+                "scope": "string"
+            },
+            "name": "onGridChilddoubletap",
+            "designerId": "8a5e4778-e3cd-4c6a-8a80-a9f07f6b2386"
+        }
+    ]
+}

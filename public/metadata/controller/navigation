@@ -412,6 +412,106 @@
             },
             "name": "oneditstore",
             "designerId": "6b42dabc-b1fb-4dea-a372-bb4ea2021334"
+        },
+        {
+            "type": "Ext.route.Route",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "showEmploeeList",
+                "implHandler": [
+                    "let workspace = this.getWorkspace();",
+                    "let container = Ext.create({",
+                    "    xtype: 'panel',",
+                    "    title:\"Katalog tovarov\",",
+                    "    header:{",
+                    "      hidden:true",
+                    "    },",
+                    "    layout: 'hbox',",
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    "});",
+                    "",
+                    "container.add({",
+                    "    xtype: 'directionlist',",
+                    "    flex:1",
+                    "",
+                    "});",
+                    "",
+                    "container.add({",
+                    "    xtype: 'eploeegrid',",
+                    "    flex:4",
+                    "",
+                    "});",
+                    "",
+                    " workspace.push(container);",
+                    ""
+                ],
+                "url": "emploees"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code",
+                "url": "string"
+            },
+            "name": "showEmploeeList",
+            "designerId": "6572af7e-d95c-4467-8142-6eb53e7841a0"
+        },
+        {
+            "type": "Ext.route.Route",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "showDirections",
+                "implHandler": [
+                    " let workspace = this.getWorkspace();",
+                    "        let container = Ext.create({",
+                    "            xtype: 'panel',",
+                    "            title:\"Katalog tovarov\",",
+                    "            header:{",
+                    "              hidden:true",
+                    "            },",
+                    "            layout: 'hbox',",
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    "",
+                    "        });",
+                    "",
+                    "        container.add({",
+                    "            xtype: 'directionsgrid',",
+                    "            flex:1",
+                    "",
+                    "        });",
+                    "",
+                    "    ",
+                    "",
+                    "         workspace.push(container);",
+                    ""
+                ],
+                "url": "directions"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code",
+                "url": "string"
+            },
+            "name": "showDirections",
+            "designerId": "363492d7-4d1d-4946-be00-c716bb4bbce4"
         }
     ]
 }

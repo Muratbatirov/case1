@@ -1,0 +1,763 @@
+{
+    "type": "Ext.Dialog",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "dialogemploeeedit",
+        "designer|userClassName": "DialogEmploeeEdit",
+        "title": "My Dialog"
+    },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string",
+        "title": "string"
+    },
+    "name": "MyDialog",
+    "designerId": "b4931ddb-8f1e-4a1f-8f77-a0f59d1fd256",
+    "viewControllerInstanceId": "c45d79bc-2eca-40f2-812f-db3192de578e",
+    "viewModelInstanceId": "db0c9a44-837a-44b9-befe-024fddaae881",
+    "cn": [
+        {
+            "type": "Ext.form.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fieldSeparators": true,
+                "itemId": "myformpanel1",
+                "reference": "form"
+            },
+            "configAlternates": {
+                "viewModel": "object",
+                "itemId": "string",
+                "reference": "string",
+                "fieldSeparators": "boolean"
+            },
+            "name": "MyFormPanel1",
+            "designerId": "584a609c-84ae-4c51-96b9-e3c2d531d842",
+            "cn": [
+                {
+                    "type": "Ext.field.Container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "label": "Field",
+                        "layout": "hbox"
+                    },
+                    "configAlternates": {
+                        "layout": "string",
+                        "label": "string"
+                    },
+                    "name": "MyFieldContainer4",
+                    "designerId": "3642c524-8646-42b9-9b3b-64a22730797b",
+                    "cn": [
+                        {
+                            "type": "Ext.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "flex": 1,
+                                "label": "Фамилия",
+                                "margin": "0 20 0 0",
+                                "name": "surname",
+                                "required": true,
+                                "value": [
+                                    "{crecord.surname}"
+                                ]
+                            },
+                            "configAlternates": {
+                                "value": "binding",
+                                "label": "string",
+                                "name": "string",
+                                "required": "boolean",
+                                "flex": "number",
+                                "margin": "auto"
+                            },
+                            "name": "MyTextField",
+                            "designerId": "52b5c57e-2a4d-4541-b495-530dbd70b983",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "flex",
+                                    "type": "string"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "flex": 1,
+                                "label": "Имя",
+                                "margin": "0 20 0 0",
+                                "name": "name",
+                                "required": true,
+                                "value": [
+                                    "{crecord.name}"
+                                ]
+                            },
+                            "configAlternates": {
+                                "value": "binding",
+                                "label": "string",
+                                "name": "string",
+                                "required": "boolean",
+                                "flex": "number",
+                                "margin": "auto"
+                            },
+                            "name": "MyTextField3",
+                            "designerId": "c6df370b-a4e6-4f7f-9d45-783ff0129b07",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "flex",
+                                    "type": "string"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "flex": 1,
+                                "label": "Отчество",
+                                "name": "patronymic",
+                                "required": true,
+                                "value": [
+                                    "{crecord.patronymic}"
+                                ]
+                            },
+                            "configAlternates": {
+                                "value": "binding",
+                                "label": "string",
+                                "name": "string",
+                                "required": "boolean",
+                                "flex": "number"
+                            },
+                            "name": "MyTextField4",
+                            "designerId": "44e9dceb-de99-4d68-a628-f08b4fe75adf",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "flex",
+                                    "type": "string"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.field.Container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout": "hbox"
+                    },
+                    "configAlternates": {
+                        "layout": "string"
+                    },
+                    "name": "MyFieldContainer1",
+                    "designerId": "8e2c9cca-74ef-4167-98a5-7d4ba7051c49",
+                    "cn": [
+                        {
+                            "type": "Ext.field.ComboBox",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "autoLoadOnValue": true,
+                                "displayField": "gender",
+                                "editable": false,
+                                "flex": 1,
+                                "label": "Пол",
+                                "margin": "0 20 0 0",
+                                "picker": "floated",
+                                "required": true,
+                                "store": [
+                                    " [",
+                                    "                  { gender: 'Мужчина' },",
+                                    "                  { gender: 'Женщина' },",
+                                    "                  ",
+                                    "              ]"
+                                ],
+                                "value": [
+                                    "{crecord.gender}"
+                                ],
+                                "valueField": "gender"
+                            },
+                            "configAlternates": {
+                                "value": "binding",
+                                "flex": "number",
+                                "autoLoadOnValue": "boolean",
+                                "displayField": "datafield",
+                                "editable": "boolean",
+                                "label": "string",
+                                "picker": "string",
+                                "valueField": "datafield",
+                                "store": "object",
+                                "margin": "auto",
+                                "required": "boolean"
+                            },
+                            "name": "MyComboBox1",
+                            "designerId": "49bab310-e6ce-44cc-9456-733ccaacbede",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "flex",
+                                    "type": "string"
+                                }
+                            ],
+                            "cn": [
+                                {
+                                    "type": "Ext.XTemplate",
+                                    "reference": {
+                                        "name": "itemTpl",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|displayName": "itemTpl",
+                                        "implHandler": [
+                                            ""
+                                        ]
+                                    },
+                                    "configAlternates": {
+                                        "designer|displayName": "string",
+                                        "implHandler": "code"
+                                    },
+                                    "name": "itemTpl",
+                                    "designerId": "7f7cbc65-58a1-4297-bd3e-7ecb46779387"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.field.Date",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "bind": [
+                                    "{crecord.birthdate}"
+                                ],
+                                "editable": false,
+                                "flex": 1,
+                                "label": "Field",
+                                "margin": "0 20 0 0",
+                                "name": "birthdate"
+                            },
+                            "configAlternates": {
+                                "value": "object",
+                                "flex": "number",
+                                "bind": "object",
+                                "editable": "boolean",
+                                "label": "string",
+                                "margin": "auto",
+                                "name": "string"
+                            },
+                            "name": "MyDate3",
+                            "designerId": "cc3100b1-f5d4-4597-9660-d0ecbf2f6067",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "flex",
+                                    "type": "string"
+                                }
+                            ],
+                            "cn": [
+                                {
+                                    "type": "Ext.picker.Date",
+                                    "reference": {
+                                        "name": "picker",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "anchor": true,
+                                        "closable": true,
+                                        "closeAction": "hide"
+                                    },
+                                    "configAlternates": {
+                                        "anchor": "boolean",
+                                        "closable": "boolean",
+                                        "closeAction": "string"
+                                    },
+                                    "name": "MyDatePicker",
+                                    "designerId": "da423bea-c90c-4d9a-ae01-c52636213fb7"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "flex": 1,
+                                "label": "Название продукта",
+                                "name": "phonenumber",
+                                "required": true,
+                                "value": [
+                                    "{crecord.phonenum}"
+                                ]
+                            },
+                            "configAlternates": {
+                                "value": "binding",
+                                "label": "string",
+                                "name": "string",
+                                "required": "boolean",
+                                "flex": "number"
+                            },
+                            "name": "MyTextField2",
+                            "designerId": "9fea850a-e857-4acc-8c45-d4288d39bccd",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "flex",
+                                    "type": "string"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.field.Container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "label": "Field",
+                        "layout": "hbox"
+                    },
+                    "configAlternates": {
+                        "layout": "string",
+                        "label": "string"
+                    },
+                    "name": "MyFieldContainer5",
+                    "designerId": "35c1845e-e1de-46fb-afaa-05c4d294f96c",
+                    "cn": [
+                        {
+                            "type": "Ext.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "flex": 1,
+                                "label": "Серия и номер паспорта",
+                                "margin": "0 20 0 0",
+                                "name": "passportnum",
+                                "required": true,
+                                "value": [
+                                    "{crecord.passportnum}"
+                                ]
+                            },
+                            "configAlternates": {
+                                "value": "binding",
+                                "label": "string",
+                                "name": "string",
+                                "required": "boolean",
+                                "flex": "number",
+                                "margin": "auto"
+                            },
+                            "name": "MyTextField",
+                            "designerId": "0760d78f-55b7-4acc-a884-74805225255a",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "flex",
+                                    "type": "string"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "flex": 1,
+                                "label": "Должность",
+                                "margin": "0 20 0 0",
+                                "name": "position",
+                                "required": true,
+                                "value": [
+                                    "{crecord.position}"
+                                ]
+                            },
+                            "configAlternates": {
+                                "value": "binding",
+                                "label": "string",
+                                "name": "string",
+                                "required": "boolean",
+                                "flex": "number",
+                                "margin": "auto"
+                            },
+                            "name": "MyTextField3",
+                            "designerId": "cacef546-9c68-46b8-87f4-b78f3a2ea823",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "flex",
+                                    "type": "string"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.field.Number",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "flex": 1,
+                                "label": "Зарплата",
+                                "name": "wages",
+                                "value": [
+                                    "{crecord.wages}"
+                                ]
+                            },
+                            "configAlternates": {
+                                "value": "binding",
+                                "flex": "number",
+                                "label": "string",
+                                "name": "string"
+                            },
+                            "name": "MyNumberField2",
+                            "designerId": "0e31316f-b5bb-437a-b115-22dc267a0ffd",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "flex",
+                                    "type": "string"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.field.Container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout": "hbox"
+                    },
+                    "configAlternates": {
+                        "layout": "string"
+                    },
+                    "name": "MyFieldContainer3",
+                    "designerId": "d648fbe0-7349-4479-b3a0-717836c4971e",
+                    "cn": [
+                        {
+                            "type": "Ext.field.ComboBox",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "autoLoadOnValue": true,
+                                "displayField": "textt",
+                                "editable": false,
+                                "flex": 1,
+                                "label": "Уволен",
+                                "margin": "0 20 0 0",
+                                "picker": "floated",
+                                "required": true,
+                                "store": [
+                                    "[",
+                                    "                                {",
+                                    "                                    dismissed: 1,",
+                                    "                                    textt: 'Да'",
+                                    "                                },",
+                                    "                                {",
+                                    "                                    dismissed: 0,",
+                                    "                                    textt: 'Нет'",
+                                    "                                }",
+                                    "                            ]"
+                                ],
+                                "value": [
+                                    "{crecord.dismissed}"
+                                ],
+                                "valueField": "dismissed"
+                            },
+                            "configAlternates": {
+                                "value": "binding",
+                                "flex": "number",
+                                "autoLoadOnValue": "boolean",
+                                "displayField": "datafield",
+                                "editable": "boolean",
+                                "label": "string",
+                                "picker": "string",
+                                "valueField": "datafield",
+                                "store": "object",
+                                "margin": "auto",
+                                "required": "boolean"
+                            },
+                            "name": "MyComboBox4",
+                            "designerId": "a22054fd-0525-4818-890d-96782a99556e",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "flex",
+                                    "type": "string"
+                                }
+                            ],
+                            "cn": [
+                                {
+                                    "type": "Ext.XTemplate",
+                                    "reference": {
+                                        "name": "itemTpl",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|displayName": "itemTpl",
+                                        "implHandler": [
+                                            ""
+                                        ]
+                                    },
+                                    "configAlternates": {
+                                        "designer|displayName": "string",
+                                        "implHandler": "code"
+                                    },
+                                    "name": "itemTpl",
+                                    "designerId": "3a309139-97f3-455c-8bcd-e6b629412981"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.field.Date",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "bind": [
+                                    "{crecord.comedate}"
+                                ],
+                                "editable": false,
+                                "flex": 1,
+                                "label": "Дата приёма на работу",
+                                "margin": "0 20 0 0",
+                                "name": "comedate"
+                            },
+                            "configAlternates": {
+                                "value": "object",
+                                "flex": "number",
+                                "bind": "object",
+                                "label": "string",
+                                "margin": "auto",
+                                "name": "string",
+                                "editable": "boolean"
+                            },
+                            "name": "MyDate4",
+                            "designerId": "26039557-1c8c-4c57-8278-40413140ba2d",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "flex",
+                                    "type": "string"
+                                }
+                            ],
+                            "cn": [
+                                {
+                                    "type": "Ext.picker.Date",
+                                    "reference": {
+                                        "name": "picker",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "anchor": true,
+                                        "closable": true,
+                                        "closeAction": "hide"
+                                    },
+                                    "configAlternates": {
+                                        "anchor": "boolean",
+                                        "closable": "boolean",
+                                        "title": "string",
+                                        "closeAction": "string"
+                                    },
+                                    "name": "MyDatePicker",
+                                    "designerId": "e648b72f-5818-430a-a501-c36f131e29b5"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.field.Date",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "bind": [
+                                    "{",
+                                    "value: '{crecord.exitdate}'",
+                                    "}"
+                                ],
+                                "disabled": [
+                                    "{crecord.dismissed==0}"
+                                ],
+                                "editable": false,
+                                "flex": 1,
+                                "label": "Дата увольнения",
+                                "margin": "0 20 0 0",
+                                "name": "exitdate"
+                            },
+                            "configAlternates": {
+                                "value": "object",
+                                "flex": "number",
+                                "bind": "object",
+                                "label": "string",
+                                "margin": "auto",
+                                "name": "string",
+                                "disabled": "binding",
+                                "editable": "boolean"
+                            },
+                            "name": "MyDate5",
+                            "designerId": "8d01a150-cdb5-47dc-8c90-e01b65d24f35",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "flex",
+                                    "type": "string"
+                                }
+                            ],
+                            "cn": [
+                                {
+                                    "type": "Ext.picker.Date",
+                                    "reference": {
+                                        "name": "picker",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "anchor": true,
+                                        "closable": true,
+                                        "closeAction": "hide"
+                                    },
+                                    "configAlternates": {
+                                        "anchor": "boolean",
+                                        "closable": "boolean",
+                                        "title": "string",
+                                        "closeAction": "string"
+                                    },
+                                    "name": "MyDatePicker",
+                                    "designerId": "58a60757-8502-49ac-b6f9-3e78fa5431d2"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "cls": [
+                            "createButton"
+                        ],
+                        "margin": "10 0 0 0 ",
+                        "text": "Сохранить"
+                    },
+                    "configAlternates": {
+                        "cls": "typedarray",
+                        "margin": "auto",
+                        "text": "string"
+                    },
+                    "name": "MyButton3",
+                    "designerId": "c6e31808-520a-4dab-9fd7-ca088310d28d",
+                    "cn": [
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onButtonTap1",
+                                "implHandler": [
+                                    "var me =  this;",
+                                    "console.log(button.up('formpanel').getViewModel().get('crecord'));",
+                                    "var recordId= button.up('formpanel').getViewModel().get('crecord').data.id;",
+                                    "var rec = button.up('formpanel').getViewModel().get('crecord').data;",
+                                    "let store = Case.app.getStore('productstore');",
+                                    "",
+                                    "Case.app.getStore('productstore').findRecord('id',recordId).save({",
+                                    "    failure: function(record, operation) {",
+                                    "",
+                                    "        Ext.Msg.alert(\"Ошибка\" , \"Poprobuyte esho raz\");",
+                                    "    },",
+                                    "    success: function(record, operation) {",
+                                    "        Ext.ComponentQuery.query('productgrid')[0].refresh();",
+                                    "        Ext.Msg.alert(\"Masege\" , \"Dannie uspeshno soxraneni\");",
+                                    "",
+                                    "    },",
+                                    "    callback: function(record, operation, success) {",
+                                    "        // do something whether the save succeeded or failed",
+                                    "    }",
+                                    "}      );",
+                                    "",
+                                    "",
+                                    "",
+                                    ""
+                                ],
+                                "name": "tap"
+                            },
+                            "configAlternates": {
+                                "fn": "string",
+                                "implHandler": "code",
+                                "name": "string",
+                                "scope": "string"
+                            },
+                            "name": "onButtonTap1",
+                            "designerId": "3b31b704-fc2d-4eef-a666-f71a4958ce8b"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

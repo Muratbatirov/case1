@@ -7,7 +7,7 @@
             "frameworkVersion": "7.3.0.55"
         },
         "urlPrefixTemplate": "http://localhost:{port}/{path}",
-        "urlPrefix": "http://localhost:50957/",
+        "urlPrefix": "http://localhost:64804/",
         "canvasControls": {
             "viewportSize": {
                 "name": "Desktop (Auto Expand)",
@@ -71,7 +71,19 @@
             "6924151e-1212-417b-9a08-4381c2bede2f",
             "48d368e7-5686-405e-807c-949d341f98d9",
             "0db2852a-f6c1-4758-9626-d837cebcb801",
-            "034a4251-c8f1-4655-aad8-8163c5b913cd"
+            "034a4251-c8f1-4655-aad8-8163c5b913cd",
+            "e81c149a-639d-4b0e-b9a9-c92e5042d332",
+            "021d308c-ea17-4c29-a938-8ac09821fe8a",
+            "f3d7e484-0ce3-4e45-8273-9bde90ef8185",
+            "099d112a-42c4-4dca-9903-62cb1605841f",
+            "bbdd0871-4748-4ff5-90cd-5b24eb095718",
+            "8448507c-0e50-425d-b79e-e9f56eb446f6",
+            "8d1a6665-3df5-488f-b237-1b41f938be33",
+            "042682be-fc8b-4025-a40c-391a868314d2",
+            "02ff4c17-b2c2-4125-8c2d-353ef150c225",
+            "b4931ddb-8f1e-4a1f-8f77-a0f59d1fd256",
+            "db0c9a44-837a-44b9-befe-024fddaae881",
+            "c45d79bc-2eca-40f2-812f-db3192de578e"
         ],
         "store": [
             "16b6bc42-f42c-48c4-b5a0-e262a4519589",
@@ -83,7 +95,9 @@
             "7cef137b-02c1-41a0-8a2c-2c7d1e081b0d",
             "ef7969e5-f06a-47a2-94c4-6d574c7ccbc2",
             "fc958b80-8f3d-46fa-a7e6-89c4335c669e",
-            "155793ef-6728-4ebd-bb68-d94b39eea72f"
+            "155793ef-6728-4ebd-bb68-d94b39eea72f",
+            "8ee8b4ae-d7c8-4b75-b1b2-3bf1cdf66957",
+            "f6139f31-8f43-4f13-8dfa-8ef071adafb2"
         ],
         "controller": [
             "11931cf1-77f9-460d-a0f4-a0df26c912d4",
@@ -94,10 +108,12 @@
             "c01ef560-6696-46b2-a24b-93b78fe024a7",
             "2fba20ac-9897-4120-988f-7b592c83be19",
             "f11a63da-9e13-470e-840a-193803ec47f0",
-            "ee28f5e7-0b06-426e-a2e3-72f0a3c6607a"
+            "ee28f5e7-0b06-426e-a2e3-72f0a3c6607a",
+            "ccad54c6-f0c6-4bb8-918a-58d6428bcb5c",
+            "824d5e0f-e0c4-4c56-a401-0cd523a11307"
         ],
         "resource": [
-            "c4d6c34b-a139-4fb9-8db7-6d4221c54d5c",
+            "5195832a-248d-49c9-8020-1c4980c15d20",
             "29cb629e-f40f-425e-9874-1353e31f9492",
             "b1c2573c-4159-4589-9551-1fae970f3d59",
             "6f290270-0c23-4215-80af-dd35b5097234"

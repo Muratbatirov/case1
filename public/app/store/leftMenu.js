@@ -43,6 +43,18 @@ Ext.define('Case.store.leftMenu', {
                         hash: 'supliers',
                         iconCls: 'x-fa fa-list',
                         leaf: true
+                    },
+                    {
+                        text: 'Список сотрудников',
+                        hash: 'emploees',
+                        iconCls: 'x-fa fa-list',
+                        leaf: true
+                    },
+                    {
+                        text: 'Список направлений',
+                        hash: 'directions',
+                        iconCls: 'x-fa fa-list',
+                        leaf: true
                     }
                 ]
             }

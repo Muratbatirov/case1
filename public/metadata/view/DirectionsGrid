@@ -1,0 +1,116 @@
+{
+    "type": "Ext.grid.Grid",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "directionsgrid",
+        "designer|userClassName": "DirectionsGrid",
+        "height": "100%",
+        "layout": "hbox",
+        "store": "directionstore",
+        "width": "100%"
+    },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string",
+        "height": "auto",
+        "layout": "string",
+        "store": "store",
+        "width": "auto"
+    },
+    "name": "MyGrid",
+    "designerId": "8d1a6665-3df5-488f-b237-1b41f938be33",
+    "viewControllerInstanceId": "02ff4c17-b2c2-4125-8c2d-353ef150c225",
+    "viewModelInstanceId": "042682be-fc8b-4025-a40c-391a868314d2",
+    "cn": [
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "name",
+                "docked": null,
+                "layout|flex": 1,
+                "text": "Название направления"
+            },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "docked": "string",
+                "layout|flex": "number",
+                "text": "string"
+            },
+            "name": "MyColumn13",
+            "designerId": "3bebe529-207c-4941-8551-806698122ac2"
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "director",
+                "docked": null,
+                "layout|flex": 1,
+                "text": "Руководитель"
+            },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "docked": "string",
+                "text": "string",
+                "width": "auto",
+                "layout|flex": "number"
+            },
+            "name": "MyColumn14",
+            "designerId": "edc4021d-c027-434b-9fec-db000d89abaf"
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "opisanie",
+                "docked": null,
+                "layout|flex": 1,
+                "text": "Описание направления"
+            },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "docked": "string",
+                "text": "string",
+                "width": "auto",
+                "layout|flex": "number"
+            },
+            "name": "MyColumn15",
+            "designerId": "fbf9449f-a3d9-4587-974e-8f00087362c9"
+        },
+        {
+            "type": "Ext.Toolbar",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "docked": "top",
+                "title": "Список направлений"
+            },
+            "configAlternates": {
+                "docked": "string",
+                "title": "string"
+            },
+            "name": "MyToolbar7",
+            "designerId": "7de573fc-f14c-4f3c-8e61-3137f299f310"
+        }
+    ]
+}

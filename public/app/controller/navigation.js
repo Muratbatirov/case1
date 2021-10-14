@@ -31,7 +31,9 @@ Ext.define('Case.controller.navigation', {
             action: 'showtree'
         },
         'categories': 'showCategoriesPage',
-        'categories/edit': 'categoryedit'
+        'categories/edit': 'categoryedit',
+        'emploees': 'showEmploeeList',
+        'directions': 'showDirections'
     },
 
     refs: {
@@ -233,6 +235,70 @@ Ext.define('Case.controller.navigation', {
 
 
 
+
+    },
+
+    showEmploeeList: function() {
+        let workspace = this.getWorkspace();
+        let container = Ext.create({
+            xtype: 'panel',
+            title:"Katalog tovarov",
+            header:{
+              hidden:true
+            },
+            layout: 'hbox',
+
+
+
+
+
+
+
+        });
+
+        container.add({
+            xtype: 'directionlist',
+            flex:1
+
+        });
+
+        container.add({
+            xtype: 'eploeegrid',
+            flex:4
+
+        });
+
+         workspace.push(container);
+
+    },
+
+    showDirections: function() {
+         let workspace = this.getWorkspace();
+                let container = Ext.create({
+                    xtype: 'panel',
+                    title:"Katalog tovarov",
+                    header:{
+                      hidden:true
+                    },
+                    layout: 'hbox',
+
+
+
+
+
+
+
+                });
+
+                container.add({
+                    xtype: 'directionsgrid',
+                    flex:1
+
+                });
+
+
+
+                 workspace.push(container);
 
     }
 

@@ -1,0 +1,124 @@
+{
+    "type": "Ext.dataview.List",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "border": true,
+        "designer|uiInterfaceName": "nav",
+        "designer|userAlias": "directionlist",
+        "designer|userClassName": "directionlist",
+        "store": "directionstore",
+        "ui": "nav"
+    },
+    "configAlternates": {
+        "border": "boolean",
+        "designer|uiInterfaceName": "string",
+        "designer|userAlias": "string",
+        "designer|userClassName": "string",
+        "store": "store",
+        "ui": "string"
+    },
+    "name": "MyList",
+    "designerId": "099d112a-42c4-4dca-9903-62cb1605841f",
+    "viewControllerInstanceId": "8448507c-0e50-425d-b79e-e9f56eb446f6",
+    "viewModelInstanceId": "bbdd0871-4748-4ff5-90cd-5b24eb095718",
+    "cn": [
+        {
+            "type": "Ext.XTemplate",
+            "reference": {
+                "name": "itemTpl",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|displayName": "itemTpl",
+                "implHandler": [
+                    "<div>{name}</div>"
+                ]
+            },
+            "configAlternates": {
+                "designer|displayName": "string",
+                "implHandler": "code"
+            },
+            "name": "itemTpl",
+            "designerId": "c4ce7bd3-0c1a-4b9a-ab3a-3740da77f279"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onListSelect",
+                "implHandler": [
+                    "let store = Case.app.getStore('EmploeeStore');",
+                    "",
+                    "store.getProxy().setExtraParams({",
+                    "   'param':selected.data.name,",
+                    "",
+                    "",
+                    "",
+                    "   });",
+                    "    store.loadPage(1,{",
+                    "                   callback: function(records, operation, success) {",
+                    "",
+                    "          Case.app.getStore('productstore').getProxy().setExtraParams({",
+                    "",
+                    "",
+                    "",
+                    "                });",
+                    "}",
+                    "    });",
+                    "",
+                    ""
+                ],
+                "name": "select",
+                "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string",
+                "scope": "string"
+            },
+            "name": "onListSelect",
+            "designerId": "d6a8acbc-264b-4f6b-8765-eac186a83e06"
+        },
+        {
+            "type": "Ext.Toolbar",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "docked": "top",
+                "items": [
+                    "{xtype: 'button',",
+                    " ",
+                    "text: 'Показать все',",
+                    "handler: 'onShowAll'",
+                    "}"
+                ]
+            },
+            "configAlternates": {
+                "items": "object",
+                "docked": "string"
+            },
+            "name": "MyToolbar5",
+            "designerId": "a13cb3e2-4057-46bc-9b90-0be4825beaca",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "items",
+                    "type": "string"
+                }
+            ]
+        }
+    ]
+}

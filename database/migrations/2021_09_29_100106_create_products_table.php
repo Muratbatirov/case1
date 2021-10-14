@@ -23,8 +23,8 @@ class CreateProductsTable extends Migration
              $table->integer('quantity');
             $table->longText('opisanie'); 
              
-               
-            
+             $table->foreign('postavshik_id')->references('id')->on('postavshiks');  
+             $table->foreign('category_id')->references('id')->on('categories');
             $table->timestamps();
         });
 

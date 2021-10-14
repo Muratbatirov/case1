@@ -1,0 +1,58 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "directionlist",
+        "designer|userClassName": "directionlistViewController"
+    },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string"
+    },
+    "designerId": "8448507c-0e50-425d-b79e-e9f56eb446f6",
+    "cn": [
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onShowAll",
+                "implHandler": [
+                    "",
+                    "            let store1 = Case.app.getStore('EmploeeStore');",
+                    " store1.getProxy().setExtraParams({",
+                    "                'param':false,",
+                    "",
+                    "",
+                    "            });",
+                    "",
+                    "            store1.loadPage(1,{",
+                    "                   callback: function(records, operation, success) {",
+                    "                     Case.app.getStore('productstore').getProxy().setExtraParams({",
+                    "",
+                    "",
+                    "",
+                    "        });",
+                    "",
+                    "      }}",
+                    "",
+                    "",
+                    "                           );"
+                ]
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code"
+            },
+            "name": "onShowAll",
+            "designerId": "c2a98671-7ae4-4cd9-af9f-38eeb7c44dac"
+        }
+    ]
+}

@@ -1,0 +1,24 @@
+{
+    "type": "Ext.data.Store",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoLoad": true,
+        "designer|userClassName": "EmploeeStore",
+        "model": "EmploeeModel",
+        "pageSize": 8,
+        "storeId": "EmploeeStore"
+    },
+    "configAlternates": {
+        "autoLoad": "boolean",
+        "designer|userClassName": "string",
+        "model": "model",
+        "pageSize": "number",
+        "storeId": "string"
+    },
+    "name": "MyStore2",
+    "designerId": "8ee8b4ae-d7c8-4b75-b1b2-3bf1cdf66957"
+}

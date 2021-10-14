@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CategoryCantroller;
 use App\Http\Controllers\PostavshikCantroller;
 use App\Http\Controllers\ProductCantroller;
+use App\Http\Controllers\EmploeeCantroller;
+use App\Http\Controllers\DirectionCantroller;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -31,3 +33,8 @@ Route::post('/categorylist/add',[CategoryCantroller::class, 'categoryadd']);
 
 //Route::post('/productlist/edit',[ProductCantroller::class, 'productlistedit']);
 Route::put('/productlist/{id}',[ProductCantroller::class, 'productlistedit']);
+
+
+
+Route::get('/directionlist',[DirectionCantroller::class, 'directions']);
+Route::get('/emploeelist',[EmploeeCantroller::class, 'emploeelist']);

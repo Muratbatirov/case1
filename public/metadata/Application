@@ -15,7 +15,9 @@
             "productmodel",
             "categoryComboModel",
             "postavshikcombo",
-            "categoryEditCombo"
+            "categoryEditCombo",
+            "EmploeeModel",
+            "directionmodel"
         ],
         "name": "Case",
         "stores": [
@@ -28,7 +30,9 @@
             "categoryedittree",
             "categoryEditCombo",
             "categoryEditComboLitle",
-            "podcategory"
+            "podcategory",
+            "EmploeeStore",
+            "directionstore"
         ],
         "views": [
             "MyToolbar",
@@ -41,7 +45,11 @@
             "dialogeditcategory",
             "editcategorytree",
             "dialogAddCategory",
-            "DialogAddProduct"
+            "DialogAddProduct",
+            "EploeeGrid",
+            "directionlist",
+            "DirectionsGrid",
+            "DialogEmploeeEdit"
         ]
     },
     "configAlternates": {

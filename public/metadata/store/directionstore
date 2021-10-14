@@ -1,0 +1,22 @@
+{
+    "type": "Ext.data.Store",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoLoad": true,
+        "designer|userClassName": "directionstore",
+        "model": "directionmodel",
+        "storeId": "directionstore"
+    },
+    "configAlternates": {
+        "autoLoad": "boolean",
+        "designer|userClassName": "string",
+        "model": "model",
+        "storeId": "string"
+    },
+    "name": "MyStore2",
+    "designerId": "f6139f31-8f43-4f13-8dfa-8ef071adafb2"
+}
