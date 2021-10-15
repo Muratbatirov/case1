@@ -15,5 +15,128 @@
 
 Ext.define('Case.view.DirectionsGridViewController', {
     extend: 'Ext.app.ViewController',
-    alias: 'controller.directionsgrid'
+    alias: 'controller.directionsgrid',
+
+    onMenuClick1: function(grid, context) {
+        var me = this;
+
+
+           var menu = Ext.create({xtype:'menu',
+                                 anchor: true,});
+
+           Ext.apply({ownerCmp: me}, me.toolContextMenu);
+
+        menu.add([{
+              text: 'EDIT',
+              iconCls: 'x-fa fa-edit',
+              handler: 'editEmploee1',
+            scope:me
+          },
+          {
+              text: 'DELETE',
+              iconCls: 'x-fa crimson fa-trash',
+              handler: 'deleteEmploee1',
+               scope:me
+          }]);
+        me.getViewModel().set('crecord', context.record.clone());
+        menu.autoFocus = !context.event.pointerType;
+        menu.showBy(context.tool.el, 'l50-r50?');
+    },
+
+    editEmploee1: function() {
+        var categoryrecord= this.getViewModel().get('crecord');
+        console.log(categoryrecord);
+
+        var me = this;
+
+        let ell = document.getElementsByClassName("x-navigationview");
+
+        let widthcalculate = ell[0].offsetWidth;
+        let heightcalculate = ell[0].offsetHeight;
+
+
+        let dialogProductEdit = Ext.create({
+           xtype: 'dialogeditdirection',
+            right: 0,
+            shadow:false,
+            zIndex:0,
+            width:widthcalculate,
+                    height:heightcalculate,
+                    showAnimation:'slide',
+        buttons: {
+                        ok: function () {  // standard button (see below)
+                            dialogProductEdit.destroy();
+
+                        }
+                    }
+
+        });
+
+        dialogProductEdit.down('formpanel').setViewModel({data:{crecord:categoryrecord}});
+        dialogProductEdit.show();
+    },
+
+    deleteEmploee1: function() {
+
+        var id= this.getViewModel().get('crecord').data.id;
+        //let store = Case.app.getStore('productstore');
+        Ext.Ajax.request({
+             url: 'directionlist/delete',
+             params:{id:id},
+             success: function(response, opts) {
+                  if(response.responseText=='true'){
+                   Case.app.getStore('directionstore').findRecord('id',id).drop();
+                }else{
+                   Ext.Msg.alert("Ошибка" , response.responseText);
+               }
+
+
+
+             },
+
+             failure: function(response, opts) {
+                 console.log('server-side failure with status code ' + response.status);
+             }
+         });
+    },
+
+    onDobavitProduct11: function(button, e, eOpts) {
+        var categoryrecord= this.getViewModel().get('crecord');
+        console.log(categoryrecord);
+
+        var me = this;
+
+        let ell = document.getElementsByClassName("x-navigationview");
+
+        let widthcalculate = ell[0].offsetWidth;
+        let heightcalculate = ell[0].offsetHeight;
+
+
+        let dialogProductEdit = Ext.create({
+            xtype: 'dialogdirectionadd',
+            right: 0,
+            shadow:false,
+            zIndex:0,
+            width:widthcalculate,
+            height:heightcalculate,
+            showAnimation:'slide',
+            buttons: {
+                ok: function () {  // standard button (see below)
+                    dialogProductEdit.destroy();
+
+                }
+            }
+
+        });
+
+        dialogProductEdit.down('formpanel').setViewModel({data:{crecord:null}});
+        dialogProductEdit.show();
+    },
+
+    onGridChilddoubletap: function(list, location, eOpts) {
+        this.getViewModel().set('crecord', location.record.clone());
+
+        this.editEmploee1();
+    }
+
 });

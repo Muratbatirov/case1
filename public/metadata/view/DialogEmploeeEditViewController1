@@ -1,0 +1,18 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "dialogemploeeadd",
+        "designer|userClassName": "DialogEmploeeEditViewController1"
+    },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string"
+    },
+    "name": "DialogEmploeeEditViewController1",
+    "designerId": "aabdc0ec-afab-4c8d-879e-86943689ba88"
+}

@@ -6,13 +6,13 @@
     },
     "codeClass": null,
     "userConfig": {
-        "designer|userClassName": "directionmodel"
+        "designer|userClassName": "reports"
     },
     "configAlternates": {
         "designer|userClassName": "string"
     },
     "name": "MyModel",
-    "designerId": "824d5e0f-e0c4-4c56-a401-0cd523a11307",
+    "designerId": "06ee4b20-4f8f-43de-ac31-13073440088b",
     "cn": [
         {
             "type": "Ext.data.field.Integer",
@@ -27,8 +27,8 @@
             "configAlternates": {
                 "name": "string"
             },
-            "name": "MyInteger11",
-            "designerId": "bfc422e6-9b6e-4bdf-a049-5c0aaefcb2d4"
+            "name": "MyInteger12",
+            "designerId": "27d8006e-1ba2-4e04-b8be-4e257bc08954"
         },
         {
             "type": "Ext.data.field.String",
@@ -43,40 +43,40 @@
             "configAlternates": {
                 "name": "string"
             },
-            "name": "MyString11",
-            "designerId": "0d14d2b2-f443-4bf3-8091-cc26f96ee2b7"
+            "name": "MyString15",
+            "designerId": "7a44ee1f-c90a-467d-b206-8218eccaf534"
         },
         {
-            "type": "Ext.data.field.String",
+            "type": "Ext.data.field.Integer",
             "reference": {
                 "name": "fields",
                 "type": "array"
             },
             "codeClass": null,
             "userConfig": {
-                "name": "director"
+                "name": "currentnum"
             },
             "configAlternates": {
                 "name": "string"
             },
-            "name": "MyString16",
-            "designerId": "fa2939ed-32dd-479c-85a6-bd4ad84a43c9"
+            "name": "MyInteger13",
+            "designerId": "5d150457-c368-4020-9745-fbab718f7454"
         },
         {
-            "type": "Ext.data.field.String",
+            "type": "Ext.data.field.Integer",
             "reference": {
                 "name": "fields",
                 "type": "array"
             },
             "codeClass": null,
             "userConfig": {
-                "name": "opisanie"
+                "name": "exitnum"
             },
             "configAlternates": {
                 "name": "string"
             },
-            "name": "MyString17",
-            "designerId": "76ff58a6-2285-4acd-859c-6a6434141a0f"
+            "name": "MyInteger14",
+            "designerId": "2bd3a110-3757-4b0f-96b4-0d0795ee8437"
         },
         {
             "type": "Ext.data.proxy.Rest",
@@ -86,13 +86,13 @@
             },
             "codeClass": null,
             "userConfig": {
-                "url": "directionlist"
+                "url": "reports"
             },
             "configAlternates": {
                 "url": "string"
             },
-            "name": "MyRestProxy5",
-            "designerId": "72d8bd35-8791-4b82-b866-ea3194913a23",
+            "name": "MyRestProxy6",
+            "designerId": "29e927e8-f646-47da-906d-8352fe4c086d",
             "cn": [
                 {
                     "type": "Ext.data.reader.Json",
@@ -107,8 +107,8 @@
                     "configAlternates": {
                         "rootProperty": "string"
                     },
-                    "name": "MyJsonReader5",
-                    "designerId": "1da61e4e-f88a-4522-8079-541c85c4e80d"
+                    "name": "MyJsonReader6",
+                    "designerId": "c0573658-1012-4da5-9134-2505eb58ea65"
                 }
             ]
         }

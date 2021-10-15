@@ -448,7 +448,7 @@
                     "",
                     "container.add({",
                     "    xtype: 'eploeegrid',",
-                    "    flex:4",
+                    "    flex:6",
                     "",
                     "});",
                     "",
@@ -512,6 +512,39 @@
             },
             "name": "showDirections",
             "designerId": "363492d7-4d1d-4946-be00-c716bb4bbce4"
+        },
+        {
+            "type": "Ext.route.Route",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "showReports",
+                "implHandler": [
+                    " let workspace = this.getWorkspace();",
+                    "            ",
+                    "",
+                    "",
+                    "",
+                    "                 workspace.push({",
+                    "                    xtype: 'reports',",
+                    "                    flex:1",
+                    "",
+                    "                });",
+                    "",
+                    "    "
+                ],
+                "url": "reports"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code",
+                "url": "string"
+            },
+            "name": "showReports",
+            "designerId": "561430fc-108f-420b-ae29-7f4ef488f5ca"
         }
     ]
 }

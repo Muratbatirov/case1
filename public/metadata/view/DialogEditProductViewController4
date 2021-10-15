@@ -1,0 +1,18 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "dialogdirectionadd",
+        "designer|userClassName": "DialogEditProductViewController4"
+    },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string"
+    },
+    "name": "DialogEditProductViewController4",
+    "designerId": "af602be2-4ba6-4e3e-a51c-1d982475c191"
+}

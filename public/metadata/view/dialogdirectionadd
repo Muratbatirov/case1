@@ -1,0 +1,272 @@
+{
+    "type": "Ext.Dialog",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "dialogdirectionadd",
+        "designer|userClassName": "dialogdirectionadd",
+        "hideAnimation": "slideOut",
+        "hideOnMaskTap": true,
+        "layout": "hbox",
+        "reference": "editCategoryDialog",
+        "right": 0,
+        "showAnimation": "slide",
+        "title": "My Dialog"
+    },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string",
+        "docked": "string",
+        "showAnimation": "string",
+        "title": "string",
+        "width": "auto",
+        "layout": "string",
+        "reference": "string",
+        "right": "auto",
+        "hideAnimation": "string",
+        "hideOnMaskTap": "boolean"
+    },
+    "name": "dialogeditdirection1",
+    "designerId": "d9952344-e4a8-4f5e-8c10-4378c1253e5a",
+    "viewControllerInstanceId": "af602be2-4ba6-4e3e-a51c-1d982475c191",
+    "viewModelInstanceId": "9aaad630-8054-4d9a-877f-999e86cf930d",
+    "cn": [
+        {
+            "type": "Ext.form.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "itemId": "myformpanel",
+                "layout|flex": 1,
+                "reference": "form"
+            },
+            "configAlternates": {
+                "viewModel": "object",
+                "itemId": "string",
+                "reference": "string",
+                "layout|flex": "number"
+            },
+            "name": "MyFormPanel",
+            "designerId": "8b61fb13-4f0a-4b5e-abfa-694d28550203",
+            "cn": [
+                {
+                    "type": "Ext.field.Container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout": "hbox"
+                    },
+                    "configAlternates": {
+                        "layout": "string"
+                    },
+                    "name": "MyFieldContainer",
+                    "designerId": "8eb2fcb6-7372-49d3-8b0d-9ea41f5c7c74",
+                    "cn": [
+                        {
+                            "type": "Ext.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "flex": 1,
+                                "label": "Название направления",
+                                "name": "name",
+                                "required": true,
+                                "value": [
+                                    "{crecord.name}"
+                                ]
+                            },
+                            "configAlternates": {
+                                "value": "binding",
+                                "label": "string",
+                                "name": "string",
+                                "required": "boolean",
+                                "flex": "number"
+                            },
+                            "name": "MyTextField1",
+                            "designerId": "1b326d51-8097-4ae0-b291-7aa4f4380c15",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "flex",
+                                    "type": "string"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "flex": 1,
+                                "label": "Руководитель",
+                                "name": "director",
+                                "required": true,
+                                "value": [
+                                    "{crecord.director}"
+                                ]
+                            },
+                            "configAlternates": {
+                                "value": "binding",
+                                "label": "string",
+                                "name": "string",
+                                "required": "boolean",
+                                "flex": "number"
+                            },
+                            "name": "MyTextField5",
+                            "designerId": "bdd3a9a5-0b0b-44e6-8ff3-d6a40f4039bb",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "flex",
+                                    "type": "string"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.field.TextArea",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "label": "Описание направления",
+                        "name": "opisanie",
+                        "required": true,
+                        "value": [
+                            "{crecord.opisanie}"
+                        ]
+                    },
+                    "configAlternates": {
+                        "value": "binding",
+                        "label": "string",
+                        "name": "string",
+                        "required": "boolean"
+                    },
+                    "name": "MyTextArea1",
+                    "designerId": "668096e9-c0e1-4099-b723-49e2c4d5285e"
+                },
+                {
+                    "type": "Ext.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "cls": [
+                            "createButton"
+                        ],
+                        "flex": 1,
+                        "margin": "10 0 0 0 ",
+                        "text": "Сохранить"
+                    },
+                    "configAlternates": {
+                        "cls": "typedarray",
+                        "margin": "auto",
+                        "text": "string",
+                        "flex": "number"
+                    },
+                    "name": "MyButton3",
+                    "designerId": "29bc8f05-c592-4ba9-87e1-1c78b8caff8e",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "flex",
+                            "type": "string"
+                        }
+                    ],
+                    "cn": [
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onButtonTap",
+                                "implHandler": [
+                                    "var me =  this;",
+                                    "refs = me.getReferences();",
+                                    "",
+                                    "if (refs.form.validate()) {",
+                                    "var cr= button.up('formpanel').getViewModel().get('crecord');",
+                                    "",
+                                    "",
+                                    "Ext.Ajax.request({",
+                                    "    url: 'directionlist/add',",
+                                    "     params:{name:cr.name,director:cr.director,opisanie:cr.opisanie},",
+                                    "     success: function(response, opts) {",
+                                    "",
+                                    "       Case.app.getStore('directionstore').load();",
+                                    "          Case.app.getStore('reports').load();",
+                                    "        Ext.Msg.alert(\"Masege\" , \"Dannie uspeshno soxraneni\");",
+                                    "",
+                                    "    },",
+                                    "",
+                                    "     failure: function(response, opts) {",
+                                    "        Ext.Msg.alert(\"Ошибка\" , \"Poprobuyte esho raz\");",
+                                    "     }",
+                                    " });",
+                                    "",
+                                    "",
+                                    "}",
+                                    "",
+                                    "//",
+                                    "//var rec = button.up('formpanel').getViewModel().get('crecord').data;",
+                                    "//let store = Case.app.getStore('productstore');",
+                                    "",
+                                    "//Case.app.getStore('productstore').findRecord('id',recordId).save({",
+                                    "  //  failure: function(record, operation) {",
+                                    "",
+                                    "    //    Ext.Msg.alert(\"Ошибка\" , \"Poprobuyte esho raz\");",
+                                    "    //},",
+                                    "  //  success: function(record, operation) {",
+                                    "      //  Ext.ComponentQuery.query('productgrid')[0].refresh();",
+                                    "     //   Ext.Msg.alert(\"Masege\" , \"Dannie uspeshno soxraneni\");",
+                                    "",
+                                    "   // },",
+                                    "   // callback: function(record, operation, success) {",
+                                    "        // do something whether the save succeeded or failed",
+                                    "   // }",
+                                    "//}      );",
+                                    "",
+                                    "",
+                                    "",
+                                    ""
+                                ],
+                                "name": "tap"
+                            },
+                            "configAlternates": {
+                                "fn": "string",
+                                "implHandler": "code",
+                                "name": "string",
+                                "scope": "string"
+                            },
+                            "name": "onButtonTap",
+                            "designerId": "faa5c787-5c72-41b6-9416-56fa779383e4"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

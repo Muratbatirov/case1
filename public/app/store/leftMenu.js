@@ -55,6 +55,12 @@ Ext.define('Case.store.leftMenu', {
                         hash: 'directions',
                         iconCls: 'x-fa fa-list',
                         leaf: true
+                    },
+                    {
+                        text: 'Отчёты',
+                        hash: 'reports',
+                        iconCls: 'x-fa fa-address-card',
+                        leaf: true
                     }
                 ]
             }

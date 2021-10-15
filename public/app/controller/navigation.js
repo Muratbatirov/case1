@@ -33,7 +33,8 @@ Ext.define('Case.controller.navigation', {
         'categories': 'showCategoriesPage',
         'categories/edit': 'categoryedit',
         'emploees': 'showEmploeeList',
-        'directions': 'showDirections'
+        'directions': 'showDirections',
+        'reports': 'showReports'
     },
 
     refs: {
@@ -264,7 +265,7 @@ Ext.define('Case.controller.navigation', {
 
         container.add({
             xtype: 'eploeegrid',
-            flex:4
+            flex:6
 
         });
 
@@ -299,6 +300,21 @@ Ext.define('Case.controller.navigation', {
 
 
                  workspace.push(container);
+
+    },
+
+    showReports: function() {
+         let workspace = this.getWorkspace();
+
+
+
+
+                         workspace.push({
+                            xtype: 'reports',
+                            flex:1
+
+                        });
+
 
     }
 

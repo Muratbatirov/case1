@@ -1,0 +1,20 @@
+{
+    "type": "Ext.data.Store",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "directioncombo",
+        "model": "directionmodel",
+        "storeId": "directioncombo"
+    },
+    "configAlternates": {
+        "designer|userClassName": "string",
+        "model": "model",
+        "storeId": "string"
+    },
+    "name": "MyStore2",
+    "designerId": "174d6b3f-b4fa-4545-a25a-929eb390dca3"
+}

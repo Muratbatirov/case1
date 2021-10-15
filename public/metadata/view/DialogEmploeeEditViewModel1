@@ -1,0 +1,18 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "dialogemploeeadd",
+        "designer|userClassName": "DialogEmploeeEditViewModel1"
+    },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string"
+    },
+    "name": "DialogEmploeeEditViewModel1",
+    "designerId": "19c067b0-b986-46ba-b08d-862340d8b190"
+}

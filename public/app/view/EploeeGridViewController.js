@@ -38,7 +38,8 @@ Ext.define('Case.view.EploeeGridViewController', {
               handler: 'deleteEmploee',
                scope:me
           }]);
-        me.getViewModel().set('crecord', context.record);
+        me.getViewModel().set('crecord', context.record.clone());
+        console.log(context.record);
         menu.autoFocus = !context.event.pointerType;
         menu.showBy(context.tool.el, 'l50-r50?');
     },
@@ -78,12 +79,64 @@ Ext.define('Case.view.EploeeGridViewController', {
 
     deleteEmploee: function() {
 
+        var recordId= this.getViewModel().get('crecord').data.id;
+        //let store = Case.app.getStore('productstore');
+        Ext.Ajax.request({
+             url: 'emploeelist/delete',
+             params:{id:recordId},
+             success: function(response, opts) {
+
+                 Case.app.getStore('EmploeeStore').findRecord('id',recordId).drop();
+
+             },
+
+             failure: function(response, opts) {
+                 console.log('server-side failure with status code ' + response.status);
+             }
+         });
+    },
+
+    onDobavitProduct1: function(button, e, eOpts) {
+        var categoryrecord= this.getViewModel().get('crecord');
+        console.log(categoryrecord);
+
+        var me = this;
+
+        let ell = document.getElementsByClassName("x-navigationview");
+
+        let widthcalculate = ell[0].offsetWidth;
+        let heightcalculate = ell[0].offsetHeight;
+
+
+        let dialogProductEdit = Ext.create({
+            xtype: 'dialogemploeeadd',
+            right: 0,
+            shadow:false,
+            zIndex:0,
+            width:widthcalculate,
+            height:heightcalculate,
+            showAnimation:'slide',
+            buttons: {
+                ok: function () {  // standard button (see below)
+                    dialogProductEdit.destroy();
+
+                }
+            }
+
+        });
+
+        dialogProductEdit.down('formpanel').setViewModel({data:{crecord:null}});
+        dialogProductEdit.show();
     },
 
     onGridChilddoubletap: function(list, location, eOpts) {
-        this.getViewModel().set('crecord', location.record);
+        this.getViewModel().set('crecord', location.record.clone());
 
         this.editEmploee();
+    },
+
+    onGridPainted: function(sender, element, eOpts) {
+
     }
 
 });

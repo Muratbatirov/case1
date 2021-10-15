@@ -25,6 +25,7 @@ Ext.define('Case.view.EploeeGrid', {
         'Ext.grid.column.Check',
         'Ext.dataview.plugin.ListPaging',
         'Ext.Toolbar',
+        'Ext.Button',
         'Ext.grid.plugin.Summary'
     ],
 
@@ -72,6 +73,8 @@ Ext.define('Case.view.EploeeGrid', {
 
                 return `На странице ${value} из ${context.store.totalCount}`;
             },
+            filterType: 'string',
+            flex: 2,
             dataIndex: 'surname',
             summary: 'count',
             text: 'Фамилия'
@@ -98,7 +101,7 @@ Ext.define('Case.view.EploeeGrid', {
         },
         {
             xtype: 'datecolumn',
-            dataIndex: 'birthdate',
+            dataIndex: 'comedate',
             text: 'Дата рождения'
         },
         {
@@ -122,6 +125,7 @@ Ext.define('Case.view.EploeeGrid', {
                 return ' ';
             },
             dataIndex: 'wages',
+            summary: 'none',
             text: 'Зарплата'
         },
         {
@@ -154,7 +158,17 @@ Ext.define('Case.view.EploeeGrid', {
     items: [
         {
             xtype: 'toolbar',
-            docked: 'bottom'
+            docked: 'bottom',
+            items: [
+                {
+                    xtype: 'button',
+                    cls: 'createButton',
+                    text: 'Добавить',
+                    listeners: {
+                        tap: 'onDobavitProduct1'
+                    }
+                }
+            ]
         },
         {
             xtype: 'toolbar',
@@ -163,7 +177,8 @@ Ext.define('Case.view.EploeeGrid', {
         }
     ],
     listeners: {
-        childdoubletap: 'onGridChilddoubletap'
+        childdoubletap: 'onGridChilddoubletap',
+        painted: 'onGridPainted'
     }
 
 });

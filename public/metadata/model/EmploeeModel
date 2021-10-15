@@ -118,10 +118,16 @@
             },
             "codeClass": null,
             "userConfig": {
+                "dateFormat": "Y-m-d",
+                "dateReadFormat": "Y-m-d",
+                "dateWriteFormat": "Y-m-d",
                 "name": "birthdate"
             },
             "configAlternates": {
-                "name": "string"
+                "name": "string",
+                "dateFormat": "string",
+                "dateReadFormat": "string",
+                "dateWriteFormat": "string"
             },
             "name": "MyDate",
             "designerId": "20dba918-2b66-4fbd-954b-f7ba7f3a7d41"
@@ -198,13 +204,19 @@
             },
             "codeClass": null,
             "userConfig": {
-                "name": "comedate"
+                "dateFormat": "Y-m-d",
+                "dateReadFormat": "Y-m-d",
+                "dateWriteFormat": "Y-m-d",
+                "name": "exitdate"
             },
             "configAlternates": {
-                "name": "string"
+                "name": "string",
+                "dateFormat": "string",
+                "dateReadFormat": "string",
+                "dateWriteFormat": "string"
             },
-            "name": "MyDate1",
-            "designerId": "65342683-398f-4d2c-9f49-a209ab19f29e"
+            "name": "MyDate7",
+            "designerId": "8114f0d2-ed69-4ba7-9171-2f83ad2e2f54"
         },
         {
             "type": "Ext.data.field.Date",
@@ -214,13 +226,19 @@
             },
             "codeClass": null,
             "userConfig": {
-                "name": "exitdate"
+                "dateFormat": "Y-m-d",
+                "dateReadFormat": "Y-m-d",
+                "dateWriteFormat": "Y-m-d",
+                "name": "comedate"
             },
             "configAlternates": {
-                "name": "string"
+                "name": "string",
+                "dateFormat": "string",
+                "dateReadFormat": "string",
+                "dateWriteFormat": "string"
             },
-            "name": "MyDate2",
-            "designerId": "24d245e3-20ab-4cc0-b71f-b61d9d1c630b"
+            "name": "MyDate6",
+            "designerId": "548dc53b-a6f8-437d-a6ac-ff091c88afea"
         },
         {
             "type": "Ext.data.proxy.Rest",

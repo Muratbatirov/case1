@@ -11,6 +11,19 @@
         "height": "100%",
         "layout": "hbox",
         "store": "directionstore",
+        "toolContextMenu": [
+            "{",
+            "            xtype: 'menu',",
+            "            anchor: true,",
+            "            separator: true,",
+            "            minWidth: 150,",
+            "            autoHide: false,",
+            "            viewModel: {",
+            "                ",
+            "            },",
+            "            cls: 'round-context-menu'",
+            "        }"
+        ],
         "width": "100%"
     },
     "configAlternates": {
@@ -19,13 +32,49 @@
         "height": "auto",
         "layout": "string",
         "store": "store",
-        "width": "auto"
+        "width": "auto",
+        "toolContextMenu": "object"
     },
     "name": "MyGrid",
     "designerId": "8d1a6665-3df5-488f-b237-1b41f938be33",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "toolContextMenu",
+            "type": "string"
+        }
+    ],
     "viewControllerInstanceId": "02ff4c17-b2c2-4125-8c2d-353ef150c225",
     "viewModelInstanceId": "042682be-fc8b-4025-a40c-391a868314d2",
     "cn": [
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "cell": [
+                    "{cls: 'erg-tool-margin-0',",
+                    "                tools: {",
+                    "                    margin: 0,",
+                    "                    menu: 'onMenuClick1'",
+                    "                }}"
+                ],
+                "docked": null,
+                "text": "MyColumn17",
+                "width": "30px"
+            },
+            "configAlternates": {
+                "cell": "object",
+                "docked": "string",
+                "text": "string",
+                "width": "auto"
+            },
+            "name": "MyColumn17",
+            "designerId": "a7eccafb-215e-4304-ada4-20946afe767c"
+        },
         {
             "type": "Ext.grid.column.Column",
             "reference": {
@@ -111,6 +160,125 @@
             },
             "name": "MyToolbar7",
             "designerId": "7de573fc-f14c-4f3c-8e61-3137f299f310"
+        },
+        {
+            "type": "Ext.Toolbar",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "docked": "bottom"
+            },
+            "configAlternates": {
+                "docked": "string"
+            },
+            "name": "MyToolbar8",
+            "designerId": "621e45ee-6b30-4c91-9e23-e5c73ae13a83",
+            "cn": [
+                {
+                    "type": "Ext.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "cls": [
+                            "createButton"
+                        ],
+                        "text": "Добавить"
+                    },
+                    "configAlternates": {
+                        "cls": "typedarray",
+                        "text": "string"
+                    },
+                    "name": "MyButton",
+                    "designerId": "a571c1eb-8a26-47b3-9b3c-71517dafc53d",
+                    "cn": [
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onDobavitProduct11",
+                                "implHandler": [
+                                    "var categoryrecord= this.getViewModel().get('crecord');",
+                                    "console.log(categoryrecord);",
+                                    "",
+                                    "var me = this;",
+                                    "",
+                                    "let ell = document.getElementsByClassName(\"x-navigationview\");",
+                                    "",
+                                    "let widthcalculate = ell[0].offsetWidth;",
+                                    "let heightcalculate = ell[0].offsetHeight;",
+                                    "",
+                                    "",
+                                    "let dialogProductEdit = Ext.create({",
+                                    "   xtype: 'dialogdirectionadd',",
+                                    "    right: 0,",
+                                    "    shadow:false,",
+                                    "    zIndex:0,",
+                                    "    width:widthcalculate,",
+                                    "            height:heightcalculate,",
+                                    "            showAnimation:'slide',",
+                                    "buttons: {",
+                                    "                ok: function () {  // standard button (see below)",
+                                    "                    dialogProductEdit.destroy();",
+                                    "",
+                                    "                }",
+                                    "            }",
+                                    "",
+                                    "});",
+                                    "",
+                                    "dialogProductEdit.down('formpanel').setViewModel({data:{crecord:null}});",
+                                    "dialogProductEdit.show();"
+                                ],
+                                "name": "tap",
+                                "scope": "me"
+                            },
+                            "configAlternates": {
+                                "fn": "string",
+                                "implHandler": "code",
+                                "name": "string",
+                                "scope": "string"
+                            },
+                            "name": "onDobavitProduct11",
+                            "designerId": "c4101bae-ce65-4256-a9be-393d195a2ff8"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onGridChilddoubletap",
+                "implHandler": [
+                    "this.getViewModel().set('crecord', location.record.clone());",
+                    "",
+                    "this.editEmploee1();"
+                ],
+                "name": "childdoubletap",
+                "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string",
+                "scope": "string"
+            },
+            "name": "onGridChilddoubletap",
+            "designerId": "eb33b485-e594-4aeb-8686-68269f04897f"
         }
     ]
 }

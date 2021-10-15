@@ -36,7 +36,7 @@
                     "",
                     "   var menu = Ext.create({xtype:'menu',",
                     "                         anchor: true,});",
-                    "      ",
+                    "",
                     "   Ext.apply({ownerCmp: me}, me.toolContextMenu);",
                     "",
                     "menu.add([{",
@@ -51,7 +51,7 @@
                     "      handler: 'deleteProduct',",
                     "       scope:me",
                     "  }]);",
-                    "me.getViewModel().set('crecord', context.record);",
+                    "me.getViewModel().set('crecord', context.record.clone());",
                     "menu.autoFocus = !context.event.pointerType;",
                     "menu.showBy(context.tool.el, 'l50-r50?');"
                 ]

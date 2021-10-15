@@ -127,7 +127,10 @@
                             "userConfig": {
                                 "fn": "onTreelistItemClick",
                                 "implHandler": [
+                                    "",
+                                    "localStorage.setItem(\"nodeid\", info.node.id);",
                                     "this.redirectTo(info.node.data.hash);",
+                                    "",
                                     ""
                                 ],
                                 "name": "itemclick",
@@ -141,6 +144,35 @@
                             },
                             "name": "onTreelistItemClick",
                             "designerId": "ee96650f-b221-48b3-80eb-1a642f6aef74"
+                        },
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|params": [
+                                    "treelist"
+                                ],
+                                "fn": "onTreelistPainted",
+                                "implHandler": [
+                                    "if(localStorage.getItem(\"nodeid\")){",
+                                    "treelist.setSelection(localStorage.getItem(\"nodeid\"));}"
+                                ],
+                                "name": "painted",
+                                "scope": "me"
+                            },
+                            "configAlternates": {
+                                "designer|params": "typedarray",
+                                "fn": "string",
+                                "implHandler": "code",
+                                "name": "string",
+                                "scope": "string"
+                            },
+                            "name": "onTreelistPainted",
+                            "designerId": "11c8e928-084b-436b-91f4-a761ca38656e"
                         }
                     ]
                 },

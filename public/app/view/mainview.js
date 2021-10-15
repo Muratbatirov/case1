@@ -59,7 +59,8 @@ Ext.define('Case.view.mainview', {
                         micro: '{micro}'
                     },
                     listeners: {
-                        itemclick: 'onTreelistItemClick'
+                        itemclick: 'onTreelistItemClick',
+                        painted: 'onTreelistPainted'
                     }
                 },
                 {

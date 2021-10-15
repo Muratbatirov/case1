@@ -6,8 +6,8 @@
     },
     "codeClass": null,
     "userConfig": {
-        "designer|userAlias": "dialogemploeeedit",
-        "designer|userClassName": "DialogEmploeeEdit",
+        "designer|userAlias": "dialogemploeeadd",
+        "designer|userClassName": "DialogEmploeeAdd",
         "title": "My Dialog"
     },
     "configAlternates": {
@@ -15,10 +15,10 @@
         "designer|userClassName": "string",
         "title": "string"
     },
-    "name": "MyDialog",
-    "designerId": "b4931ddb-8f1e-4a1f-8f77-a0f59d1fd256",
-    "viewControllerInstanceId": "c45d79bc-2eca-40f2-812f-db3192de578e",
-    "viewModelInstanceId": "db0c9a44-837a-44b9-befe-024fddaae881",
+    "name": "DialogEmploeeEdit1",
+    "designerId": "4bd37dd3-6b31-4941-823f-f4fba840e085",
+    "viewControllerInstanceId": "aabdc0ec-afab-4c8d-879e-86943689ba88",
+    "viewModelInstanceId": "19c067b0-b986-46ba-b08d-862340d8b190",
     "cn": [
         {
             "type": "Ext.form.Panel",
@@ -39,7 +39,7 @@
                 "fieldSeparators": "boolean"
             },
             "name": "MyFormPanel1",
-            "designerId": "584a609c-84ae-4c51-96b9-e3c2d531d842",
+            "designerId": "88ea358d-5caa-4a6b-8460-5f485327764f",
             "cn": [
                 {
                     "type": "Ext.field.Container",
@@ -57,7 +57,7 @@
                         "label": "string"
                     },
                     "name": "MyFieldContainer4",
-                    "designerId": "3642c524-8646-42b9-9b3b-64a22730797b",
+                    "designerId": "8db02819-b750-4409-bd46-510704b597a1",
                     "cn": [
                         {
                             "type": "Ext.field.Text",
@@ -85,7 +85,7 @@
                                 "margin": "auto"
                             },
                             "name": "MyTextField",
-                            "designerId": "52b5c57e-2a4d-4541-b495-530dbd70b983",
+                            "designerId": "59965129-f0ef-418a-b2f4-bce2956fb1bf",
                             "customConfigs": [
                                 {
                                     "group": "(Custom Properties)",
@@ -120,7 +120,7 @@
                                 "margin": "auto"
                             },
                             "name": "MyTextField3",
-                            "designerId": "c6df370b-a4e6-4f7f-9d45-783ff0129b07",
+                            "designerId": "ba71efed-aa04-46cf-be20-421728b8d912",
                             "customConfigs": [
                                 {
                                     "group": "(Custom Properties)",
@@ -153,7 +153,7 @@
                                 "flex": "number"
                             },
                             "name": "MyTextField4",
-                            "designerId": "44e9dceb-de99-4d68-a628-f08b4fe75adf",
+                            "designerId": "b3793f9b-7d05-4d3d-a90b-c06941d035f0",
                             "customConfigs": [
                                 {
                                     "group": "(Custom Properties)",
@@ -178,7 +178,7 @@
                         "layout": "string"
                     },
                     "name": "MyFieldContainer1",
-                    "designerId": "8e2c9cca-74ef-4167-98a5-7d4ba7051c49",
+                    "designerId": "bd12f81f-045a-4e41-8acd-466e75392389",
                     "cn": [
                         {
                             "type": "Ext.field.ComboBox",
@@ -222,7 +222,7 @@
                                 "required": "boolean"
                             },
                             "name": "MyComboBox1",
-                            "designerId": "49bab310-e6ce-44cc-9456-733ccaacbede",
+                            "designerId": "ea19eeda-d9fd-4899-b852-1dde600520bf",
                             "customConfigs": [
                                 {
                                     "group": "(Custom Properties)",
@@ -249,7 +249,7 @@
                                         "implHandler": "code"
                                     },
                                     "name": "itemTpl",
-                                    "designerId": "7f7cbc65-58a1-4297-bd3e-7ecb46779387"
+                                    "designerId": "5e790b51-248e-4198-8158-faee5e2cb7d9"
                                 }
                             ]
                         },
@@ -270,6 +270,7 @@
                                 "label": "Дата рождения",
                                 "margin": "0 20 0 0",
                                 "name": "birthdate",
+                                "required": true,
                                 "submitFormat": "Y-m-d"
                             },
                             "configAlternates": {
@@ -281,10 +282,11 @@
                                 "margin": "auto",
                                 "name": "string",
                                 "dateFormat": "string",
-                                "submitFormat": "string"
+                                "submitFormat": "string",
+                                "required": "boolean"
                             },
                             "name": "MyDate3",
-                            "designerId": "cc3100b1-f5d4-4597-9660-d0ecbf2f6067",
+                            "designerId": "1a17e14a-36ca-4e92-8d37-cf427fe6cdd5",
                             "customConfigs": [
                                 {
                                     "group": "(Custom Properties)",
@@ -302,7 +304,7 @@
                             "codeClass": null,
                             "userConfig": {
                                 "flex": 1,
-                                "label": "Контактный телефон",
+                                "label": "Название продукта",
                                 "name": "phonenumber",
                                 "required": true,
                                 "value": [
@@ -317,7 +319,7 @@
                                 "flex": "number"
                             },
                             "name": "MyTextField2",
-                            "designerId": "9fea850a-e857-4acc-8c45-d4288d39bccd",
+                            "designerId": "d280e04a-488c-4c5a-bd04-79d5d4c4c1ca",
                             "customConfigs": [
                                 {
                                     "group": "(Custom Properties)",
@@ -344,7 +346,7 @@
                         "label": "string"
                     },
                     "name": "MyFieldContainer5",
-                    "designerId": "35c1845e-e1de-46fb-afaa-05c4d294f96c",
+                    "designerId": "572cbceb-c24f-4b06-8d01-0de9daec2734",
                     "cn": [
                         {
                             "type": "Ext.field.Text",
@@ -372,7 +374,7 @@
                                 "margin": "auto"
                             },
                             "name": "MyTextField",
-                            "designerId": "0760d78f-55b7-4acc-a884-74805225255a",
+                            "designerId": "6d32a267-bf3d-48cb-ac33-73b3715165ae",
                             "customConfigs": [
                                 {
                                     "group": "(Custom Properties)",
@@ -407,7 +409,7 @@
                                 "margin": "auto"
                             },
                             "name": "MyTextField3",
-                            "designerId": "cacef546-9c68-46b8-87f4-b78f3a2ea823",
+                            "designerId": "49bb711f-fe80-4e6d-82b3-591d0cb65072",
                             "customConfigs": [
                                 {
                                     "group": "(Custom Properties)",
@@ -427,6 +429,7 @@
                                 "flex": 1,
                                 "label": "Зарплата",
                                 "name": "wages",
+                                "required": true,
                                 "value": [
                                     "{crecord.wages}"
                                 ]
@@ -435,10 +438,11 @@
                                 "value": "binding",
                                 "flex": "number",
                                 "label": "string",
-                                "name": "string"
+                                "name": "string",
+                                "required": "boolean"
                             },
                             "name": "MyNumberField2",
-                            "designerId": "0e31316f-b5bb-437a-b115-22dc267a0ffd",
+                            "designerId": "a621afa6-6094-497b-a4ee-bcdcbdc38d9f",
                             "customConfigs": [
                                 {
                                     "group": "(Custom Properties)",
@@ -463,7 +467,7 @@
                         "layout": "string"
                     },
                     "name": "MyFieldContainer3",
-                    "designerId": "d648fbe0-7349-4479-b3a0-717836c4971e",
+                    "designerId": "fa533924-c996-4ff7-8e09-8824ec692a45",
                     "cn": [
                         {
                             "type": "Ext.field.ComboBox",
@@ -512,7 +516,7 @@
                                 "required": "boolean"
                             },
                             "name": "MyComboBox4",
-                            "designerId": "a22054fd-0525-4818-890d-96782a99556e",
+                            "designerId": "1ae9d580-34e9-46b1-b0d7-55ed5ac15dda",
                             "customConfigs": [
                                 {
                                     "group": "(Custom Properties)",
@@ -539,7 +543,7 @@
                                         "implHandler": "code"
                                     },
                                     "name": "itemTpl",
-                                    "designerId": "3a309139-97f3-455c-8bcd-e6b629412981"
+                                    "designerId": "f916cc9d-56e3-4ae6-8e11-9886ea3f60c4"
                                 }
                             ]
                         },
@@ -574,7 +578,7 @@
                                 "required": "boolean"
                             },
                             "name": "MyDate4",
-                            "designerId": "26039557-1c8c-4c57-8278-40413140ba2d",
+                            "designerId": "4d3da69a-7c55-4ed9-9088-ca6484e09490",
                             "customConfigs": [
                                 {
                                     "group": "(Custom Properties)",
@@ -617,7 +621,7 @@
                                 "dateFormat": "string"
                             },
                             "name": "MyDate5",
-                            "designerId": "8d01a150-cdb5-47dc-8c90-e01b65d24f35",
+                            "designerId": "1d45213c-9732-41c2-8450-0149acfcad95",
                             "customConfigs": [
                                 {
                                     "group": "(Custom Properties)",
@@ -661,8 +665,8 @@
                                 "required": "boolean",
                                 "store": "store"
                             },
-                            "name": "MyComboBox",
-                            "designerId": "7ad33568-b6b6-4949-b59e-48fc7bef5efd",
+                            "name": "MyComboBox2",
+                            "designerId": "41f17a2c-d302-4687-91f7-484dbb7e2565",
                             "customConfigs": [
                                 {
                                     "group": "(Custom Properties)",
@@ -689,7 +693,7 @@
                                         "implHandler": "code"
                                     },
                                     "name": "itemTpl",
-                                    "designerId": "ee74bb34-f529-40e6-a0d8-add094ee645d"
+                                    "designerId": "f180086e-7ae0-48a0-a5a9-4f35df96cf30"
                                 }
                             ]
                         }
@@ -715,7 +719,7 @@
                         "text": "string"
                     },
                     "name": "MyButton3",
-                    "designerId": "c6e31808-520a-4dab-9fd7-ca088310d28d",
+                    "designerId": "9ea79b98-fd64-4528-9a58-8b5f4bb4db3a",
                     "cn": [
                         {
                             "type": "viewcontrollereventbinding",
@@ -731,25 +735,25 @@
                                     "refs = me.getReferences();",
                                     "",
                                     "if (refs.form.validate()) {",
-                                    "var recordId= button.up('formpanel').getViewModel().get('crecord').data.id;",
-                                    "var rec = button.up('formpanel').getViewModel().get('crecord').data;",
-                                    "let store = Case.app.getStore('EmploeeStore');",
+                                    "var cr= button.up('formpanel').getViewModel().get('crecord');",
                                     "",
-                                    "store.findRecord('id',recordId).save({",
-                                    "    failure: function(record, operation) {",
                                     "",
-                                    "        Ext.Msg.alert(\"Ошибка\" , \"Poprobuyte esho raz\");",
-                                    "    },",
-                                    "    success: function(record, operation) {",
-                                    "        Ext.ComponentQuery.query('eploeegrid')[0].refresh();",
+                                    "Ext.Ajax.request({",
+                                    "    url: 'emploeelist/add',",
+                                    "     params:{surname:cr.surname,name:cr.name,patronymic:cr.patronymic , gender:cr.gender,birthdate:cr.birthdate,phonenum:cr.phonenum,",
+                                    "            passportnum:cr.passportnum,position:cr.position,wages:cr.wages,dismissed:cr.dismissed,comedate:cr.comedate,exitdate:cr.exitdate,direction_id:cr.direction_id},",
+                                    "     success: function(response, opts) {",
+                                    "",
+                                    "       Case.app.getStore('EmploeeStore').load();",
+                                    "          Case.app.getStore('reports').load();",
                                     "        Ext.Msg.alert(\"Masege\" , \"Dannie uspeshno soxraneni\");",
-                                    "        Case.app.getStore('reports').load();",
-                                    "        console.log('succes');",
+                                    "",
                                     "    },",
-                                    "    callback: function(record, operation, success) {",
-                                    "        // do something whether the save succeeded or failed",
-                                    "    }",
-                                    "}      );",
+                                    "",
+                                    "     failure: function(response, opts) {",
+                                    "        Ext.Msg.alert(\"Ошибка\" , \"Poprobuyte esho raz\");",
+                                    "     }",
+                                    " });",
                                     "",
                                     "",
                                     "}",
@@ -764,7 +768,7 @@
                                 "scope": "string"
                             },
                             "name": "onButtonTap1",
-                            "designerId": "3b31b704-fc2d-4eef-a666-f71a4958ce8b"
+                            "designerId": "4cb71f59-6b9e-4324-8541-5006cf235a0d"
                         }
                     ]
                 }

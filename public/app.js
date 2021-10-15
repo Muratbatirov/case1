@@ -27,7 +27,8 @@ Ext.application({
         'postavshikcombo',
         'categoryEditCombo',
         'EmploeeModel',
-        'directionmodel'
+        'directionmodel',
+        'reports'
     ],
     stores: [
         'Categories',
@@ -41,7 +42,9 @@ Ext.application({
         'categoryEditComboLitle',
         'podcategory',
         'EmploeeStore',
-        'directionstore'
+        'directionstore',
+        'directioncombo',
+        'reports'
     ],
     views: [
         'MyToolbar',
@@ -58,7 +61,11 @@ Ext.application({
         'EploeeGrid',
         'directionlist',
         'DirectionsGrid',
-        'DialogEmploeeEdit'
+        'DialogEmploeeEdit',
+        'DialogEmploeeAdd',
+        'dialogeditdirection',
+        'dialogdirectionadd',
+        'Reports'
     ],
     controllers: [
         'navigation',

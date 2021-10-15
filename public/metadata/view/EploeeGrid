@@ -87,6 +87,8 @@
             "userConfig": {
                 "dataIndex": "surname",
                 "docked": null,
+                "filterType": "string",
+                "layout|flex": 2,
                 "summary": "count",
                 "text": "Фамилия"
             },
@@ -94,10 +96,19 @@
                 "dataIndex": "datafield",
                 "docked": "string",
                 "summary": "string",
-                "text": "string"
+                "text": "string",
+                "filterType": "string",
+                "layout|flex": "number"
             },
             "name": "MyColumn5",
             "designerId": "51c1d51c-01de-463c-a3a0-cc1e2507305d",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "filterType",
+                    "type": "string"
+                }
+            ],
             "cn": [
                 {
                     "type": "fixedfunction",
@@ -219,7 +230,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "dataIndex": "birthdate",
+                "dataIndex": "comedate",
                 "docked": null,
                 "text": "Дата рождения"
             },
@@ -304,12 +315,14 @@
             "userConfig": {
                 "dataIndex": "wages",
                 "docked": null,
+                "summary": "none",
                 "text": "Зарплата"
             },
             "configAlternates": {
                 "dataIndex": "datafield",
                 "docked": "string",
-                "text": "string"
+                "text": "string",
+                "summary": "string"
             },
             "name": "MyNumberColumn2",
             "designerId": "01bf76e1-ca66-4e45-8c61-7f60de4f8ad6",
@@ -436,7 +449,84 @@
                 "docked": "string"
             },
             "name": "MyToolbar4",
-            "designerId": "aadf3507-db0a-4fbb-8387-3a9225b1dd14"
+            "designerId": "aadf3507-db0a-4fbb-8387-3a9225b1dd14",
+            "cn": [
+                {
+                    "type": "Ext.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "cls": [
+                            "createButton"
+                        ],
+                        "text": "Добавить"
+                    },
+                    "configAlternates": {
+                        "cls": "typedarray",
+                        "text": "string"
+                    },
+                    "name": "MyButton",
+                    "designerId": "d6fe3bcd-66ce-4029-b2b9-4eec10a12a73",
+                    "cn": [
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onDobavitProduct1",
+                                "implHandler": [
+                                    "var categoryrecord= this.getViewModel().get('crecord');",
+                                    "console.log(categoryrecord);",
+                                    "",
+                                    "var me = this;",
+                                    "",
+                                    "let ell = document.getElementsByClassName(\"x-navigationview\");",
+                                    "",
+                                    "let widthcalculate = ell[0].offsetWidth;",
+                                    "let heightcalculate = ell[0].offsetHeight;",
+                                    "",
+                                    "",
+                                    "let dialogProductEdit = Ext.create({",
+                                    "   xtype: 'dialogemploeeadd',",
+                                    "    right: 0,",
+                                    "    shadow:false,",
+                                    "    zIndex:0,",
+                                    "    width:widthcalculate,",
+                                    "            height:heightcalculate,",
+                                    "            showAnimation:'slide',",
+                                    "buttons: {",
+                                    "                ok: function () {  // standard button (see below)",
+                                    "                    dialogProductEdit.destroy();",
+                                    "",
+                                    "                }",
+                                    "            }",
+                                    "",
+                                    "});",
+                                    "",
+                                    "dialogProductEdit.down('formpanel').setViewModel({data:{crecord:null}});",
+                                    "dialogProductEdit.show();"
+                                ],
+                                "name": "tap",
+                                "scope": "me"
+                            },
+                            "configAlternates": {
+                                "fn": "string",
+                                "implHandler": "code",
+                                "name": "string",
+                                "scope": "string"
+                            },
+                            "name": "onDobavitProduct1",
+                            "designerId": "8eb325be-4a74-458b-b9bb-a9117d35d381"
+                        }
+                    ]
+                }
+            ]
         },
         {
             "type": "Ext.grid.plugin.Summary",
@@ -482,7 +572,7 @@
             "userConfig": {
                 "fn": "onGridChilddoubletap",
                 "implHandler": [
-                    "this.getViewModel().set('crecord', location.record);",
+                    "this.getViewModel().set('crecord', location.record.clone());",
                     "",
                     "this.editEmploee();"
                 ],
@@ -497,6 +587,30 @@
             },
             "name": "onGridChilddoubletap",
             "designerId": "8a5e4778-e3cd-4c6a-8a80-a9f07f6b2386"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onGridPainted",
+                "implHandler": [
+                    ""
+                ],
+                "name": "painted",
+                "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string",
+                "scope": "string"
+            },
+            "name": "onGridPainted",
+            "designerId": "ca6e2c4d-b27c-4ec9-985d-2cafd80d86ba"
         }
     ]
 }

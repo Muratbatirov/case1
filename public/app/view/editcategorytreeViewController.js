@@ -42,7 +42,7 @@ Ext.define('Case.view.editcategorytreeViewController', {
                scope:me
           }]);
 
-        me.getViewModel().set('crecordtree', context.record);
+        me.getViewModel().set('crecordtree', context.record.clone());
         menu.autoFocus = !context.event.pointerType;
         menu.showBy(context.tool.el, 'l50-r50?');
     },

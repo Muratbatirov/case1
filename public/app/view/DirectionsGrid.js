@@ -19,10 +19,27 @@ Ext.define('Case.view.DirectionsGrid', {
 
     requires: [
         'Case.view.DirectionsGridViewModel',
+        'Case.view.DirectionsGridViewController',
         'Ext.grid.column.Column',
-        'Ext.Toolbar'
+        'Ext.Toolbar',
+        'Ext.Button'
     ],
 
+    config: {
+        toolContextMenu: {
+            xtype: 'menu',
+            anchor: true,
+            separator: true,
+            minWidth: 150,
+            autoHide: false,
+            viewModel: {
+                
+            },
+            cls: 'round-context-menu'
+        }
+    },
+
+    controller: 'directionsgrid',
     viewModel: {
         type: 'directionsgrid'
     },
@@ -32,6 +49,18 @@ Ext.define('Case.view.DirectionsGrid', {
     store: 'directionstore',
 
     columns: [
+        {
+            xtype: 'gridcolumn',
+            width: '30px',
+            cell: {
+                cls: 'erg-tool-margin-0',
+                tools: {
+                    margin: 0,
+                    menu: 'onMenuClick1'
+                }
+            },
+            text: 'MyColumn17'
+        },
         {
             xtype: 'gridcolumn',
             flex: 1,
@@ -56,7 +85,24 @@ Ext.define('Case.view.DirectionsGrid', {
             xtype: 'toolbar',
             docked: 'top',
             title: 'Список направлений'
+        },
+        {
+            xtype: 'toolbar',
+            docked: 'bottom',
+            items: [
+                {
+                    xtype: 'button',
+                    cls: 'createButton',
+                    text: 'Добавить',
+                    listeners: {
+                        tap: 'onDobavitProduct11'
+                    }
+                }
+            ]
         }
-    ]
+    ],
+    listeners: {
+        childdoubletap: 'onGridChilddoubletap'
+    }
 
 });

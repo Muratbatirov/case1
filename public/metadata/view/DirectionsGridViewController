@@ -13,5 +13,143 @@
         "designer|userAlias": "string",
         "designer|userClassName": "string"
     },
-    "designerId": "02ff4c17-b2c2-4125-8c2d-353ef150c225"
+    "designerId": "02ff4c17-b2c2-4125-8c2d-353ef150c225",
+    "cn": [
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "grid",
+                    "context"
+                ],
+                "fn": "onMenuClick1",
+                "implHandler": [
+                    "var me = this;",
+                    "",
+                    "",
+                    "   var menu = Ext.create({xtype:'menu',",
+                    "                         anchor: true,});",
+                    "",
+                    "   Ext.apply({ownerCmp: me}, me.toolContextMenu);",
+                    "",
+                    "menu.add([{",
+                    "      text: 'EDIT',",
+                    "      iconCls: 'x-fa fa-edit',",
+                    "      handler: 'editEmploee1',",
+                    "    scope:me",
+                    "  },",
+                    "  {",
+                    "      text: 'DELETE',",
+                    "      iconCls: 'x-fa crimson fa-trash',",
+                    "      handler: 'deleteEmploee1',",
+                    "       scope:me",
+                    "  }]);",
+                    "me.getViewModel().set('crecord', context.record.clone());",
+                    "menu.autoFocus = !context.event.pointerType;",
+                    "menu.showBy(context.tool.el, 'l50-r50?');"
+                ]
+            },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "implHandler": "code"
+            },
+            "name": "onMenuClick1",
+            "designerId": "a24b6b61-aa03-4fa0-8cd0-71f75cb53123"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "editEmploee1",
+                "implHandler": [
+                    "var categoryrecord= this.getViewModel().get('crecord');",
+                    "console.log(categoryrecord);",
+                    "",
+                    "var me = this;",
+                    "",
+                    "let ell = document.getElementsByClassName(\"x-navigationview\");",
+                    "",
+                    "let widthcalculate = ell[0].offsetWidth;",
+                    "let heightcalculate = ell[0].offsetHeight;",
+                    "",
+                    "",
+                    "let dialogProductEdit = Ext.create({",
+                    "   xtype: 'dialogeditdirection',",
+                    "    right: 0,",
+                    "    shadow:false,",
+                    "    zIndex:0,",
+                    "    width:widthcalculate,",
+                    "            height:heightcalculate,",
+                    "            showAnimation:'slide',",
+                    "buttons: {",
+                    "                ok: function () {  // standard button (see below)",
+                    "                    dialogProductEdit.destroy();",
+                    "",
+                    "                }",
+                    "            }",
+                    "",
+                    "});",
+                    "",
+                    "dialogProductEdit.down('formpanel').setViewModel({data:{crecord:categoryrecord}});",
+                    "dialogProductEdit.show();"
+                ]
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code"
+            },
+            "name": "editEmploee1",
+            "designerId": "f54f7191-2737-4399-b7d1-23eecde2e523"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "deleteEmploee1",
+                "implHandler": [
+                    "",
+                    "var id= this.getViewModel().get('crecord').data.id;",
+                    "//let store = Case.app.getStore('productstore');",
+                    "Ext.Ajax.request({",
+                    "     url: 'directionlist/delete',",
+                    "     params:{id:id},",
+                    "     success: function(response, opts) {",
+                    "          if(response.responseText=='true'){",
+                    "           Case.app.getStore('directionstore').findRecord('id',id).drop();",
+                    "        }else{",
+                    "           Ext.Msg.alert(\"Ошибка\" , response.responseText);",
+                    "       }",
+                    "",
+                    "         ",
+                    "",
+                    "     },",
+                    "",
+                    "     failure: function(response, opts) {",
+                    "         console.log('server-side failure with status code ' + response.status);",
+                    "     }",
+                    " });"
+                ]
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code"
+            },
+            "name": "deleteEmploee1",
+            "designerId": "52d4cd57-93f0-42e9-8d48-a1468c4cf172"
+        }
+    ]
 }

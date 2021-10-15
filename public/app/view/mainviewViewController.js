@@ -22,8 +22,16 @@ Ext.define('Case.view.mainviewViewController', {
     },
 
     onTreelistItemClick: function(sender, info, eOpts) {
+
+        localStorage.setItem("nodeid", info.node.id);
         this.redirectTo(info.node.data.hash);
 
+
+    },
+
+    onTreelistPainted: function(treelist) {
+        if(localStorage.getItem("nodeid")){
+        treelist.setSelection(localStorage.getItem("nodeid"));}
     },
 
     onButtonTapMenu: function(button, e, eOpts) {

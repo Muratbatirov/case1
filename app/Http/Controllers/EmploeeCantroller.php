@@ -7,6 +7,7 @@ use App\Models\Category;
 use App\Models\Product;
 use App\Models\Direction;
 use App\Models\Postavshik;
+use App\Models\Employee;
 
 class EmploeeCantroller extends Controller
 {
@@ -25,14 +26,14 @@ if($request->param!='false' and $request->param ){
             ->join('directions', 'directions.id', '=', 'employees.direction_id' )
             
             
-            ->select( 'employees.id', 'surname', 'employees.name as name', 'patronymic','directions.name AS direction','gender','birthdate'  ,'phonenum','passportnum','position', 'wages','dismissed','comedate', 'exitdate')->where('directions.name', $request->param)->skip($request->start)->take($request->limit)
+            ->select( 'employees.id', 'surname', 'employees.name as name', 'patronymic','directions.name AS direction','directions.id AS direction_id','gender','birthdate'  ,'phonenum','passportnum','position', 'wages','dismissed','comedate', 'exitdate')->where('directions.name', $request->param)->skip($request->start)->take($request->limit)
             
                 ->get()->toArray();
  $productscount = DB::table('employees')
             ->join('directions', 'directions.id', '=', 'employees.direction_id' )
             
             
-            ->select( 'employees.id', 'surname', 'employees.name as name', 'patronymic','directions.name AS direction','gender','birthdate'  ,'phonenum','passportnum','position', 'wages','dismissed','comedate', 'exitdate')->where('directions.name', $request->param)
+            ->select( 'employees.id', 'surname', 'employees.name as name', 'patronymic','directions.name AS direction','directions.id AS direction_id','gender','birthdate'  ,'phonenum','passportnum','position', 'wages','dismissed','comedate', 'exitdate')->where('directions.name', $request->param)
                 ->get()->toArray();
                 
               
@@ -50,14 +51,14 @@ if($request->param!='false' and $request->param ){
             ->join('directions', 'directions.id', '=', 'employees.direction_id' )
             
             
-            ->select( 'employees.id', 'surname', 'employees.name as name', 'patronymic','directions.name AS direction','gender','birthdate'  ,'phonenum','passportnum','position', 'wages','dismissed','comedate', 'exitdate')->skip($request->start)->take($request->limit)
+            ->select( 'employees.id', 'surname', 'employees.name as name', 'patronymic','directions.name AS direction','directions.id AS direction_id','gender','birthdate'  ,'phonenum','passportnum','position', 'wages','dismissed','comedate', 'exitdate')->skip($request->start)->take($request->limit)
             
                 ->get()->toArray();
  $productscount = DB::table('employees')
             ->join('directions', 'directions.id', '=', 'employees.direction_id' )
             
             
-            ->select( 'employees.id', 'surname', 'employees.name as name', 'patronymic','directions.name AS direction','gender','birthdate'  ,'phonenum','passportnum','position', 'wages','dismissed','comedate', 'exitdate')
+            ->select( 'employees.id', 'surname', 'employees.name as name', 'patronymic','directions.name AS direction','directions.id AS direction_id','gender','birthdate'  ,'phonenum','passportnum','position', 'wages','dismissed','comedate', 'exitdate')
             
                 ->get()->toArray();
                 
@@ -82,43 +83,23 @@ if($request->param!='false' and $request->param ){
 
 }
 
+ 
+ public function emploeelistedit($id ,Request $request ){
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
- public function productlistedit($id ,Request $request ){
-
-
-$product= Product::where('id',$id)->first();
+$product= Employee::where('id',$id)->first();
 $data= $request->input();
 foreach($data as $x => $x_value) {
-    if ( $x== '_dc'){continue;}
+    if ( $x== '_dc' || $x=='param'){continue;}
   $product->$x= $x_value;
  $product->save();
 }
 
- $productss = DB::table('products')
-            ->join('categories', 'categories.id', '=', 'products.category_id' )
-            ->join('postavshiks', 'postavshiks.id', '=', 'products.postavshik_id' )
+ $productss = DB::table('employees')
+            ->join('directions', 'directions.id', '=', 'employees.direction_id' )
             
-            ->select( 'products.id','categories.name AS category', 'postavshiks.name AS postavshik', 'products.name as name', 'products.price','products.quantity'  ,'categories.id as category_id','products.opisanie as opisanie','postavshiks.id as postavshik_id')->where('products.id', $id)
+            
+            ->select( 'employees.id', 'surname', 'employees.name as name', 'patronymic','directions.name AS direction','directions.id AS direction_id','gender','birthdate'  ,'phonenum','passportnum','position', 'wages','dismissed','comedate', 'exitdate')->where('employees.id', $id)
             
                 ->get()->toArray();
 
@@ -137,18 +118,23 @@ foreach($data as $x => $x_value) {
 
 
  }
- public function productadd(Request $request ){
+
+  public function emploeeadd(Request $request ){
 
 
-$product= new Product();
-$product->category_id=$request->input('category_id');
-$product->postavshik_id=$request->input('postavshik_id');
-$product->name=$request->input('name');
-$product->price=$request->input('price');
-$product->quantity=$request->input('quantity');
-$product->opisanie=$request->input('opisanie');
+$emploee= new Employee();
+$data= $request->input();
+foreach($data as $x => $x_value) {
+    if ( $x== '_dc'){continue;}
+  $emploee->$x= $x_value;
 
-$product->save();
+}
+ $emploee->save();
+
+
+
+
+
 
                 
          $arr = [];      
@@ -166,5 +152,16 @@ $product->save();
 
 
  }
- 
+  public function emploeelistdelete(Request $request){
+
+
+$product= Employee::where('id',$request->id)->first();
+$product->delete();
+ $arr = [];
+             $arr['success']=true;
+
+           return json_encode($arr, JSON_UNESCAPED_UNICODE);
+
+
+ }
 }

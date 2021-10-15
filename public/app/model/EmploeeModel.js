@@ -52,7 +52,10 @@ Ext.define('Case.model.EmploeeModel', {
         },
         {
             type: 'date',
-            name: 'birthdate'
+            name: 'birthdate',
+            dateFormat: 'Y-m-d',
+            dateReadFormat: 'Y-m-d',
+            dateWriteFormat: 'Y-m-d'
         },
         {
             type: 'string',
@@ -72,11 +75,17 @@ Ext.define('Case.model.EmploeeModel', {
         },
         {
             type: 'date',
-            name: 'comedate'
+            name: 'exitdate',
+            dateFormat: 'Y-m-d',
+            dateReadFormat: 'Y-m-d',
+            dateWriteFormat: 'Y-m-d'
         },
         {
             type: 'date',
-            name: 'exitdate'
+            name: 'comedate',
+            dateFormat: 'Y-m-d',
+            dateReadFormat: 'Y-m-d',
+            dateWriteFormat: 'Y-m-d'
         }
     ],
     proxy: {
