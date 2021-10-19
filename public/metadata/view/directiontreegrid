@@ -1,0 +1,290 @@
+{
+    "type": "Ext.grid.Tree",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "directiontreegrid",
+        "designer|userClassName": "directiontreegrid",
+        "height": "100%",
+        "layout": "hbox",
+        "store": "directionstore",
+        "toolContextMenu": [
+            "{",
+            "            xtype: 'menu',",
+            "            anchor: true,",
+            "            separator: true,",
+            "            minWidth: 150,",
+            "            autoHide: false,",
+            "            viewModel: {",
+            "                ",
+            "            },",
+            "            cls: 'round-context-menu'",
+            "        }"
+        ],
+        "width": "100%"
+    },
+    "configAlternates": {
+        "toolContextMenu": "object",
+        "designer|userAlias": "string",
+        "designer|userClassName": "string",
+        "height": "auto",
+        "layout": "string",
+        "store": "store",
+        "width": "auto"
+    },
+    "name": "MyTree",
+    "designerId": "16746cc3-5540-49ba-8b61-ef7c4e26647d",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "toolContextMenu",
+            "type": "string"
+        }
+    ],
+    "viewControllerInstanceId": "e5969bb6-e234-4fab-a19e-340f56f227cd",
+    "viewModelInstanceId": "7c43b658-c975-452c-b07e-77ca457e0e3a",
+    "cn": [
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "cell": [
+                    "{cls: 'erg-tool-margin-0',",
+                    "                tools: {",
+                    "                    margin: 0,",
+                    "                    menu: 'onMenuClick1'",
+                    "                }}"
+                ],
+                "docked": null,
+                "text": "MyColumn17",
+                "width": "30px"
+            },
+            "configAlternates": {
+                "cell": "object",
+                "docked": "string",
+                "text": "string",
+                "width": "auto"
+            },
+            "name": "MyColumn17",
+            "designerId": "60e5d525-5d93-4b00-929e-03ecee98176f"
+        },
+        {
+            "type": "Ext.grid.column.Tree",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "name",
+                "docked": null,
+                "layout|flex": 1,
+                "text": "Название направления"
+            },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "docked": "string",
+                "layout|flex": "number",
+                "text": "string"
+            },
+            "name": "MyTreeColumn4",
+            "designerId": "7823a206-2192-4fc5-8ef7-dfc7b3e2ac3c"
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "director",
+                "docked": null,
+                "layout|flex": 1,
+                "text": "Руководитель"
+            },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "docked": "string",
+                "text": "string",
+                "width": "auto",
+                "layout|flex": "number"
+            },
+            "name": "MyColumn14",
+            "designerId": "165613f0-2020-49d4-8f68-3ca2f3635b8a"
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "opisanie",
+                "docked": null,
+                "layout|flex": 1,
+                "text": "Описание направления"
+            },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "docked": "string",
+                "layout|flex": "number",
+                "text": "string"
+            },
+            "name": "MyColumn19",
+            "designerId": "c97422ae-b385-47d4-8fcd-46a83054c734"
+        },
+        {
+            "type": "Ext.Toolbar",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "docked": "top",
+                "title": "Список направлений"
+            },
+            "configAlternates": {
+                "docked": "string",
+                "title": "string"
+            },
+            "name": "MyToolbar7",
+            "designerId": "314a2e34-6950-433a-b5d9-76cd8e10e888"
+        },
+        {
+            "type": "Ext.Toolbar",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "docked": "bottom"
+            },
+            "configAlternates": {
+                "docked": "string"
+            },
+            "name": "MyToolbar8",
+            "designerId": "7e7e40cb-8694-4fab-bdc9-fac9ad447924",
+            "cn": [
+                {
+                    "type": "Ext.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "cls": [
+                            "createButton"
+                        ],
+                        "text": "Добавить"
+                    },
+                    "configAlternates": {
+                        "cls": "typedarray",
+                        "text": "string"
+                    },
+                    "name": "MyButton",
+                    "designerId": "a571c1eb-8a26-47b3-9b3c-71517dafc53d",
+                    "cn": [
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onDobavitProduct11",
+                                "implHandler": [
+                                    "var categoryrecord= this.getViewModel().get('crecord');",
+                                    "console.log(categoryrecord);",
+                                    "",
+                                    "var me = this;",
+                                    "",
+                                    "let ell = document.getElementsByClassName(\"x-navigationview\");",
+                                    "",
+                                    "let widthcalculate = ell[0].offsetWidth;",
+                                    "let heightcalculate = ell[0].offsetHeight;",
+                                    "",
+                                    "let editcombostore= Case.app.getStore('directioneditcombo');",
+                                    "",
+                                    "        editcombostore.addListener({",
+                                    "            load: me.oneditstore1,",
+                                    "            scope:me",
+                                    "",
+                                    "        });",
+                                    "",
+                                    "let dialogProductEdit = Ext.create({",
+                                    "   xtype: 'dialogdirectionadd',",
+                                    "    right: 0,",
+                                    "    shadow:false,",
+                                    "    zIndex:0,",
+                                    "    width:widthcalculate,",
+                                    "            height:heightcalculate,",
+                                    "            showAnimation:'slide',",
+                                    "buttons: {",
+                                    "                ok: function () {  // standard button (see below)",
+                                    "                    dialogProductEdit.destroy();",
+                                    "",
+                                    "                }",
+                                    "            }",
+                                    "",
+                                    "});",
+                                    "",
+                                    "dialogProductEdit.down('formpanel').setViewModel({data:{crecord:null}});",
+                                    "dialogProductEdit.show();"
+                                ],
+                                "name": "tap",
+                                "scope": "me"
+                            },
+                            "configAlternates": {
+                                "fn": "string",
+                                "implHandler": "code",
+                                "name": "string",
+                                "scope": "string"
+                            },
+                            "name": "onDobavitProduct11",
+                            "designerId": "c4101bae-ce65-4256-a9be-393d195a2ff8"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onTreeChilddoubletap",
+                "implHandler": [
+                    "this.getViewModel().set('crecord', location.record);",
+                    "",
+                    "this.editEmploee1();"
+                ],
+                "name": "childdoubletap",
+                "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string",
+                "scope": "string"
+            },
+            "name": "onTreeChilddoubletap",
+            "designerId": "8663a7bf-08a6-4f1b-bc77-b3e10b327db9"
+        }
+    ]
+}

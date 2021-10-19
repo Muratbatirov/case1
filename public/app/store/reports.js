@@ -14,10 +14,11 @@
  */
 
 Ext.define('Case.store.reports', {
-    extend: 'Ext.data.Store',
+    extend: 'Ext.data.TreeStore',
 
     requires: [
-        'Case.model.reports'
+        'Ext.data.proxy.Ajax',
+        'Ext.data.reader.Json'
     ],
 
     constructor: function(cfg) {
@@ -26,7 +27,24 @@ Ext.define('Case.store.reports', {
         me.callParent([Ext.apply({
             storeId: 'reports',
             autoLoad: true,
-            model: 'Case.model.reports'
+            proxy: {
+                type: 'ajax',
+                url: 'reports',
+                reader: {
+                    type: 'json',
+                    rootProperty: 'children'
+                }
+            },
+            listeners: {
+                datachanged: {
+                    fn: me.onTreeStoreDataChangeD
+                }
+            }
         }, cfg)]);
+    },
+
+    onTreeStoreDataChangeD: function(store, eOpts) {
+         store.setRootVisible(false);
     }
+
 });

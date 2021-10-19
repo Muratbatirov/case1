@@ -19,47 +19,57 @@ Ext.define('Case.view.DialogEditProductViewController2', {
 
     onButtonTapCategory: function(button, e, eOpts) {
         var me =  this;
+        refs = me.getReferences();
+
+        if (refs.form.validate()) {
+
+            var crecord= button.up('formpanel').getViewModel().get('crecordtree');
+            console.log(crecord);
+
+            Ext.Ajax.request({
+                url: 'categorylist/add',
+                params:{parent_id:crecord.parent_id,name:crecord.text},
+                success: function(response, opts) {
+
+                    Case.app.getStore('categoryedittree').load();
+                    Ext.Msg.alert("Masege" , "Dannie uspeshno soxraneni");
+
+                },
+
+                failure: function(response, opts) {
+                    Ext.Msg.alert("Ошибка" , "Poprobuyte esho raz");
+                }
+            });}
+            //
+            //var rec = button.up('formpanel').getViewModel().get('crecord').data;
+            //let store = Case.app.getStore('productstore');
+
+            //Case.app.getStore('productstore').findRecord('id',recordId).save({
+            //  failure: function(record, operation) {
+
+            //    Ext.Msg.alert("Ошибка" , "Poprobuyte esho raz");
+            //},
+            //  success: function(record, operation) {
+            //  Ext.ComponentQuery.query('productgrid')[0].refresh();
+            //   Ext.Msg.alert("Masege" , "Dannie uspeshno soxraneni");
+
+            // },
+            // callback: function(record, operation, success) {
+            // do something whether the save succeeded or failed
+            // }
+            //}      );
 
 
-        var crecord= button.up('formpanel').getViewModel().get('crecordtree');
-        console.log(crecord);
-
-        Ext.Ajax.request({
-            url: 'categorylist/add',
-            params:{parent_id:crecord.parent_id,name:crecord.text},
-            success: function(response, opts) {
-
-                Case.app.getStore('categoryedittree').load();
-                Ext.Msg.alert("Masege" , "Dannie uspeshno soxraneni");
-
-            },
-
-            failure: function(response, opts) {
-                Ext.Msg.alert("Ошибка" , "Poprobuyte esho raz");
-            }
-        });
-        //
-        //var rec = button.up('formpanel').getViewModel().get('crecord').data;
-        //let store = Case.app.getStore('productstore');
-
-        //Case.app.getStore('productstore').findRecord('id',recordId).save({
-        //  failure: function(record, operation) {
-
-        //    Ext.Msg.alert("Ошибка" , "Poprobuyte esho raz");
-        //},
-        //  success: function(record, operation) {
-        //  Ext.ComponentQuery.query('productgrid')[0].refresh();
-        //   Ext.Msg.alert("Masege" , "Dannie uspeshno soxraneni");
-
-        // },
-        // callback: function(record, operation, success) {
-        // do something whether the save succeeded or failed
-        // }
-        //}      );
 
 
+    },
 
+    onDialogBeforeShow: function(component, eOpts) {
+        let me = this,
+        refs = me.getReferences(),
+        vm = me.getViewModel();
 
+        refs.form.validate();
     }
 
 });

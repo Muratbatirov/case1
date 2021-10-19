@@ -254,6 +254,9 @@ Ext.define('Case.view.DialogEmploeeEdit', {
                 }
             ]
         }
-    ]
+    ],
+    listeners: {
+        beforeshow: 'onDialogBeforeShow'
+    }
 
 });

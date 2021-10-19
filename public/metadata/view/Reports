@@ -10,7 +10,7 @@
         "designer|userClassName": "Reports",
         "height": "100%",
         "layout": "hbox",
-        "store": "reports",
+        "store": null,
         "width": "100%"
     },
     "configAlternates": {
@@ -49,80 +49,6 @@
             },
             "name": "MyColumn18",
             "designerId": "29480554-7a09-4f20-8a22-f3dec129e968"
-        },
-        {
-            "type": "Ext.grid.column.Number",
-            "reference": {
-                "name": "columns",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "dataIndex": "currentnum",
-                "docked": null,
-                "format": "0",
-                "layout|flex": 1,
-                "name": "currentnum",
-                "text": "Кол-во работающих сотрудников",
-                "width": 89
-            },
-            "configAlternates": {
-                "dataIndex": "datafield",
-                "docked": "string",
-                "text": "string",
-                "width": "auto",
-                "format": "string",
-                "layout|flex": "number",
-                "name": "string"
-            },
-            "name": "MyNumberColumn4",
-            "designerId": "36e13398-30b3-4a68-a48a-8f0ca3466218"
-        },
-        {
-            "type": "Ext.grid.column.Number",
-            "reference": {
-                "name": "columns",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "dataIndex": "exitnum",
-                "docked": null,
-                "format": "0",
-                "layout|flex": 1,
-                "name": "exitnum",
-                "text": "Кол-во уволенных сотрудников",
-                "width": 89
-            },
-            "configAlternates": {
-                "dataIndex": "datafield",
-                "docked": "string",
-                "text": "string",
-                "width": "auto",
-                "name": "string",
-                "format": "string",
-                "layout|flex": "number"
-            },
-            "name": "MyNumberColumn3",
-            "designerId": "f04b9221-fffd-4980-9f0f-8d681b229925"
-        },
-        {
-            "type": "Ext.Toolbar",
-            "reference": {
-                "name": "items",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "docked": "top",
-                "title": "Отчёты по направлениям"
-            },
-            "configAlternates": {
-                "docked": "string",
-                "title": "string"
-            },
-            "name": "MyToolbar9",
-            "designerId": "14be8b21-5cf4-46a2-9a76-4918e9a57e3e"
         }
     ]
 }

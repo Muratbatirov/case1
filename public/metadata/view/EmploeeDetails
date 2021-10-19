@@ -1,0 +1,89 @@
+{
+    "type": "Ext.Dialog",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "emploeedetails",
+        "designer|userClassName": "EmploeeDetails",
+        "title": "My Dialog"
+    },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string",
+        "title": "string"
+    },
+    "name": "MyDialog",
+    "designerId": "da7764cc-edb0-4202-9d77-fbd2f066982c",
+    "viewControllerInstanceId": "8a7b337c-b0f0-406a-8298-e06c1069e9f9",
+    "viewModelInstanceId": "d328f798-81c0-4459-a47f-5e420f69b925",
+    "cn": [
+        {
+            "type": "Ext.grid.Grid",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "height": "100%",
+                "layout": "hbox",
+                "reference": "grid",
+                "width": "100%"
+            },
+            "configAlternates": {
+                "height": "auto",
+                "layout": "string",
+                "reference": "string",
+                "width": "auto"
+            },
+            "name": "MyGrid",
+            "designerId": "d39af42a-6899-40d3-b89c-900034313187",
+            "cn": [
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "key",
+                        "docked": null,
+                        "layout|flex": 1
+                    },
+                    "configAlternates": {
+                        "dataIndex": "datafield",
+                        "docked": "string",
+                        "layout|flex": "number"
+                    },
+                    "name": "MyColumn",
+                    "designerId": "c2a78cd4-6674-42cb-8a8b-c22e72bf21d9"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "value",
+                        "docked": null,
+                        "layout|flex": 1
+                    },
+                    "configAlternates": {
+                        "dataIndex": "datafield",
+                        "docked": "string",
+                        "width": "auto",
+                        "layout|flex": "number"
+                    },
+                    "name": "MyColumn1",
+                    "designerId": "3f66c6c9-eb26-461d-be6c-f716f4c15b13"
+                }
+            ]
+        }
+    ]
+}

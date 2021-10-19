@@ -56,6 +56,74 @@
             "designerId": "70eec17a-1146-46b3-b347-2decb5bc73b4",
             "cn": [
                 {
+                    "type": "Ext.field.ComboBox",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "autoLoadOnValue": true,
+                        "displayField": "direction",
+                        "editable": false,
+                        "flex": 1,
+                        "floatedPicker": [
+                            "{\"xtype\":\"boundlist\",\"infinite\":false,\"navigationModel\":{\"disabled\":true},\"scrollToTopOnRefresh\":false,\"loadingHeight\":70,\"maxHeight\":300,\"floated\":true,\"axisLock\":true,\"hideAnimation\":null}"
+                        ],
+                        "label": "Надкатегория(\"нет\" для корневых категории)",
+                        "picker": "floated",
+                        "store": "directioneditcombo",
+                        "value": [
+                            "{crecord.parent_id}"
+                        ],
+                        "valueField": "id"
+                    },
+                    "configAlternates": {
+                        "value": "binding",
+                        "flex": "number",
+                        "autoLoadOnValue": "boolean",
+                        "displayField": "datafield",
+                        "editable": "boolean",
+                        "label": "string",
+                        "picker": "string",
+                        "store": "store",
+                        "valueField": "datafield",
+                        "floatedPicker": "object"
+                    },
+                    "name": "MyComboBox5",
+                    "designerId": "197aeff8-85ff-4759-b2f2-1e24095e26fa",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "flex",
+                            "type": "string"
+                        }
+                    ],
+                    "cn": [
+                        {
+                            "type": "Ext.XTemplate",
+                            "reference": {
+                                "name": "itemTpl",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|displayName": "itemTpl",
+                                "implHandler": [
+                                    "<p>{[''.padStart(6*values.level, \"-\") + values.direction]}</p>"
+                                ]
+                            },
+                            "configAlternates": {
+                                "definitions": "array",
+                                "designer|displayName": "string",
+                                "implHandler": "code"
+                            },
+                            "name": "itemTpl",
+                            "designerId": "138ca78e-27d6-4fd2-95bf-ca1a6909110e"
+                        }
+                    ]
+                },
+                {
                     "type": "Ext.field.Container",
                     "reference": {
                         "name": "items",
@@ -81,6 +149,7 @@
                             "userConfig": {
                                 "flex": 1,
                                 "label": "Название направления",
+                                "margin": "0 20 0 0",
                                 "name": "name",
                                 "required": true,
                                 "value": [
@@ -92,7 +161,8 @@
                                 "label": "string",
                                 "name": "string",
                                 "required": "boolean",
-                                "flex": "number"
+                                "flex": "number",
+                                "margin": "auto"
                             },
                             "name": "MyTextField1",
                             "designerId": "85f6fdcd-e871-4fb2-8632-858e688588fb",
@@ -114,6 +184,7 @@
                             "userConfig": {
                                 "flex": 1,
                                 "label": "Руководитель",
+                                "margin": "0 20 0 0",
                                 "name": "director",
                                 "required": true,
                                 "value": [
@@ -125,7 +196,8 @@
                                 "label": "string",
                                 "name": "string",
                                 "required": "boolean",
-                                "flex": "number"
+                                "flex": "number",
+                                "margin": "auto"
                             },
                             "name": "MyTextField5",
                             "designerId": "eb2f8332-4e6a-4de6-afd6-da089b717a77",
@@ -207,29 +279,30 @@
                                     "var me =  this;",
                                     "refs = me.getReferences();",
                                     "",
-                                    "var me =  this;",
-                                    "refs = me.getReferences();",
-                                    "",
                                     "if (refs.form.validate()) {",
-                                    "var recordId= button.up('formpanel').getViewModel().get('crecord').data.id;",
-                                    "var rec = button.up('formpanel').getViewModel().get('crecord').data;",
-                                    "let store = Case.app.getStore('directionstore');",
                                     "",
-                                    "store.findRecord('id',recordId).save({",
-                                    "    failure: function(record, operation) {",
                                     "",
+                                    "",
+                                    "var crecord= button.up('formpanel').getViewModel().get('crecord').data;",
+                                    "",
+                                    "Ext.Ajax.request({",
+                                    "     url: 'directionlist/update',",
+                                    "     params:{id:crecord.id,parent_id:crecord.parent_id,name:crecord.name,director:crecord.director,opisanie:crecord.opisanie},",
+                                    "     success: function(response, opts) {",
+                                    "",
+                                    "        Case.app.getStore('directionstore').load();",
+                                    "           Case.app.getStore('reports').load();",
+                                    "          Case.app.getStore('directioneditcombo').load();",
+                                    "",
+                                    "         Ext.Msg.alert(\"Masege\" , \"Dannie uspeshno soxraneni\");",
+                                    "         me.getView().close();",
+                                    "",
+                                    "     },",
+                                    "",
+                                    "     failure: function(response, opts) {",
                                     "        Ext.Msg.alert(\"Ошибка\" , \"Poprobuyte esho raz\");",
-                                    "    },",
-                                    "    success: function(record, operation) {",
-                                    "       // Ext.ComponentQuery.query('eploeegrid')[0].refresh();",
-                                    "        Ext.Msg.alert(\"Masege\" , \"Dannie uspeshno soxraneni\");",
-                                    "         Case.app.getStore('reports').load();",
-                                    "        console.log('succes');",
-                                    "    },",
-                                    "    callback: function(record, operation, success) {",
-                                    "",
-                                    "    }",
-                                    "}      );",
+                                    "     }",
+                                    " });",
                                     "",
                                     "",
                                     "}",
@@ -271,6 +344,34 @@
                     ]
                 }
             ]
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onDialogBeforeShow",
+                "implHandler": [
+                    "let me = this,",
+                    "    refs = me.getReferences(),",
+                    "    vm = me.getViewModel();",
+                    "",
+                    "refs.form.validate();"
+                ],
+                "name": "beforeshow",
+                "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string",
+                "scope": "string"
+            },
+            "name": "onDialogBeforeShow",
+            "designerId": "6a4b3dd8-3d22-4e0f-93c0-0b4040af689a"
         }
     ]
 }

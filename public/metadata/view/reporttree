@@ -1,0 +1,224 @@
+{
+    "type": "Ext.grid.Tree",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "reporttree",
+        "designer|userClassName": "reporttree",
+        "height": "100%",
+        "layout": "hbox",
+        "store": "reports",
+        "width": "100%"
+    },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string",
+        "height": "auto",
+        "layout": "string",
+        "store": "store",
+        "width": "auto"
+    },
+    "name": "MyTree",
+    "designerId": "63769b86-6847-43c4-ac3c-40fe4838df02",
+    "viewControllerInstanceId": "3c151bd5-c6c2-4ad4-ac04-5c8b934fe09e",
+    "viewModelInstanceId": "cdf6ca8e-8dee-4a38-a94f-df30447bfa39",
+    "cn": [
+        {
+            "type": "Ext.grid.column.Tree",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "name",
+                "docked": null,
+                "layout|flex": 1,
+                "text": "Название направлении"
+            },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "docked": "string",
+                "layout|flex": "number",
+                "text": "string"
+            },
+            "name": "MyTreeColumn",
+            "designerId": "30f24075-c63f-487c-86d8-9b7d8b26f38d"
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "currentnum",
+                "docked": null,
+                "layout|flex": 1,
+                "name": "currentnum",
+                "text": "Кол-во работающих сотрудников"
+            },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "docked": "string",
+                "text": "string",
+                "width": "auto",
+                "format": "string",
+                "layout|flex": "number",
+                "name": "string"
+            },
+            "name": "MyColumn2",
+            "designerId": "ee3ef898-56fb-41f4-8f52-4c12902bd694",
+            "cn": [
+                {
+                    "type": "fixedfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|params": [
+                            "value",
+                            "record",
+                            "dataIndex",
+                            "cell",
+                            "column"
+                        ],
+                        "fn": "renderer",
+                        "implHandler": [
+                            "function recurse(rec) {",
+                            "     let count = 0;",
+                            "       if (rec.hasChildNodes()) {",
+                            "",
+                            "  rec.childNodes.forEach( function(item, i, arr) {",
+                            "   count += item.data.currentnum + recurse(item);",
+                            "      ",
+                            "",
+                            " });",
+                            "",
+                            "  ",
+                            "    return count;",
+                            "",
+                            "",
+                            "} else {",
+                            "",
+                            " return record.data.currentnum;",
+                            "",
+                            "}",
+                            "    }",
+                            "",
+                            "return recurse(record);"
+                        ]
+                    },
+                    "configAlternates": {
+                        "designer|params": "typedarray",
+                        "fn": "string",
+                        "implHandler": "code"
+                    },
+                    "name": "renderer",
+                    "designerId": "bb9fa5a0-a657-4267-9b74-299ca2d635d1"
+                }
+            ]
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "exitnum",
+                "docked": null,
+                "layout|flex": 1,
+                "name": "exitnum",
+                "text": "Кол-во уволенных сотрудников"
+            },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "docked": "string",
+                "text": "string",
+                "width": "auto",
+                "name": "string",
+                "format": "string",
+                "layout|flex": "number"
+            },
+            "name": "MyColumn3",
+            "designerId": "237cd217-e4a1-4b50-b239-e941e4bd9f7a",
+            "cn": [
+                {
+                    "type": "fixedfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|params": [
+                            "value",
+                            "record",
+                            "dataIndex",
+                            "cell",
+                            "column"
+                        ],
+                        "fn": "renderer",
+                        "implHandler": [
+                            "function recurse(rec) {",
+                            "     let count = 0;",
+                            "       if (rec.hasChildNodes()) {",
+                            "",
+                            "  rec.childNodes.forEach( function(item, i, arr) {",
+                            "   count += item.data.exitnum + recurse(item);",
+                            "      ",
+                            "",
+                            " });",
+                            "",
+                            "  ",
+                            "    return count;",
+                            "",
+                            "",
+                            "} else {",
+                            "",
+                            " return record.data.exitnum;",
+                            "",
+                            "}",
+                            "    }",
+                            "",
+                            "return recurse(record);"
+                        ]
+                    },
+                    "configAlternates": {
+                        "designer|params": "typedarray",
+                        "fn": "string",
+                        "implHandler": "code"
+                    },
+                    "name": "renderer",
+                    "designerId": "c4ac5f6c-9edd-4dd1-8fa1-9a7fd84d22c8"
+                }
+            ]
+        },
+        {
+            "type": "Ext.Toolbar",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "docked": "top",
+                "title": "Отчёты по направлениям"
+            },
+            "configAlternates": {
+                "docked": "string",
+                "title": "string"
+            },
+            "name": "MyToolbar9",
+            "designerId": "9110f1cd-b559-4f6d-bf5c-c9faba04bd9c"
+        }
+    ]
+}

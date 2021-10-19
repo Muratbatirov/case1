@@ -19,29 +19,40 @@ Ext.define('Case.view.DialogEditProductViewController', {
 
     onButtonTap: function(button, e, eOpts) {
         var me =  this;
-        console.log(button.up('formpanel').getViewModel().get('crecord'));
-        var recordId= button.up('formpanel').getViewModel().get('crecord').data.id;
-        var rec = button.up('formpanel').getViewModel().get('crecord').data;
-        let store = Case.app.getStore('productstore');
+        refs = me.getReferences();
 
-        Case.app.getStore('productstore').findRecord('id',recordId).save({
-            failure: function(record, operation) {
+        if (refs.form.validate()) {
+            console.log(button.up('formpanel').getViewModel().get('crecord'));
+            var recordId= button.up('formpanel').getViewModel().get('crecord').data.id;
+            var rec = button.up('formpanel').getViewModel().get('crecord').data;
+            let store = Case.app.getStore('productstore');
 
-                Ext.Msg.alert("Ошибка" , "Poprobuyte esho raz");
-            },
-            success: function(record, operation) {
-                Ext.ComponentQuery.query('productgrid')[0].refresh();
-                Ext.Msg.alert("Masege" , "Dannie uspeshno soxraneni");
+            Case.app.getStore('productstore').findRecord('id',recordId).save({
+                failure: function(record, operation) {
 
-            },
-            callback: function(record, operation, success) {
-                // do something whether the save succeeded or failed
-            }
-        }      );
+                    Ext.Msg.alert("Ошибка" , "Poprobuyte esho raz");
+                },
+                success: function(record, operation) {
+                    Ext.ComponentQuery.query('productgrid')[0].refresh();
+                    Ext.Msg.alert("Masege" , "Dannie uspeshno soxraneni");
+
+                },
+                callback: function(record, operation, success) {
+                    // do something whether the save succeeded or failed
+                }
+            }      );}
 
 
 
 
+    },
+
+    onDialogBeforeShow: function(component, eOpts) {
+        let me = this,
+        refs = me.getReferences(),
+        vm = me.getViewModel();
+
+        refs.form.validate();
     }
 
 });

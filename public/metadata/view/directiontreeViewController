@@ -1,0 +1,58 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "directiontree",
+        "designer|userClassName": "directiontreeViewController"
+    },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string"
+    },
+    "designerId": "55ac73d0-6d43-4af1-9ab4-f16d250022fc",
+    "cn": [
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onShowAll",
+                "implHandler": [
+                    "",
+                    "            let store1 = Case.app.getStore('EmploeeStore');",
+                    " store1.getProxy().setExtraParams({",
+                    "",
+                    "",
+                    "",
+                    "            });",
+                    "",
+                    "            store1.loadPage(0,{",
+                    "                   callback: function(records, operation, success) {",
+                    "                     Case.app.getStore('EmploeeStore').getProxy().setExtraParams({",
+                    "",
+                    "",
+                    "",
+                    "        });",
+                    "",
+                    "      }}",
+                    "",
+                    "",
+                    "                           );"
+                ]
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code"
+            },
+            "name": "onShowAll",
+            "designerId": "89bd377d-1124-4f93-b8e1-16835816b92f"
+        }
+    ]
+}

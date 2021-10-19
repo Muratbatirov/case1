@@ -20,9 +20,8 @@ Ext.define('Case.view.EploeeGrid', {
     requires: [
         'Case.view.EploeeGridViewModel',
         'Case.view.EploeeGridViewController',
-        'Ext.grid.column.Date',
-        'Ext.grid.column.Number',
         'Ext.grid.column.Check',
+        'Ext.grid.column.Date',
         'Ext.dataview.plugin.ListPaging',
         'Ext.Toolbar',
         'Ext.Button',
@@ -74,18 +73,20 @@ Ext.define('Case.view.EploeeGrid', {
                 return `На странице ${value} из ${context.store.totalCount}`;
             },
             filterType: 'string',
-            flex: 2,
+            flex: 1,
             dataIndex: 'surname',
             summary: 'count',
             text: 'Фамилия'
         },
         {
             xtype: 'gridcolumn',
+            flex: 1,
             dataIndex: 'name',
             text: 'Имя'
         },
         {
             xtype: 'gridcolumn',
+            flex: 1,
             dataIndex: 'patronymic',
             text: 'Отчество'
         },
@@ -95,41 +96,8 @@ Ext.define('Case.view.EploeeGrid', {
             text: 'Направления'
         },
         {
-            xtype: 'gridcolumn',
-            dataIndex: 'gender',
-            text: 'Пол'
-        },
-        {
-            xtype: 'datecolumn',
-            dataIndex: 'comedate',
-            text: 'Дата рождения'
-        },
-        {
-            xtype: 'gridcolumn',
-            dataIndex: 'phonenum',
-            text: 'Контактный телефон'
-        },
-        {
-            xtype: 'gridcolumn',
-            dataIndex: 'passportnum',
-            text: 'Серия и номер паспорта'
-        },
-        {
-            xtype: 'gridcolumn',
-            dataIndex: 'position',
-            text: 'Должность'
-        },
-        {
-            xtype: 'numbercolumn',
-            summaryRenderer: function(value, context) {
-                return ' ';
-            },
-            dataIndex: 'wages',
-            summary: 'none',
-            text: 'Зарплата'
-        },
-        {
             xtype: 'checkcolumn',
+            flex: 0.5,
             disabled: true,
             dataIndex: 'dismissed',
             editable: false,
@@ -137,11 +105,13 @@ Ext.define('Case.view.EploeeGrid', {
         },
         {
             xtype: 'datecolumn',
+            flex: 0.5,
             dataIndex: 'comedate',
             text: 'Дата приёма на работу'
         },
         {
             xtype: 'datecolumn',
+            flex: 0.5,
             dataIndex: 'exitdate',
             text: 'Дата увольнения'
         }
@@ -178,7 +148,8 @@ Ext.define('Case.view.EploeeGrid', {
     ],
     listeners: {
         childdoubletap: 'onGridChilddoubletap',
-        painted: 'onGridPainted'
+        painted: 'onGridPainted',
+        childsingletap: 'onGridChildsingletap'
     }
 
 });

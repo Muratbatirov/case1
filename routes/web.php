@@ -37,12 +37,14 @@ Route::put('/productlist/{id}',[ProductCantroller::class, 'productlistedit']);
 
 
 Route::get('/directionlist',[DirectionCantroller::class, 'directions']);
+Route::get('/directionlistcombo',[DirectionCantroller::class, 'directionlistcombo']);
 Route::get('/emploeelist',[EmploeeCantroller::class, 'emploeelist']);
 Route::put('/emploeelist/{id}',[EmploeeCantroller::class, 'emploeelistedit']);
 Route::post('/emploeelist/add',[EmploeeCantroller::class, 'emploeeadd']);
 //Route::get('/directioncombo',[DirectionCantroller::class, 'directioncombo']);
 
-Route::put('/directionlist/{id}',[DirectionCantroller::class, 'directionlistedit']);
+Route::post('/directionlist/update',[DirectionCantroller::class, 'directionlistedit']);
 Route::post('/directionlist/delete',[DirectionCantroller::class, 'directionlistdelete']);
 Route::post('/directionlist/add',[DirectionCantroller::class, 'directionlistadd']);
 Route::get('/reports',[DirectionCantroller::class, 'reports']);
+Route::get('/directioneditcombo',[DirectionCantroller::class, 'directioneditcombo']);

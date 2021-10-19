@@ -124,6 +124,9 @@ Ext.define('Case.view.DialogEditProduct', {
                 }
             ]
         }
-    ]
+    ],
+    listeners: {
+        beforeshow: 'onDialogBeforeShow'
+    }
 
 });

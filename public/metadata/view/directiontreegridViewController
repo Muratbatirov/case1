@@ -1,0 +1,236 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "directiontreegrid",
+        "designer|userClassName": "directiontreegridViewController"
+    },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string"
+    },
+    "designerId": "e5969bb6-e234-4fab-a19e-340f56f227cd",
+    "cn": [
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "grid",
+                    "context"
+                ],
+                "fn": "onMenuClick1",
+                "implHandler": [
+                    "var me = this;",
+                    "",
+                    "",
+                    "   var menu = Ext.create({xtype:'menu',",
+                    "                         anchor: true,});",
+                    "",
+                    "   Ext.apply({ownerCmp: me}, me.toolContextMenu);",
+                    "",
+                    "menu.add([{",
+                    "      text: 'EDIT',",
+                    "      iconCls: 'x-fa fa-edit',",
+                    "      handler: 'editEmploee1',",
+                    "    scope:me",
+                    "  },",
+                    "  {",
+                    "      text: 'DELETE',",
+                    "      iconCls: 'x-fa crimson fa-trash',",
+                    "      handler: 'deleteEmploee1',",
+                    "       scope:me",
+                    "  }]);",
+                    "me.getViewModel().set('crecord', context.record);",
+                    "menu.autoFocus = !context.event.pointerType;",
+                    "menu.showBy(context.tool.el, 'l50-r50?');"
+                ]
+            },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "implHandler": "code"
+            },
+            "name": "onMenuClick1",
+            "designerId": "9b244a26-1616-40dc-af35-5fb099f7c7fd"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "editEmploee1",
+                "implHandler": [
+                    "var categoryrecord= this.getViewModel().get('crecord');",
+                    "console.log(categoryrecord);",
+                    "",
+                    "var me = this;",
+                    "",
+                    "let ell = document.getElementsByClassName(\"x-navigationview\");",
+                    " let editcombostore= Case.app.getStore('directioneditcombo');",
+                    "",
+                    "        editcombostore.addListener({",
+                    "            load: me.oneditstore1,",
+                    "            scope:me",
+                    "",
+                    "        });",
+                    "",
+                    "let widthcalculate = ell[0].offsetWidth;",
+                    "let heightcalculate = ell[0].offsetHeight;",
+                    "",
+                    "",
+                    "let dialogProductEdit = Ext.create({",
+                    "   xtype: 'dialogeditdirection',",
+                    "    right: 0,",
+                    "    shadow:false,",
+                    "    zIndex:0,",
+                    "    width:widthcalculate,",
+                    "            height:heightcalculate,",
+                    "            showAnimation:'slide',",
+                    "buttons: {",
+                    "                ok: function () {  // standard button (see below)",
+                    "                    dialogProductEdit.destroy();",
+                    "",
+                    "                }",
+                    "            }",
+                    "",
+                    "});",
+                    "",
+                    "dialogProductEdit.down('formpanel').setViewModel({data:{crecord:categoryrecord}});",
+                    "dialogProductEdit.show();"
+                ]
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code"
+            },
+            "name": "editEmploee1",
+            "designerId": "ba9bd289-afd8-4356-981f-5e48c3996f3f"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "deleteEmploee1",
+                "implHandler": [
+                    "",
+                    "var id= this.getViewModel().get('crecord').data.id;",
+                    "",
+                    "Ext.Ajax.request({",
+                    "     url: 'directionlist/delete',",
+                    "     params:{id:id},",
+                    "     success: function(response, opts) {",
+                    "          if(response.responseText=='true'){",
+                    "           Case.app.getStore('directionstore').findRecord('id',id).drop();",
+                    "        }else{",
+                    "           Ext.Msg.alert(\"Ошибка\" , response.responseText);",
+                    "       }",
+                    "",
+                    "",
+                    "",
+                    "     },",
+                    "",
+                    "     failure: function(response, opts) {",
+                    "         console.log('server-side failure with status code ' + response.status);",
+                    "     }",
+                    " });"
+                ]
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code"
+            },
+            "name": "deleteEmploee1",
+            "designerId": "c24d4d60-5460-4da9-95fa-7188c3e0d1fb"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "thiss",
+                    "records",
+                    "successful",
+                    "operation",
+                    "eOpts"
+                ],
+                "fn": "oneditstore1",
+                "implHandler": [
+                    " var me= this;",
+                    "",
+                    "",
+                    "",
+                    "",
+                    "        var categoryrecord= me.getViewModel().get('crecord').data.id;",
+                    "        console.log(categoryrecord);",
+                    "        var arr =[];",
+                    "",
+                    "        arr=records;",
+                    "",
+                    "",
+                    "",
+                    "",
+                    "function recurse(rec,  categoryrec) {",
+                    "        if(rec) {",
+                    "        rec.forEach(function(item, i, rec) {",
+                    "",
+                    "                               if((item.data.id)&&item.data.id==categoryrec){",
+                    "                                   delete rec[i];",
+                    "                               }",
+                    "                        if((item.data.parent_id)&&item.data.parent_id==categoryrec){",
+                    "",
+                    "",
+                    "                         delete rec[i];",
+                    "                          recurse(rec,item.data.id);",
+                    "",
+                    "",
+                    "                        }",
+                    "",
+                    "",
+                    "",
+                    "                });}",
+                    "    }",
+                    "",
+                    "",
+                    "",
+                    "",
+                    "recurse(arr,categoryrecord );",
+                    "arrnew=[{\"id\":0,\"parent_id\":null,\"direction\":\"Нет\",\"parentdirection\":\"null\",\"level\":0}];",
+                    " arr.forEach(function(item, i, arr) {",
+                    "    arrnew.push(item.data);",
+                    "",
+                    " });",
+                    "thiss.setData(arrnew);",
+                    "",
+                    ""
+                ]
+            },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "implHandler": "code"
+            },
+            "name": "oneditstore1",
+            "designerId": "7b192ad9-466a-484c-889d-49ae6c79e80a"
+        }
+    ]
+}

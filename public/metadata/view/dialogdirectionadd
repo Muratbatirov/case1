@@ -56,6 +56,74 @@
             "designerId": "8b61fb13-4f0a-4b5e-abfa-694d28550203",
             "cn": [
                 {
+                    "type": "Ext.field.ComboBox",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "autoLoadOnValue": true,
+                        "displayField": "direction",
+                        "editable": false,
+                        "flex": 1,
+                        "floatedPicker": [
+                            "{\"xtype\":\"boundlist\",\"infinite\":false,\"navigationModel\":{\"disabled\":true},\"scrollToTopOnRefresh\":false,\"loadingHeight\":70,\"maxHeight\":300,\"floated\":true,\"axisLock\":true,\"hideAnimation\":null}"
+                        ],
+                        "label": "Надкатегория(\"нет\" для корневых категории)",
+                        "picker": "floated",
+                        "store": "directioneditcombo",
+                        "value": [
+                            "{crecord.parent_id}"
+                        ],
+                        "valueField": "id"
+                    },
+                    "configAlternates": {
+                        "value": "binding",
+                        "flex": "number",
+                        "autoLoadOnValue": "boolean",
+                        "displayField": "datafield",
+                        "editable": "boolean",
+                        "label": "string",
+                        "picker": "string",
+                        "store": "store",
+                        "valueField": "datafield",
+                        "floatedPicker": "object"
+                    },
+                    "name": "MyComboBox2",
+                    "designerId": "70641fe6-f760-4102-94d5-6a47658c3a86",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "flex",
+                            "type": "string"
+                        }
+                    ],
+                    "cn": [
+                        {
+                            "type": "Ext.XTemplate",
+                            "reference": {
+                                "name": "itemTpl",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|displayName": "itemTpl",
+                                "implHandler": [
+                                    "<p>{[''.padStart(6*values.level, \"-\") + values.direction]}</p>"
+                                ]
+                            },
+                            "configAlternates": {
+                                "definitions": "array",
+                                "designer|displayName": "string",
+                                "implHandler": "code"
+                            },
+                            "name": "itemTpl",
+                            "designerId": "a52983fa-ab94-4c5d-9512-e36c2a4893fa"
+                        }
+                    ]
+                },
+                {
                     "type": "Ext.field.Container",
                     "reference": {
                         "name": "items",
@@ -81,6 +149,7 @@
                             "userConfig": {
                                 "flex": 1,
                                 "label": "Название направления",
+                                "margin": "0 20 0 0",
                                 "name": "name",
                                 "required": true,
                                 "value": [
@@ -92,7 +161,8 @@
                                 "label": "string",
                                 "name": "string",
                                 "required": "boolean",
-                                "flex": "number"
+                                "flex": "number",
+                                "margin": "auto"
                             },
                             "name": "MyTextField1",
                             "designerId": "1b326d51-8097-4ae0-b291-7aa4f4380c15",
@@ -114,6 +184,7 @@
                             "userConfig": {
                                 "flex": 1,
                                 "label": "Руководитель",
+                                "margin": "0 20 0 0",
                                 "name": "director",
                                 "required": true,
                                 "value": [
@@ -125,7 +196,8 @@
                                 "label": "string",
                                 "name": "string",
                                 "required": "boolean",
-                                "flex": "number"
+                                "flex": "number",
+                                "margin": "auto"
                             },
                             "name": "MyTextField5",
                             "designerId": "bdd3a9a5-0b0b-44e6-8ff3-d6a40f4039bb",
@@ -267,6 +339,34 @@
                     ]
                 }
             ]
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onDialogBeforeShow",
+                "implHandler": [
+                    "let me = this,",
+                    "    refs = me.getReferences(),",
+                    "    vm = me.getViewModel();",
+                    "",
+                    "refs.form.validate();"
+                ],
+                "name": "beforeshow",
+                "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string",
+                "scope": "string"
+            },
+            "name": "onDialogBeforeShow",
+            "designerId": "297588fc-a9c9-45bf-b459-b91dc93bb25d"
         }
     ]
 }

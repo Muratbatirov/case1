@@ -20,20 +20,74 @@ class EmploeeCantroller extends Controller
  public function emploeelist(Request $request){
 
 if($request->param!='false' and $request->param ){
-  $emploee= Direction::where('name',$request->param)->first();
+
+  $direction= Direction::where('name',$request->param)->get();
+$selector;
+$value;
+$arr2=array();
+
+ if($direction[0]->childdirections->count()!=0){
+
+
+
+
+  function rekurs($direc, array &$arr) {
+    
+
+  
+     
+foreach ($direc as $element) {
+  
+if($element->childdirections->count()!=0){
+    array_push($arr, $element->id);
+    rekurs($element->childdirections,$arr);
+  }else{
+     array_push($arr, $element->id);
+  }
+
+}
+
+
+}
+
+
+$arrr = array();
+
+rekurs($direction,$arrr);
+
+
+foreach ($arrr as $element) {
+  
+ array_push($arr2, ['employees.direction_id','=',strval($element)]);
+
+}
+
+$selector = 'employees.direction_id';
+$value = $arrr;
+
+
+ }else{
+$value=array($direction[0]->id);
+
+ }
 
  $emploees = DB::table('employees')
             ->join('directions', 'directions.id', '=', 'employees.direction_id' )
             
             
-            ->select( 'employees.id', 'surname', 'employees.name as name', 'patronymic','directions.name AS direction','directions.id AS direction_id','gender','birthdate'  ,'phonenum','passportnum','position', 'wages','dismissed','comedate', 'exitdate')->where('directions.name', $request->param)->skip($request->start)->take($request->limit)
+            ->select( 'employees.id', 'surname', 'employees.name as name', 'patronymic','directions.name AS direction','directions.id AS direction_id','gender','birthdate'  ,'phonenum','passportnum','position', 'wages','dismissed','comedate', 'exitdate')->whereIn("employees.direction_id" ,$value)
+
+
+
+
+            ->skip($request->start)->take($request->limit)
             
                 ->get()->toArray();
  $productscount = DB::table('employees')
             ->join('directions', 'directions.id', '=', 'employees.direction_id' )
             
             
-            ->select( 'employees.id', 'surname', 'employees.name as name', 'patronymic','directions.name AS direction','directions.id AS direction_id','gender','birthdate'  ,'phonenum','passportnum','position', 'wages','dismissed','comedate', 'exitdate')->where('directions.name', $request->param)
+            ->select( 'employees.id', 'surname', 'employees.name as name', 'patronymic','directions.name AS direction','directions.id AS direction_id','gender','birthdate'  ,'phonenum','passportnum','position', 'wages','dismissed','comedate', 'exitdate')->whereIn("employees.direction_id" ,$value)
                 ->get()->toArray();
                 
               

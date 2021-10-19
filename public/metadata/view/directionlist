@@ -10,7 +10,7 @@
         "designer|uiInterfaceName": "nav",
         "designer|userAlias": "directionlist",
         "designer|userClassName": "directionlist",
-        "store": "directionstore",
+        "store": null,
         "ui": "nav"
     },
     "configAlternates": {

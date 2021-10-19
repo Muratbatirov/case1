@@ -248,7 +248,9 @@
                                 "fn": "onButtonTapCategory",
                                 "implHandler": [
                                     "var me =  this;",
+                                    "refs = me.getReferences();",
                                     "",
+                                    "if (refs.form.validate()) {",
                                     "",
                                     "var crecord= button.up('formpanel').getViewModel().get('crecordtree');",
                                     "console.log(crecord);",
@@ -266,7 +268,7 @@
                                     "     failure: function(response, opts) {",
                                     "        Ext.Msg.alert(\"Ошибка\" , \"Poprobuyte esho raz\");",
                                     "     }",
-                                    " });",
+                                    " });}",
                                     "//",
                                     "//var rec = button.up('formpanel').getViewModel().get('crecord').data;",
                                     "//let store = Case.app.getStore('productstore');",
@@ -304,6 +306,34 @@
                     ]
                 }
             ]
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onDialogBeforeShow",
+                "implHandler": [
+                    "let me = this,",
+                    "    refs = me.getReferences(),",
+                    "    vm = me.getViewModel();",
+                    "",
+                    "refs.form.validate();"
+                ],
+                "name": "beforeshow",
+                "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string",
+                "scope": "string"
+            },
+            "name": "onDialogBeforeShow",
+            "designerId": "21c800a2-24cb-4411-9f89-9aca4e71b583"
         }
     ]
 }

@@ -28,7 +28,9 @@ Ext.application({
         'categoryEditCombo',
         'EmploeeModel',
         'directionmodel',
-        'reports'
+        'reports',
+        'directioneditcombo',
+        'directionmodel1'
     ],
     stores: [
         'Categories',
@@ -42,8 +44,9 @@ Ext.application({
         'categoryEditComboLitle',
         'podcategory',
         'EmploeeStore',
-        'directionstore',
         'directioncombo',
+        'directionstore',
+        'directioneditcombo',
         'reports'
     ],
     views: [
@@ -65,12 +68,18 @@ Ext.application({
         'DialogEmploeeAdd',
         'dialogeditdirection',
         'dialogdirectionadd',
-        'Reports'
+        'Reports',
+        'directiontree',
+        'directiontreegrid',
+        'EploeeGrid1',
+        'EmploeeDetails',
+        'reporttree'
     ],
     controllers: [
         'navigation',
         'Menu'
     ],
+    defaultToken: 'catalogs',
     name: 'Case',
 
     launch: function() {

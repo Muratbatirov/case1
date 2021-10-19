@@ -12,4 +12,7 @@ class Direction extends Model
     public function employees() {
     return $this->hasMany('App\Models\Employee','direction_id');
   }
+   public function childdirections() {
+    return $this->hasMany('App\Models\Direction','parent_id');
+  }
 }

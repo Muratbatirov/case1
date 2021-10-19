@@ -21,6 +21,8 @@ Ext.define('Case.view.dialogeditdirection', {
         'Case.view.DialogEditProductViewModel4',
         'Case.view.DialogEditProductViewController3',
         'Ext.form.Panel',
+        'Ext.field.ComboBox',
+        'Ext.XTemplate',
         'Ext.field.Container',
         'Ext.field.TextArea',
         'Ext.Button'
@@ -46,6 +48,36 @@ Ext.define('Case.view.dialogeditdirection', {
             itemId: 'myformpanel',
             items: [
                 {
+                    xtype: 'combobox',
+                    flex: 1,
+                    label: 'Надкатегория("нет" для корневых категории)',
+                    editable: false,
+                    floatedPicker: {
+                        xtype: 'boundlist',
+                        infinite: false,
+                        navigationModel: {
+                            disabled: true
+                        },
+                        scrollToTopOnRefresh: false,
+                        loadingHeight: 70,
+                        maxHeight: 300,
+                        floated: true,
+                        axisLock: true,
+                        hideAnimation: null
+                    },
+                    picker: 'floated',
+                    autoLoadOnValue: true,
+                    displayField: 'direction',
+                    itemTpl: [
+                        '<p>{[\'\'.padStart(6*values.level, "-") + values.direction]}</p>'
+                    ],
+                    store: 'directioneditcombo',
+                    valueField: 'id',
+                    bind: {
+                        value: '{crecord.parent_id}'
+                    }
+                },
+                {
                     xtype: 'containerfield',
                     layout: 'hbox',
                     items: [
@@ -53,6 +85,7 @@ Ext.define('Case.view.dialogeditdirection', {
                             xtype: 'textfield',
                             flex: 1,
                             name: 'name',
+                            margin: '0 20 0 0',
                             label: 'Название направления',
                             required: true,
                             bind: {
@@ -63,6 +96,7 @@ Ext.define('Case.view.dialogeditdirection', {
                             xtype: 'textfield',
                             flex: 1,
                             name: 'director',
+                            margin: '0 20 0 0',
                             label: 'Руководитель',
                             required: true,
                             bind: {
@@ -92,6 +126,9 @@ Ext.define('Case.view.dialogeditdirection', {
                 }
             ]
         }
-    ]
+    ],
+    listeners: {
+        beforeshow: 'onDialogBeforeShow'
+    }
 
 });

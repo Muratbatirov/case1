@@ -7,7 +7,7 @@
             "frameworkVersion": "7.3.0.55"
         },
         "urlPrefixTemplate": "http://localhost:{port}/{path}",
-        "urlPrefix": "http://localhost:53068/",
+        "urlPrefix": "http://localhost:62960/",
         "canvasControls": {
             "viewportSize": {
                 "name": "Desktop (Auto Expand)",
@@ -79,8 +79,11 @@
             "0db2852a-f6c1-4758-9626-d837cebcb801",
             "034a4251-c8f1-4655-aad8-8163c5b913cd",
             "e81c149a-639d-4b0e-b9a9-c92e5042d332",
+            "89ac354b-ada3-425d-b49f-71d86e096623",
             "021d308c-ea17-4c29-a938-8ac09821fe8a",
+            "aa55922a-46ef-4ccf-8be2-9cb5032b88f8",
             "f3d7e484-0ce3-4e45-8273-9bde90ef8185",
+            "601ed5ee-6584-45ab-9598-73f320299b91",
             "099d112a-42c4-4dca-9903-62cb1605841f",
             "bbdd0871-4748-4ff5-90cd-5b24eb095718",
             "8448507c-0e50-425d-b79e-e9f56eb446f6",
@@ -95,7 +98,19 @@
             "aabdc0ec-afab-4c8d-879e-86943689ba88",
             "3d276ca5-4457-47ed-a13d-446f82e6b47b",
             "3b1a49c0-0bee-49aa-9c0b-783b182315fb",
-            "6c7ef8fd-b3d9-48af-bf06-f7343392a6b1"
+            "6c7ef8fd-b3d9-48af-bf06-f7343392a6b1",
+            "c6418fae-2de7-4dd1-a43a-2772c4bb0230",
+            "12f3808b-d7bb-4d4d-991e-e0ce48f247bb",
+            "55ac73d0-6d43-4af1-9ab4-f16d250022fc",
+            "16746cc3-5540-49ba-8b61-ef7c4e26647d",
+            "7c43b658-c975-452c-b07e-77ca457e0e3a",
+            "e5969bb6-e234-4fab-a19e-340f56f227cd",
+            "da7764cc-edb0-4202-9d77-fbd2f066982c",
+            "d328f798-81c0-4459-a47f-5e420f69b925",
+            "8a7b337c-b0f0-406a-8298-e06c1069e9f9",
+            "63769b86-6847-43c4-ac3c-40fe4838df02",
+            "cdf6ca8e-8dee-4a38-a94f-df30447bfa39",
+            "3c151bd5-c6c2-4ad4-ac04-5c8b934fe09e"
         ],
         "store": [
             "16b6bc42-f42c-48c4-b5a0-e262a4519589",
@@ -107,11 +122,12 @@
             "7cef137b-02c1-41a0-8a2c-2c7d1e081b0d",
             "ef7969e5-f06a-47a2-94c4-6d574c7ccbc2",
             "fc958b80-8f3d-46fa-a7e6-89c4335c669e",
+            "9a0007be-698b-4388-a0a3-ff8d4d318647",
             "155793ef-6728-4ebd-bb68-d94b39eea72f",
             "8ee8b4ae-d7c8-4b75-b1b2-3bf1cdf66957",
-            "f6139f31-8f43-4f13-8dfa-8ef071adafb2",
             "174d6b3f-b4fa-4545-a25a-929eb390dca3",
-            "02f43668-99bc-4ea0-bdcd-f4fa3f895c9e"
+            "85064275-3bd2-4d94-a15a-9939a1b9f428",
+            "00d1a403-fbef-476f-bfe1-e22a7b714a99"
         ],
         "controller": [
             "11931cf1-77f9-460d-a0f4-a0df26c912d4",
@@ -122,13 +138,15 @@
             "c01ef560-6696-46b2-a24b-93b78fe024a7",
             "2fba20ac-9897-4120-988f-7b592c83be19",
             "f11a63da-9e13-470e-840a-193803ec47f0",
+            "e10e209d-8e82-42d8-8c11-b19624c17c1b",
             "ee28f5e7-0b06-426e-a2e3-72f0a3c6607a",
             "ccad54c6-f0c6-4bb8-918a-58d6428bcb5c",
             "824d5e0f-e0c4-4c56-a401-0cd523a11307",
+            "43a40af0-db78-4322-95d1-13bee925845a",
             "06ee4b20-4f8f-43de-ac31-13073440088b"
         ],
         "resource": [
-            "c356ab66-399c-469c-9510-189a7ee688fc",
+            "4e24a915-548c-4f90-924f-fb9ee70079c2",
             "29cb629e-f40f-425e-9874-1353e31f9492",
             "b1c2573c-4159-4589-9551-1fae970f3d59",
             "6f290270-0c23-4215-80af-dd35b5097234"

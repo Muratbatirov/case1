@@ -10,6 +10,7 @@
             "navigation",
             "Menu"
         ],
+        "defaultToken": "catalogs",
         "models": [
             "Category",
             "productmodel",
@@ -18,7 +19,9 @@
             "categoryEditCombo",
             "EmploeeModel",
             "directionmodel",
-            "reports"
+            "reports",
+            "directioneditcombo",
+            "directionmodel1"
         ],
         "name": "Case",
         "stores": [
@@ -33,8 +36,9 @@
             "categoryEditComboLitle",
             "podcategory",
             "EmploeeStore",
-            "directionstore",
             "directioncombo",
+            "directionstore",
+            "directioneditcombo",
             "reports"
         ],
         "views": [
@@ -56,7 +60,12 @@
             "DialogEmploeeAdd",
             "dialogeditdirection",
             "dialogdirectionadd",
-            "Reports"
+            "Reports",
+            "directiontree",
+            "directiontreegrid",
+            "EploeeGrid1",
+            "EmploeeDetails",
+            "reporttree"
         ]
     },
     "configAlternates": {
@@ -64,7 +73,8 @@
         "models": "typedarray",
         "name": "string",
         "stores": "typedarray",
-        "views": "typedarray"
+        "views": "typedarray",
+        "defaultToken": "string"
     },
     "name": "Application",
     "designerId": "application"

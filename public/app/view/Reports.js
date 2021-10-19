@@ -19,8 +19,7 @@ Ext.define('Case.view.Reports', {
 
     requires: [
         'Case.view.ReportsViewModel',
-        'Ext.grid.column.Number',
-        'Ext.Toolbar'
+        'Ext.grid.column.Column'
     ],
 
     viewModel: {
@@ -29,7 +28,6 @@ Ext.define('Case.view.Reports', {
     height: '100%',
     width: '100%',
     layout: 'hbox',
-    store: 'reports',
 
     columns: [
         {
@@ -38,31 +36,6 @@ Ext.define('Case.view.Reports', {
             name: 'name',
             dataIndex: 'name',
             text: 'Название направления'
-        },
-        {
-            xtype: 'numbercolumn',
-            flex: 1,
-            name: 'currentnum',
-            width: 89,
-            dataIndex: 'currentnum',
-            text: 'Кол-во работающих сотрудников',
-            format: '0'
-        },
-        {
-            xtype: 'numbercolumn',
-            flex: 1,
-            name: 'exitnum',
-            width: 89,
-            dataIndex: 'exitnum',
-            text: 'Кол-во уволенных сотрудников',
-            format: '0'
-        }
-    ],
-    items: [
-        {
-            xtype: 'toolbar',
-            docked: 'top',
-            title: 'Отчёты по направлениям'
         }
     ]
 

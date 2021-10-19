@@ -21,29 +21,30 @@ Ext.define('Case.view.DialogEditProductViewController3', {
         var me =  this;
         refs = me.getReferences();
 
-        var me =  this;
-        refs = me.getReferences();
-
         if (refs.form.validate()) {
-            var recordId= button.up('formpanel').getViewModel().get('crecord').data.id;
-            var rec = button.up('formpanel').getViewModel().get('crecord').data;
-            let store = Case.app.getStore('directionstore');
 
-            store.findRecord('id',recordId).save({
-                failure: function(record, operation) {
 
-                    Ext.Msg.alert("Ошибка" , "Poprobuyte esho raz");
-                },
-                success: function(record, operation) {
-                    // Ext.ComponentQuery.query('eploeegrid')[0].refresh();
-                    Ext.Msg.alert("Masege" , "Dannie uspeshno soxraneni");
+
+            var crecord= button.up('formpanel').getViewModel().get('crecord').data;
+
+            Ext.Ajax.request({
+                url: 'directionlist/update',
+                params:{id:crecord.id,parent_id:crecord.parent_id,name:crecord.name,director:crecord.director,opisanie:crecord.opisanie},
+                success: function(response, opts) {
+
+                    Case.app.getStore('directionstore').load();
                     Case.app.getStore('reports').load();
-                    console.log('succes');
-                },
-                callback: function(record, operation, success) {
+                    Case.app.getStore('directioneditcombo').load();
 
+                    Ext.Msg.alert("Masege" , "Dannie uspeshno soxraneni");
+                    me.getView().close();
+
+                },
+
+                failure: function(response, opts) {
+                    Ext.Msg.alert("Ошибка" , "Poprobuyte esho raz");
                 }
-            }      );
+            });
 
 
         }
@@ -70,6 +71,14 @@ Ext.define('Case.view.DialogEditProductViewController3', {
 
 
 
+    },
+
+    onDialogBeforeShow: function(component, eOpts) {
+        let me = this,
+        refs = me.getReferences(),
+        vm = me.getViewModel();
+
+        refs.form.validate();
     }
 
 });

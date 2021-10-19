@@ -1,5 +1,5 @@
 {
-    "type": "Ext.data.Store",
+    "type": "Ext.data.TreeStore",
     "reference": {
         "name": "items",
         "type": "array"
@@ -8,15 +8,71 @@
     "userConfig": {
         "autoLoad": true,
         "designer|userClassName": "reports",
-        "model": "reports",
         "storeId": "reports"
     },
     "configAlternates": {
         "autoLoad": "boolean",
         "designer|userClassName": "string",
-        "model": "model",
         "storeId": "string"
     },
-    "name": "MyStore2",
-    "designerId": "02f43668-99bc-4ea0-bdcd-f4fa3f895c9e"
+    "name": "MyTreeStore",
+    "designerId": "00d1a403-fbef-476f-bfe1-e22a7b714a99",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "url": "reports"
+            },
+            "configAlternates": {
+                "url": "string"
+            },
+            "name": "MyAjaxProxy1",
+            "designerId": "8c236355-d3fa-4dc5-8dce-5d1cf2a2cbca",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "rootProperty": "children"
+                    },
+                    "configAlternates": {
+                        "rootProperty": "string"
+                    },
+                    "name": "MyJsonReader8",
+                    "designerId": "b987ae37-c21e-4ba5-8f2a-69c1f4373a76"
+                }
+            ]
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onTreeStoreDataChangeD",
+                "implHandler": [
+                    " store.setRootVisible(false);"
+                ],
+                "name": "datachanged"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string"
+            },
+            "name": "onTreeStoreDataChangeD",
+            "designerId": "6a89077c-897b-47b4-9335-cf16db48d5b9"
+        }
+    ]
 }

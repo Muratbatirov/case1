@@ -40,7 +40,7 @@ Ext.define('Case.view.ProductGridViewController', {
               handler: 'deleteProduct',
                scope:me
           }]);
-        me.getViewModel().set('crecord', context.record.clone());
+        me.getViewModel().set('crecord', context.record);
         menu.autoFocus = !context.event.pointerType;
         menu.showBy(context.tool.el, 'l50-r50?');
     },

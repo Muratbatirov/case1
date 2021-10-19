@@ -14,15 +14,13 @@
  */
 
 Ext.define('Case.view.DirectionsGrid', {
-    extend: 'Ext.grid.Grid',
+    extend: 'Ext.grid.Tree',
     alias: 'widget.directionsgrid',
 
     requires: [
         'Case.view.DirectionsGridViewModel',
         'Case.view.DirectionsGridViewController',
-        'Ext.grid.column.Column',
-        'Ext.Toolbar',
-        'Ext.Button'
+        'Ext.grid.column.Column'
     ],
 
     config: {
@@ -46,59 +44,13 @@ Ext.define('Case.view.DirectionsGrid', {
     height: '100%',
     width: '100%',
     layout: 'hbox',
-    store: 'directionstore',
 
     columns: [
-        {
-            xtype: 'gridcolumn',
-            width: '30px',
-            cell: {
-                cls: 'erg-tool-margin-0',
-                tools: {
-                    margin: 0,
-                    menu: 'onMenuClick1'
-                }
-            },
-            text: 'MyColumn17'
-        },
-        {
-            xtype: 'gridcolumn',
-            flex: 1,
-            dataIndex: 'name',
-            text: 'Название направления'
-        },
-        {
-            xtype: 'gridcolumn',
-            flex: 1,
-            dataIndex: 'director',
-            text: 'Руководитель'
-        },
         {
             xtype: 'gridcolumn',
             flex: 1,
             dataIndex: 'opisanie',
             text: 'Описание направления'
-        }
-    ],
-    items: [
-        {
-            xtype: 'toolbar',
-            docked: 'top',
-            title: 'Список направлений'
-        },
-        {
-            xtype: 'toolbar',
-            docked: 'bottom',
-            items: [
-                {
-                    xtype: 'button',
-                    cls: 'createButton',
-                    text: 'Добавить',
-                    listeners: {
-                        tap: 'onDobavitProduct11'
-                    }
-                }
-            ]
         }
     ],
     listeners: {

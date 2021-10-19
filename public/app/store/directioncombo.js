@@ -17,7 +17,7 @@ Ext.define('Case.store.directioncombo', {
     extend: 'Ext.data.Store',
 
     requires: [
-        'Case.model.directionmodel'
+        'Case.model.directionmodel1'
     ],
 
     constructor: function(cfg) {
@@ -25,7 +25,7 @@ Ext.define('Case.store.directioncombo', {
         cfg = cfg || {};
         me.callParent([Ext.apply({
             storeId: 'directioncombo',
-            model: 'Case.model.directionmodel'
+            model: 'Case.model.directionmodel1'
         }, cfg)]);
     }
 });

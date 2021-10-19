@@ -14,10 +14,11 @@
  */
 
 Ext.define('Case.store.directionstore', {
-    extend: 'Ext.data.Store',
+    extend: 'Ext.data.TreeStore',
 
     requires: [
-        'Case.model.directionmodel'
+        'Ext.data.proxy.Ajax',
+        'Ext.data.reader.Json'
     ],
 
     constructor: function(cfg) {
@@ -26,7 +27,35 @@ Ext.define('Case.store.directionstore', {
         me.callParent([Ext.apply({
             storeId: 'directionstore',
             autoLoad: true,
-            model: 'Case.model.directionmodel'
+            root: {
+                expanded: true,
+                loaded: true,
+                children: [
+                    {
+                        text: 'Направления',
+                        hash: 'directions',
+                        leaf: true
+                    }
+                ]
+            },
+            proxy: {
+                type: 'ajax',
+                url: 'directionlist',
+                reader: {
+                    type: 'json',
+                    rootProperty: 'children'
+                }
+            },
+            listeners: {
+                datachanged: {
+                    fn: me.onTreeStoreDataChangeD
+                }
+            }
         }, cfg)]);
+    },
+
+    onTreeStoreDataChangeD: function(store, eOpts) {
+         store.setRootVisible(false);
     }
+
 });

@@ -295,6 +295,9 @@
                                 "fn": "onButtonTap",
                                 "implHandler": [
                                     "var me =  this;",
+                                    "refs = me.getReferences();",
+                                    "",
+                                    "if (refs.form.validate()) {",
                                     "console.log(button.up('formpanel').getViewModel().get('crecord'));",
                                     "var recordId= button.up('formpanel').getViewModel().get('crecord').data.id;",
                                     "var rec = button.up('formpanel').getViewModel().get('crecord').data;",
@@ -313,7 +316,7 @@
                                     "    callback: function(record, operation, success) {",
                                     "        // do something whether the save succeeded or failed",
                                     "    }",
-                                    "}      );",
+                                    "}      );}",
                                     "",
                                     "",
                                     "",
@@ -333,6 +336,34 @@
                     ]
                 }
             ]
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onDialogBeforeShow",
+                "implHandler": [
+                    "let me = this,",
+                    "    refs = me.getReferences(),",
+                    "    vm = me.getViewModel();",
+                    "",
+                    "refs.form.validate();"
+                ],
+                "name": "beforeshow",
+                "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string",
+                "scope": "string"
+            },
+            "name": "onDialogBeforeShow",
+            "designerId": "bc8c9992-38cf-49b6-9838-60c43804955a"
         }
     ]
 }

@@ -38,7 +38,7 @@ Ext.define('Case.view.EploeeGridViewController', {
               handler: 'deleteEmploee',
                scope:me
           }]);
-        me.getViewModel().set('crecord', context.record.clone());
+        me.getViewModel().set('crecord', context.record);
         console.log(context.record);
         menu.autoFocus = !context.event.pointerType;
         menu.showBy(context.tool.el, 'l50-r50?');
@@ -130,13 +130,87 @@ Ext.define('Case.view.EploeeGridViewController', {
     },
 
     onGridChilddoubletap: function(list, location, eOpts) {
-        this.getViewModel().set('crecord', location.record.clone());
+        this.getViewModel().set('crecord', location.record);
 
         this.editEmploee();
     },
 
     onGridPainted: function(sender, element, eOpts) {
 
+    },
+
+    onGridChildsingletap: function(list, location, eOpts) {
+        var me = this;
+        var rec = location.record.data;
+
+        var store = Ext.create('Ext.data.Store',{
+
+            fields: ['key', 'value'],
+            data: [
+            { 'key': 'Пол',  "value":rec.gender  },
+            { 'key': 'Дата рождения', "value":`${rec.birthdate.getFullYear()}/${rec.birthdate.getMonth()+1}/${rec.birthdate.getDate()}`},
+            { 'key': 'Контактный телефон', "value":rec.phonenum },
+
+            { 'key': 'Серия и номер паспорта',"value":rec.passportnum },
+            { 'key': 'Должность',"value":rec.position},
+            { 'key': 'Зарплата',"value":rec.wages},
+            ]
+
+        });
+        var dialog =Ext.create({
+            xtype: 'dialog',
+            title:`Информация о сотруднике`,
+            width:'400px',
+            height:"450px",
+            layout:'hbox',
+            closable:true,
+
+            items: [
+            {
+                xtype: 'grid',
+                reference: 'grid',
+
+                hideHeaders:true,
+                flex:1,
+                height: '100%',
+                width: '100%',
+                layout: 'hbox',
+                store:store,
+                columns: [
+                {
+                    xtype: 'gridcolumn',
+                    flex: 1,
+                    dataIndex: 'key'
+                },
+                {
+                    xtype: 'gridcolumn',
+                    flex: 1,
+                    dataIndex: 'value'
+                }
+                ],
+                items: [
+
+                {
+                    xtype: 'toolbar',
+                    docked: 'top',
+                    title: `${rec.surname} ${rec.name}`
+                }
+                ],
+            }
+            ],
+            buttons: {
+                ok: function () {  // standard button (see below)
+                    dialog.destroy();
+
+                }
+            }
+
+        });
+
+
+
+
+        dialog.show();
     }
 
 });

@@ -88,7 +88,7 @@
                 "dataIndex": "surname",
                 "docked": null,
                 "filterType": "string",
-                "layout|flex": 2,
+                "layout|flex": 1,
                 "summary": "count",
                 "text": "Фамилия"
             },
@@ -148,13 +148,15 @@
             "userConfig": {
                 "dataIndex": "name",
                 "docked": null,
+                "layout|flex": 1,
                 "text": "Имя"
             },
             "configAlternates": {
                 "dataIndex": "datafield",
                 "docked": "string",
                 "text": "string",
-                "width": "auto"
+                "width": "auto",
+                "layout|flex": "number"
             },
             "name": "MyColumn6",
             "designerId": "4d29d4d8-aa75-4ade-91bb-e10cb9971acf"
@@ -169,13 +171,15 @@
             "userConfig": {
                 "dataIndex": "patronymic",
                 "docked": null,
+                "layout|flex": 1,
                 "text": "Отчество"
             },
             "configAlternates": {
                 "dataIndex": "datafield",
                 "docked": "string",
                 "text": "string",
-                "width": "auto"
+                "width": "auto",
+                "layout|flex": "number"
             },
             "name": "MyColumn7",
             "designerId": "408aa1d4-252c-4f35-a4f7-5732b0f6eee7"
@@ -199,160 +203,7 @@
                 "width": "auto"
             },
             "name": "MyColumn12",
-            "designerId": "9554af66-09e4-4a9e-950f-f4bcc486c703"
-        },
-        {
-            "type": "Ext.grid.column.Column",
-            "reference": {
-                "name": "columns",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "dataIndex": "gender",
-                "docked": null,
-                "text": "Пол"
-            },
-            "configAlternates": {
-                "dataIndex": "datafield",
-                "docked": "string",
-                "text": "string",
-                "width": "auto"
-            },
-            "name": "MyColumn8",
-            "designerId": "42de288b-a83a-4afc-841a-04d06f216bbb"
-        },
-        {
-            "type": "Ext.grid.column.Date",
-            "reference": {
-                "name": "columns",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "dataIndex": "comedate",
-                "docked": null,
-                "text": "Дата рождения"
-            },
-            "configAlternates": {
-                "dataIndex": "datafield",
-                "docked": "string",
-                "text": "string"
-            },
-            "name": "MyDateColumn1",
-            "designerId": "a5c92170-ec5a-4281-b525-280a4bdf6b3f"
-        },
-        {
-            "type": "Ext.grid.column.Column",
-            "reference": {
-                "name": "columns",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "dataIndex": "phonenum",
-                "docked": null,
-                "text": "Контактный телефон"
-            },
-            "configAlternates": {
-                "dataIndex": "datafield",
-                "docked": "string",
-                "text": "string",
-                "width": "auto"
-            },
-            "name": "MyColumn9",
-            "designerId": "4767bede-a786-4cc4-86ff-499ef1328de5"
-        },
-        {
-            "type": "Ext.grid.column.Column",
-            "reference": {
-                "name": "columns",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "dataIndex": "passportnum",
-                "docked": null,
-                "text": "Серия и номер паспорта"
-            },
-            "configAlternates": {
-                "dataIndex": "datafield",
-                "docked": "string",
-                "text": "string",
-                "width": "auto"
-            },
-            "name": "MyColumn10",
-            "designerId": "0b0528b0-9ce9-4cbf-83e2-dab54fc6f4ba"
-        },
-        {
-            "type": "Ext.grid.column.Column",
-            "reference": {
-                "name": "columns",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "dataIndex": "position",
-                "docked": null,
-                "text": "Должность"
-            },
-            "configAlternates": {
-                "dataIndex": "datafield",
-                "docked": "string",
-                "text": "string",
-                "width": "auto"
-            },
-            "name": "MyColumn11",
-            "designerId": "89cb2b53-3232-453b-b0a8-f424fa58a65e"
-        },
-        {
-            "type": "Ext.grid.column.Number",
-            "reference": {
-                "name": "columns",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "dataIndex": "wages",
-                "docked": null,
-                "summary": "none",
-                "text": "Зарплата"
-            },
-            "configAlternates": {
-                "dataIndex": "datafield",
-                "docked": "string",
-                "text": "string",
-                "summary": "string"
-            },
-            "name": "MyNumberColumn2",
-            "designerId": "01bf76e1-ca66-4e45-8c61-7f60de4f8ad6",
-            "cn": [
-                {
-                    "type": "fixedfunction",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "designer|params": [
-                            "value",
-                            "context"
-                        ],
-                        "fn": "summaryRenderer",
-                        "implHandler": [
-                            "return ' ';"
-                        ]
-                    },
-                    "configAlternates": {
-                        "designer|params": "typedarray",
-                        "fn": "string",
-                        "implHandler": "code"
-                    },
-                    "name": "summaryRenderer",
-                    "designerId": "7cfa4b31-00ed-457a-82f6-21ea9fbea931"
-                }
-            ]
+            "designerId": "301d477a-e176-4c2d-a913-2782a594a6e8"
         },
         {
             "type": "Ext.grid.column.Check",
@@ -366,6 +217,7 @@
                 "disabled": true,
                 "docked": null,
                 "editable": false,
+                "layout|flex": 0.5,
                 "text": "Уволен"
             },
             "configAlternates": {
@@ -373,7 +225,8 @@
                 "disabled": "boolean",
                 "docked": "string",
                 "editable": "boolean",
-                "text": "string"
+                "text": "string",
+                "layout|flex": "number"
             },
             "name": "MyCheckColumn",
             "designerId": "8888f433-9eac-45a2-8012-ebe97cd9e984"
@@ -388,12 +241,14 @@
             "userConfig": {
                 "dataIndex": "comedate",
                 "docked": null,
+                "layout|flex": 0.5,
                 "text": "Дата приёма на работу"
             },
             "configAlternates": {
                 "dataIndex": "datafield",
                 "docked": "string",
-                "text": "string"
+                "text": "string",
+                "layout|flex": "number"
             },
             "name": "MyDateColumn",
             "designerId": "375cdc1a-d9b1-4019-b078-e49eb2c5e9fe"
@@ -408,13 +263,15 @@
             "userConfig": {
                 "dataIndex": "exitdate",
                 "docked": null,
+                "layout|flex": 0.5,
                 "text": "Дата увольнения"
             },
             "configAlternates": {
                 "dataIndex": "datafield",
                 "docked": "string",
                 "text": "string",
-                "width": "auto"
+                "width": "auto",
+                "layout|flex": "number"
             },
             "name": "MyDateColumn2",
             "designerId": "157f19b0-2b15-4bda-ba4f-b861d4b83d3a"
@@ -572,7 +429,7 @@
             "userConfig": {
                 "fn": "onGridChilddoubletap",
                 "implHandler": [
-                    "this.getViewModel().set('crecord', location.record.clone());",
+                    "this.getViewModel().set('crecord', location.record);",
                     "",
                     "this.editEmploee();"
                 ],
@@ -611,6 +468,100 @@
             },
             "name": "onGridPainted",
             "designerId": "ca6e2c4d-b27c-4ec9-985d-2cafd80d86ba"
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onGridChildsingletap",
+                "implHandler": [
+                    "var me = this;",
+                    "var rec = location.record.data;",
+                    "",
+                    "var store = Ext.create('Ext.data.Store',{",
+                    "",
+                    " fields: ['key', 'value'],",
+                    "    data: [",
+                    "        { 'key': 'Пол',  \"value\":rec.gender  },",
+                    "        { 'key': 'Дата рождения', \"value\":`${rec.birthdate.getFullYear()}/${rec.birthdate.getMonth()+1}/${rec.birthdate.getDate()}`},",
+                    "        { 'key': 'Контактный телефон', \"value\":rec.phonenum },",
+                    "",
+                    "         { 'key': 'Серия и номер паспорта',\"value\":rec.passportnum },",
+                    "         { 'key': 'Должность',\"value\":rec.position},",
+                    "         { 'key': 'Зарплата',\"value\":rec.wages},",
+                    "    ]",
+                    "",
+                    "        });",
+                    "var dialog =Ext.create({",
+                    "            xtype: 'dialog',",
+                    "    title:`Информация о сотруднике`,",
+                    "            width:'400px',",
+                    "    height:\"450px\",",
+                    "            layout:'hbox',",
+                    "           closable:true,",
+                    "",
+                    "              items: [",
+                    "        {",
+                    "            xtype: 'grid',",
+                    "            reference: 'grid',",
+                    "",
+                    "hideHeaders:true,",
+                    "            flex:1,",
+                    "            height: '100%',",
+                    "            width: '100%',",
+                    "            layout: 'hbox',",
+                    "            store:store,",
+                    "            columns: [",
+                    "                {",
+                    "                    xtype: 'gridcolumn',",
+                    "                    flex: 1,",
+                    "                    dataIndex: 'key'",
+                    "                },",
+                    "                {",
+                    "                    xtype: 'gridcolumn',",
+                    "                    flex: 1,",
+                    "                    dataIndex: 'value'",
+                    "                }",
+                    "            ],",
+                    "            items: [",
+                    "      ",
+                    "        {",
+                    "            xtype: 'toolbar',",
+                    "            docked: 'top',",
+                    "            title: `${rec.surname} ${rec.name}`",
+                    "        }",
+                    "    ],",
+                    "        }",
+                    "    ],",
+                    "            buttons: {",
+                    "                ok: function () {  // standard button (see below)",
+                    "                    dialog.destroy();",
+                    "",
+                    "                }",
+                    "            }",
+                    "",
+                    "        });",
+                    "",
+                    "",
+                    "",
+                    "",
+                    "dialog.show();"
+                ],
+                "name": "childsingletap",
+                "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string",
+                "scope": "string"
+            },
+            "name": "onGridChildsingletap",
+            "designerId": "397298e6-ec88-4f36-b978-bda7932d14b2"
         }
     ]
 }

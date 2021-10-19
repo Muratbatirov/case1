@@ -258,8 +258,8 @@ Ext.define('Case.controller.navigation', {
         });
 
         container.add({
-            xtype: 'directionlist',
-            flex:1
+            xtype: 'directiontree',
+            flex:2
 
         });
 
@@ -292,7 +292,7 @@ Ext.define('Case.controller.navigation', {
                 });
 
                 container.add({
-                    xtype: 'directionsgrid',
+                    xtype: 'directiontreegrid',
                     flex:1
 
                 });
@@ -310,7 +310,7 @@ Ext.define('Case.controller.navigation', {
 
 
                          workspace.push({
-                            xtype: 'reports',
+                            xtype: 'reporttree',
                             flex:1
 
                         });

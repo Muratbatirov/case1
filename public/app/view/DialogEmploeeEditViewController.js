@@ -45,6 +45,14 @@ Ext.define('Case.view.DialogEmploeeEditViewController', {
 
         }
 
+    },
+
+    onDialogBeforeShow: function(component, eOpts) {
+        let me = this,
+        refs = me.getReferences(),
+        vm = me.getViewModel();
+
+        refs.form.validate();
     }
 
 });

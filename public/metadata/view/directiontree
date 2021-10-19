@@ -1,0 +1,125 @@
+{
+    "type": "Ext.grid.Tree",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "directiontree",
+        "designer|userClassName": "directiontree",
+        "height": "100%",
+        "hideHeaders": true,
+        "layout": "hbox",
+        "store": "directionstore",
+        "width": "100%"
+    },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string",
+        "height": "auto",
+        "hideHeaders": "boolean",
+        "layout": "string",
+        "store": "store",
+        "width": "auto"
+    },
+    "name": "MyTree",
+    "designerId": "c6418fae-2de7-4dd1-a43a-2772c4bb0230",
+    "viewControllerInstanceId": "55ac73d0-6d43-4af1-9ab4-f16d250022fc",
+    "viewModelInstanceId": "12f3808b-d7bb-4d4d-991e-e0ce48f247bb",
+    "cn": [
+        {
+            "type": "Ext.grid.column.Tree",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "name",
+                "docked": null,
+                "layout|flex": 1
+            },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "docked": "string",
+                "layout|flex": "number"
+            },
+            "name": "MyTreeColumn2",
+            "designerId": "3b0485ba-7502-48a8-8bcd-a42898ac83ca"
+        },
+        {
+            "type": "Ext.Toolbar",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "docked": "top",
+                "items": [
+                    "{xtype: 'button',",
+                    " ",
+                    "text: 'Показать все',",
+                    "handler: 'onShowAll'",
+                    "}"
+                ]
+            },
+            "configAlternates": {
+                "items": "object",
+                "docked": "string"
+            },
+            "name": "MyToolbar10",
+            "designerId": "5a7cd60b-61ac-44a8-8df1-a65b75a63985",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "items",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onTreeSelect",
+                "implHandler": [
+                    "let store = Case.app.getStore('EmploeeStore');",
+                    "",
+                    "store.getProxy().setExtraParams({",
+                    "   'param':selected[0].data.name,",
+                    "",
+                    "",
+                    "",
+                    "   });",
+                    "    store.loadPage(0,{",
+                    "                   callback: function(records, operation, success) {",
+                    "",
+                    "          Case.app.getStore('productstore').getProxy().setExtraParams({",
+                    "",
+                    "",
+                    "",
+                    "                });",
+                    "}",
+                    "    });",
+                    ""
+                ],
+                "name": "select",
+                "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string",
+                "scope": "string"
+            },
+            "name": "onTreeSelect",
+            "designerId": "1dd8d351-67b0-4db6-aef4-2a6941ebbb76"
+        }
+    ]
+}

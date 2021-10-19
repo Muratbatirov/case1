@@ -102,6 +102,9 @@ Ext.define('Case.view.dialogAddCategory', {
                 }
             ]
         }
-    ]
+    ],
+    listeners: {
+        beforeshow: 'onDialogBeforeShow'
+    }
 
 });

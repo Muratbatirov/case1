@@ -15,9 +15,12 @@ class CreateDirectionsTable extends Migration
     {
         Schema::create('directions', function (Blueprint $table) {
             $table->id();
+             $table->unsignedBigInteger('parent_id')->nullable();
             $table->longText('name'); 
             $table->char('director', 100);
             $table->longText('opisanie'); 
+             $table->foreign('parent_id')->references('id')->on('directions'); 
+        
             $table->timestamps();
         });
     }

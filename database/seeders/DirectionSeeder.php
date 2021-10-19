@@ -14,585 +14,118 @@ class DirectionSeeder extends Seeder
      */
    public function run()
     {
-         Direction::create([
-       	    
-       	    'name'=> 'Поставка оборудования',
-       	    'director'=>'Яковлев Ким Иванович',
-       	    'opisanie'=>"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged"
+
+
+ Direction::create([
+            
+            'name'=> 'Поставка оборудования',
+            'director'=>'Яковлев Ким Иванович',
+            'opisanie'=>"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged"
            
-           ])->employees()->createMany([
-               
-            ['surname'=> 'Моисеенко',
-              'name'=> 'Радислав',
-              'patronymic'=>'Ярославович',
-             'birthdate' =>Carbon::create('1989', '01', '01'),
-             'phonenum'=> '+998931869789',
-             'gender'=>'Мужчина',
-             'passportnum'=>'AA1234567',
-             'position'=>'Техник',
-             'wages'=>5000000,
-             'comedate'=>Carbon::create('2020', '01', '01'),
+           ])->childdirections()->createMany([
+             
+            [
+              'name'=> 'Промышленная автоматизация и системы управления производством',
+             'director'=>'Яценюк Йосып Фёдорович',
+              'opisanie'=>"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged"
+
+        ],  
+
+            [
+              'name'=> 'POS-системы, торговое оборудование',
+             'director'=>'Третьяков Гавриил Алексеевич',
+              'opisanie'=>"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged"
 
         ],
-        ['surname'=> 'Лебедев',
-              'name'=> 'Устин',
-              'patronymic'=>'Васильевич',
-             'birthdate' =>Carbon::create('1989', '01', '01'),
-              'gender'=>'Мужчина',
-             'phonenum'=> '+998931869789',
-             'passportnum'=>'AA1234567',
-             'position'=>'Механик',
-             'wages'=>5000000,
-             'comedate'=>Carbon::create('2020', '01', '01'),
+         [
+              'name'=> 'Медицинское оборудование и изделия',
+             'director'=>'Антонов Йосеф Эдуардович',
+              'opisanie'=>"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged"
 
         ],
-         ['surname'=> 'Лебедев',
-              'name'=> 'Устин',
-              'patronymic'=>'Васильевич',
-             'birthdate' =>Carbon::create('1989', '01', '01'),
-              'gender'=>'Мужчина',
-             'phonenum'=> '+998931869789',
-             'passportnum'=>'AA1234567',
-             'position'=>'Кабельщик',
-             'wages'=>5000000,
-             'comedate'=>Carbon::create('2020', '01', '01'),
+         [
+              'name'=> 'Весоизмерительное оборудование',
+             'director'=>'Федоренко Карл Александрович',
+              'opisanie'=>"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged"
 
         ],
-         ['surname'=> 'Батиров',
-              'name'=> 'Мурат',
-              'patronymic'=>'Сайдиллаевич',
-             'birthdate' =>Carbon::create('1989', '01', '01'),
-              'gender'=>'Мужчина',
-             'phonenum'=> '+998931869789',
-             'passportnum'=>'AA1234567',
-             'position'=>'Кабельщик',
-             'wages'=>5000000,
-             'comedate'=>Carbon::create('2020', '01', '01'),
+       
+         
+             
+          ]);
+            Direction::create([
+            
+            'name'=> 'Информационные технологии',
+            'director'=>'Красинец Антонин Петрович',
+            'opisanie'=>"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged"
+           
+           ])->childdirections()->createMany([
+             
+            [
+              'name'=> 'Разработка программного обеспечения',
+             'director'=>'Коровяк Николай Богданович',
+              'opisanie'=>"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged"
+
+        ],  
+
+            [
+              'name'=> 'Лицензионное программное обеспечение',
+             'director'=>'Беляев Заур Васильевич',
+              'opisanie'=>"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged"
 
         ],
-        ['surname'=> 'Маматов',
-              'name'=> 'Нурбек',
-              'patronymic'=>'Сайдиллаевич',
-             'birthdate' =>Carbon::create('1989', '01', '01'),
-              'gender'=>'Мужчина',
-             'phonenum'=> '+998931869789',
-             'passportnum'=>'AA1234567',
-             'position'=>'Кабельщик',
-             'wages'=>5000000,
-             'comedate'=>Carbon::create('2020', '01', '01'),
+         [
+              'name'=> 'Учебный центр',
+             'director'=>'Гелетей Шарль Викторович',
+              'opisanie'=>"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged"
 
         ],
+         [
+              'name'=> 'Micros24 - Цифровой офис',
+             'director'=>'Петрик Остин Алексеевич',
+              'opisanie'=>"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged"
+
+        ],
+       
+         
              
           ]);
            Direction::create([
-       	    
-       	    'name'=> 'Информационные технологии',
-       	    'director'=>'Егоров Жигер Виталиевич',
-       	    'opisanie'=>"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged"
+            
+            'name'=> 'Производство',
+            'director'=>'Гришин Илья Васильевич',
+            'opisanie'=>"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged"
            
-           ])->employees()->createMany([
-               
-            ['surname'=> 'Моисеенко',
-              'name'=> 'Радислав',
-              'patronymic'=>'Ярославович',
-             'birthdate' =>Carbon::create('1989', '01', '01'),
-              'gender'=>'Мужчина',
-             'phonenum'=> '+998931869789',
-             'passportnum'=>'AA1234567',
-             'position'=>'Техник',
-             'wages'=>5000000,
-             'comedate'=>Carbon::create('2020', '01', '01'),
-
-        ],
-        ['surname'=> 'Лебедев',
-              'name'=> 'Устин',
-              'patronymic'=>'Васильевич',
-             'birthdate' =>Carbon::create('1989', '01', '01'),
-              'gender'=>'Мужчина',
-             'phonenum'=> '+998931869789',
-             'passportnum'=>'AA1234567',
-             'position'=>'Механик',
-             'wages'=>5000000,
-             'comedate'=>Carbon::create('2020', '01', '01'),
-
-        ],
-         ['surname'=> 'Лебедев',
-              'name'=> 'Устин',
-              'patronymic'=>'Васильевич',
-             'birthdate' =>Carbon::create('1989', '01', '01'),
-              'gender'=>'Мужчина',
-             'phonenum'=> '+998931869789',
-             'passportnum'=>'AA1234567',
-             'position'=>'Кабельщик',
-             'wages'=>5000000,
-             'comedate'=>Carbon::create('2020', '01', '01'),
-
-        ],
-         ['surname'=> 'Батиров',
-              'name'=> 'Мурат',
-              'patronymic'=>'Сайдиллаевич',
-             'birthdate' =>Carbon::create('1989', '01', '01'),
-              'gender'=>'Мужчина',
-             'phonenum'=> '+998931869789',
-             'passportnum'=>'AA1234567',
-             'position'=>'Кабельщик',
-             'wages'=>5000000,
-             'comedate'=>Carbon::create('2020', '01', '01'),
-
-        ],
-        ['surname'=> 'Маматов',
-              'name'=> 'Нурбек',
-              'patronymic'=>'Сайдиллаевич',
-             'birthdate' =>Carbon::create('1989', '01', '01'),
-              'gender'=>'Мужчина',
-             'phonenum'=> '+998931869789',
-             'passportnum'=>'AA1234567',
-             'position'=>'Кабельщик',
-             'wages'=>5000000,
-             'comedate'=>Carbon::create('2020', '01', '01'),
-
-        ],
-         ['surname'=> 'Моисеенко',
-              'name'=> 'Радислав',
-              'patronymic'=>'Ярославович',
-             'birthdate' =>Carbon::create('1989', '01', '01'),
-              'gender'=>'Мужчина',
-             'phonenum'=> '+998931869789',
-             'passportnum'=>'AA1234567',
-             'position'=>'Техник',
-             'wages'=>5000000,
-             'comedate'=>Carbon::create('2020', '01', '01'),
-
-        ],
-        ['surname'=> 'Лебедев',
-              'name'=> 'Устин',
-              'patronymic'=>'Васильевич',
-             'birthdate' =>Carbon::create('1989', '01', '01'),
-              'gender'=>'Мужчина',
-             'phonenum'=> '+998931869789',
-             'passportnum'=>'AA1234567',
-             'position'=>'Механик',
-             'wages'=>5000000,
-             'comedate'=>Carbon::create('2020', '01', '01'),
-
-        ],
-         ['surname'=> 'Лебедев',
-              'name'=> 'Устин',
-              'patronymic'=>'Васильевич',
-             'birthdate' =>Carbon::create('1989', '01', '01'),
-              'gender'=>'Мужчина',
-             'phonenum'=> '+998931869789',
-             'passportnum'=>'AA1234567',
-             'position'=>'Кабельщик',
-             'wages'=>5000000,
-             'comedate'=>Carbon::create('2020', '01', '01'),
-
-        ],
-         ['surname'=> 'Батиров',
-              'name'=> 'Мурат',
-              'patronymic'=>'Сайдиллаевич',
-             'birthdate' =>Carbon::create('1989', '01', '01'),
-              'gender'=>'Мужчина',
-             'phonenum'=> '+998931869789',
-             'passportnum'=>'AA1234567',
-             'position'=>'Кабельщик',
-             'wages'=>5000000,
-             'comedate'=>Carbon::create('2020', '01', '01'),
-
-        ],
-        ['surname'=> 'Маматов',
-              'name'=> 'Нурбек',
-              'patronymic'=>'Сайдиллаевич',
-             'birthdate' =>Carbon::create('1989', '01', '01'),
-              'gender'=>'Мужчина',
-             'phonenum'=> '+998931869789',
-             'passportnum'=>'AA1234567',
-             'position'=>'Кабельщик',
-             'wages'=>5000000,
-             'comedate'=>Carbon::create('2020', '01', '01'),
-
-        ],
-        ['surname'=> 'Моисеенко',
-              'name'=> 'Радислав',
-              'patronymic'=>'Ярославович',
-             'birthdate' =>Carbon::create('1989', '01', '01'),
-              'gender'=>'Мужчина',
-             'phonenum'=> '+998931869789',
-             'passportnum'=>'AA1234567',
-             'position'=>'Техник',
-             'wages'=>5000000,
-             'comedate'=>Carbon::create('2020', '01', '01'),
-
-        ],
-        ['surname'=> 'Лебедев',
-              'name'=> 'Устин',
-              'patronymic'=>'Васильевич',
-             'birthdate' =>Carbon::create('1989', '01', '01'),
-              'gender'=>'Мужчина',
-             'phonenum'=> '+998931869789',
-             'passportnum'=>'AA1234567',
-             'dismissed'=>1,
-             'position'=>'Механик',
-             'wages'=>5000000,
-             'comedate'=>Carbon::create('2020', '01', '01'),
-             'exitdate'=>Carbon::create('2020', '01', '01'),
-
-        ],
-         ['surname'=> 'Лебедев',
-              'name'=> 'Устин',
-              'patronymic'=>'Васильевич',
-             'birthdate' =>Carbon::create('1989', '01', '01'),
-              'gender'=>'Мужчина',
-             'phonenum'=> '+998931869789',
-             'passportnum'=>'AA1234567',
-             'position'=>'Кабельщик',
-             'wages'=>5000000,
-             'comedate'=>Carbon::create('2020', '01', '01'),
-
-        ],
-         ['surname'=> 'Батиров',
-              'name'=> 'Мурат',
-              'patronymic'=>'Сайдиллаевич',
-             'birthdate' =>Carbon::create('1989', '01', '01'),
-              'gender'=>'Мужчина',
-             'phonenum'=> '+998931869789',
-             'passportnum'=>'AA1234567',
-             'position'=>'Кабельщик',
-             'wages'=>5000000,
-             'comedate'=>Carbon::create('2020', '01', '01'),
-
-        ],
-        ['surname'=> 'Маматов',
-              'name'=> 'Нурбек',
-              'patronymic'=>'Сайдиллаевич',
-             'birthdate' =>Carbon::create('1989', '01', '01'),
-              'gender'=>'Мужчина',
-             'phonenum'=> '+998931869789',
-             'passportnum'=>'AA1234567',
-             'position'=>'Кабельщик',
-             'wages'=>5000000,
-             'comedate'=>Carbon::create('2020', '01', '01'),
-
-        ],
-         ['surname'=> 'Моисеенко',
-              'name'=> 'Радислав',
-              'patronymic'=>'Ярославович',
-             'birthdate' =>Carbon::create('1989', '01', '01'),
-              'gender'=>'Мужчина',
-             'phonenum'=> '+998931869789',
-             'passportnum'=>'AA1234567',
-             'position'=>'Техник',
-             'wages'=>5000000,
-             'comedate'=>Carbon::create('2020', '01', '01'),
-
-        ],
-        ['surname'=> 'Лебедев',
-              'name'=> 'Устин',
-              'patronymic'=>'Васильевич',
-             'birthdate' =>Carbon::create('1989', '01', '01'),
-              'gender'=>'Мужчина',
-             'phonenum'=> '+998931869789',
-             'passportnum'=>'AA1234567',
-             'position'=>'Механик',
-             'wages'=>5000000,
-             'comedate'=>Carbon::create('2020', '01', '01'),
-
-        ],
-         ['surname'=> 'Лебедев',
-              'name'=> 'Устин',
-              'patronymic'=>'Васильевич',
-             'birthdate' =>Carbon::create('1989', '01', '01'),
-              'gender'=>'Мужчина',
-             'phonenum'=> '+998931869789',
-             'passportnum'=>'AA1234567',
-             'position'=>'Кабельщик',
-             'wages'=>5000000,
-             'comedate'=>Carbon::create('2020', '01', '01'),
-
-        ],
-         ['surname'=> 'Батиров',
-              'name'=> 'Мурат',
-              'patronymic'=>'Сайдиллаевич',
-             'birthdate' =>Carbon::create('1989', '01', '01'),
-              'gender'=>'Мужчина',
-             'phonenum'=> '+998931869789',
-             'passportnum'=>'AA1234567',
-             'position'=>'Кабельщик',
-             'wages'=>5000000,
-             'comedate'=>Carbon::create('2020', '01', '01'),
-
-        ],
-        ['surname'=> 'Маматов',
-              'name'=> 'Нурбек',
-              'patronymic'=>'Сайдиллаевич',
-             'birthdate' =>Carbon::create('1989', '01', '01'),
-              'gender'=>'Мужчина',
-             'phonenum'=> '+998931869789',
-             'passportnum'=>'AA1234567',
-             'position'=>'Кабельщик',
-             'wages'=>5000000,
-             'comedate'=>Carbon::create('2020', '01', '01'),
-
-        ],
+           ])->childdirections()->createMany([
              
+            [
+              'name'=> 'Полиграфическое производство',
+             'director'=>'Сергеев Павел Львович',
+              'opisanie'=>"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged"
+
+        ],  
+
+            [
+              'name'=> 'Производство окон, дверей и витражей из ПВХ',
+             'director'=>'Колобов Тит Валериевич',
+              'opisanie'=>"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged"
+
+        ],
+         [
+              'name'=> 'Фурнитура и комплектующие для окон и дверей',
+             'director'=>'Николаев Тарас Евгеньевич',
+              'opisanie'=>"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged"
+
+        ],
+        
+       
+         
              
           ]);
-           Direction::create([
-       	    
-       	    'name'=> 'Производство',
-       	    'director'=>'Миклашевский Бронислав Ярославович',
-       	    'opisanie'=>"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged"
-           
-           ])->employees()->createMany([
-               
-            ['surname'=> 'Моисеенко',
-              'name'=> 'Радислав',
-              'patronymic'=>'Ярославович',
-             'birthdate' =>Carbon::create('1989', '01', '01'),
-              'gender'=>'Мужчина',
-             'phonenum'=> '+998931869789',
-             'passportnum'=>'AA1234567',
-             'position'=>'Техник',
-             'wages'=>5000000,
-             'comedate'=>Carbon::create('2020', '01', '01'),
 
-        ],
-        ['surname'=> 'Лебедев',
-              'name'=> 'Устин',
-              'patronymic'=>'Васильевич',
-             'birthdate' =>Carbon::create('1989', '01', '01'),
-              'gender'=>'Мужчина',
-             'phonenum'=> '+998931869789',
-             'passportnum'=>'AA1234567',
-             'dismissed'=>1,
-             'position'=>'Механик',
-             'wages'=>5000000,
-             'comedate'=>Carbon::create('2020', '01', '01'),
-             'exitdate'=>Carbon::create('2020', '01', '01'),
 
-        ],
-         ['surname'=> 'Лебедев',
-              'name'=> 'Устин',
-              'patronymic'=>'Васильевич',
-             'birthdate' =>Carbon::create('1989', '01', '01'),
-              'gender'=>'Мужчина',
-             'phonenum'=> '+998931869789',
-             'passportnum'=>'AA1234567',
-             'position'=>'Кабельщик',
-             'wages'=>5000000,
-             'comedate'=>Carbon::create('2020', '01', '01'),
 
-        ],
-         ['surname'=> 'Батиров',
-              'name'=> 'Мурат',
-              'patronymic'=>'Сайдиллаевич',
-             'birthdate' =>Carbon::create('1989', '01', '01'),
-              'gender'=>'Мужчина',
-             'phonenum'=> '+998931869789',
-             'passportnum'=>'AA1234567',
-             'position'=>'Кабельщик',
-             'wages'=>5000000,
-             'comedate'=>Carbon::create('2020', '01', '01'),
-
-        ],
-        ['surname'=> 'Маматов',
-              'name'=> 'Нурбек',
-              'patronymic'=>'Сайдиллаевич',
-             'birthdate' =>Carbon::create('1989', '01', '01'),
-              'gender'=>'Мужчина',
-             'phonenum'=> '+998931869789',
-             'passportnum'=>'AA1234567',
-             'position'=>'Кабельщик',
-             'wages'=>5000000,
-             'comedate'=>Carbon::create('2020', '01', '01'),
-
-        ],
-         ['surname'=> 'Моисеенко',
-              'name'=> 'Радислав',
-              'patronymic'=>'Ярославович',
-             'birthdate' =>Carbon::create('1989', '01', '01'),
-              'gender'=>'Мужчина',
-             'phonenum'=> '+998931869789',
-             'passportnum'=>'AA1234567',
-             'position'=>'Техник',
-             'wages'=>5000000,
-             'comedate'=>Carbon::create('2020', '01', '01'),
-
-        ],
-        ['surname'=> 'Лебедев',
-              'name'=> 'Устин',
-              'patronymic'=>'Васильевич',
-             'birthdate' =>Carbon::create('1989', '01', '01'),
-              'gender'=>'Мужчина',
-             'phonenum'=> '+998931869789',
-             'passportnum'=>'AA1234567',
-             'position'=>'Механик',
-             'wages'=>5000000,
-             'comedate'=>Carbon::create('2020', '01', '01'),
-
-        ],
-         ['surname'=> 'Лебедев',
-              'name'=> 'Устин',
-              'patronymic'=>'Васильевич',
-             'birthdate' =>Carbon::create('1989', '01', '01'),
-              'gender'=>'Мужчина',
-             'phonenum'=> '+998931869789',
-             'passportnum'=>'AA1234567',
-             'position'=>'Кабельщик',
-             'wages'=>5000000,
-             'comedate'=>Carbon::create('2020', '01', '01'),
-
-        ],
-         ['surname'=> 'Батиров',
-              'name'=> 'Мурат',
-              'patronymic'=>'Сайдиллаевич',
-             'birthdate' =>Carbon::create('1989', '01', '01'),
-              'gender'=>'Мужчина',
-             'phonenum'=> '+998931869789',
-             'passportnum'=>'AA1234567',
-             'position'=>'Кабельщик',
-             'wages'=>5000000,
-             'comedate'=>Carbon::create('2020', '01', '01'),
-
-        ],
-        ['surname'=> 'Маматов',
-              'name'=> 'Нурбек',
-              'patronymic'=>'Сайдиллаевич',
-             'birthdate' =>Carbon::create('1989', '01', '01'),
-              'gender'=>'Мужчина',
-             'phonenum'=> '+998931869789',
-             'passportnum'=>'AA1234567',
-             'position'=>'Кабельщик',
-             'wages'=>5000000,
-             'comedate'=>Carbon::create('2020', '01', '01'),
-
-        ],
-        ['surname'=> 'Моисеенко',
-              'name'=> 'Радислав',
-              'patronymic'=>'Ярославович',
-             'birthdate' =>Carbon::create('1989', '01', '01'),
-              'gender'=>'Мужчина',
-             'phonenum'=> '+998931869789',
-             'passportnum'=>'AA1234567',
-             'position'=>'Техник',
-             'wages'=>5000000,
-             'comedate'=>Carbon::create('2020', '01', '01'),
-
-        ],
-        ['surname'=> 'Лебедев',
-              'name'=> 'Устин',
-              'patronymic'=>'Васильевич',
-             'birthdate' =>Carbon::create('1989', '01', '01'),
-              'gender'=>'Мужчина',
-             'phonenum'=> '+998931869789',
-             'passportnum'=>'AA1234567',
-             'dismissed'=>1,
-             'position'=>'Механик',
-             'wages'=>5000000,
-             'comedate'=>Carbon::create('2020', '01', '01'),
-             'exitdate'=>Carbon::create('2020', '01', '01'),
-
-        ],
-         ['surname'=> 'Лебедев',
-              'name'=> 'Устин',
-              'patronymic'=>'Васильевич',
-             'birthdate' =>Carbon::create('1989', '01', '01'),
-              'gender'=>'Мужчина',
-             'phonenum'=> '+998931869789',
-             'passportnum'=>'AA1234567',
-             'position'=>'Кабельщик',
-             'wages'=>5000000,
-             'comedate'=>Carbon::create('2020', '01', '01'),
-
-        ],
-         ['surname'=> 'Батиров',
-              'name'=> 'Мурат',
-              'patronymic'=>'Сайдиллаевич',
-             'birthdate' =>Carbon::create('1989', '01', '01'),
-              'gender'=>'Мужчина',
-             'phonenum'=> '+998931869789',
-             'passportnum'=>'AA1234567',
-             'position'=>'Кабельщик',
-             'wages'=>5000000,
-             'comedate'=>Carbon::create('2020', '01', '01'),
-
-        ],
-        ['surname'=> 'Маматов',
-              'name'=> 'Нурбек',
-              'patronymic'=>'Сайдиллаевич',
-             'birthdate' =>Carbon::create('1989', '01', '01'),
-              'gender'=>'Мужчина',
-             'phonenum'=> '+998931869789',
-             'passportnum'=>'AA1234567',
-             'position'=>'Кабельщик',
-             'wages'=>5000000,
-             'comedate'=>Carbon::create('2020', '01', '01'),
-
-        ],
-         ['surname'=> 'Моисеенко',
-              'name'=> 'Радислав',
-              'patronymic'=>'Ярославович',
-             'birthdate' =>Carbon::create('1989', '01', '01'),
-              'gender'=>'Мужчина',
-             'phonenum'=> '+998931869789',
-             'passportnum'=>'AA1234567',
-             'position'=>'Техник',
-             'wages'=>5000000,
-             'comedate'=>Carbon::create('2020', '01', '01'),
-
-        ],
-        ['surname'=> 'Лебедев',
-              'name'=> 'Устин',
-              'patronymic'=>'Васильевич',
-             'birthdate' =>Carbon::create('1989', '01', '01'),
-              'gender'=>'Мужчина',
-             'phonenum'=> '+998931869789',
-             'passportnum'=>'AA1234567',
-             'position'=>'Механик',
-             'wages'=>5000000,
-             'comedate'=>Carbon::create('2020', '01', '01'),
-
-        ],
-         ['surname'=> 'Лебедев',
-              'name'=> 'Устин',
-              'patronymic'=>'Васильевич',
-             'birthdate' =>Carbon::create('1989', '01', '01'),
-              'gender'=>'Мужчина',
-             'phonenum'=> '+998931869789',
-             'passportnum'=>'AA1234567',
-             'position'=>'Кабельщик',
-             'wages'=>5000000,
-             'comedate'=>Carbon::create('2020', '01', '01'),
-
-        ],
-         ['surname'=> 'Батиров',
-              'name'=> 'Мурат',
-              'patronymic'=>'Сайдиллаевич',
-             'birthdate' =>Carbon::create('1989', '01', '01'),
-              'gender'=>'Мужчина',
-             'phonenum'=> '+998931869789',
-             'passportnum'=>'AA1234567',
-             'position'=>'Кабельщик',
-             'wages'=>5000000,
-             'comedate'=>Carbon::create('2020', '01', '01'),
-
-        ],
-        ['surname'=> 'Маматов',
-              'name'=> 'Нурбек',
-              'patronymic'=>'Сайдиллаевич',
-             'birthdate' =>Carbon::create('1989', '01', '01'),
-              'gender'=>'Мужчина',
-             'phonenum'=> '+998931869789',
-             'passportnum'=>'AA1234567',
-             'position'=>'Кабельщик',
-             'wages'=>5000000,
-             'comedate'=>Carbon::create('2020', '01', '01'),
-
-        ],
-             
-             
-          ]);
-      
+        
 
 
        

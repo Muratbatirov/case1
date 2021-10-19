@@ -19,47 +19,58 @@ Ext.define('Case.view.DialogEditProductViewController1', {
 
     onButtonTap: function(button, e, eOpts) {
         var me =  this;
-        console.log(button.up('formpanel').getViewModel().get('crecordtree'));
+        refs = me.getReferences();
 
-        var crecord= button.up('formpanel').getViewModel().get('crecordtree');
+        if (refs.form.validate()) {
+            console.log(button.up('formpanel').getViewModel().get('crecordtree'));
 
-        Ext.Ajax.request({
-            url: 'categorylist/update',
-            params:{recordid:crecord.data.id,parent_id:crecord.data.parent_id,name:crecord.data.text},
-            success: function(response, opts) {
+            var crecord= button.up('formpanel').getViewModel().get('crecordtree');
 
-                Case.app.getStore('categoryedittree').load();
-                Case.app.getStore('categorytree').load();
-                Ext.Msg.alert("Masege" , "Dannie uspeshno soxraneni");
+            Ext.Ajax.request({
+                url: 'categorylist/update',
+                params:{recordid:crecord.data.id,parent_id:crecord.data.parent_id,name:crecord.data.text},
+                success: function(response, opts) {
 
-            },
+                    Case.app.getStore('categoryedittree').load();
+                    Case.app.getStore('categorytree').load();
+                    Ext.Msg.alert("Masege" , "Dannie uspeshno soxraneni");
 
-            failure: function(response, opts) {
-                Ext.Msg.alert("Ошибка" , "Poprobuyte esho raz");
-            }
-        });
-        //
-        //var rec = button.up('formpanel').getViewModel().get('crecord').data;
-        //let store = Case.app.getStore('productstore');
+                },
 
-        //Case.app.getStore('productstore').findRecord('id',recordId).save({
-        //  failure: function(record, operation) {
+                failure: function(response, opts) {
+                    Ext.Msg.alert("Ошибка" , "Poprobuyte esho raz");
+                }
+            });}
+            //
+            //var rec = button.up('formpanel').getViewModel().get('crecord').data;
+            //let store = Case.app.getStore('productstore');
 
-        //    Ext.Msg.alert("Ошибка" , "Poprobuyte esho raz");
-        //},
-        //  success: function(record, operation) {
-        //  Ext.ComponentQuery.query('productgrid')[0].refresh();
-        //   Ext.Msg.alert("Masege" , "Dannie uspeshno soxraneni");
+            //Case.app.getStore('productstore').findRecord('id',recordId).save({
+            //  failure: function(record, operation) {
 
-        // },
-        // callback: function(record, operation, success) {
-        // do something whether the save succeeded or failed
-        // }
-        //}      );
+            //    Ext.Msg.alert("Ошибка" , "Poprobuyte esho raz");
+            //},
+            //  success: function(record, operation) {
+            //  Ext.ComponentQuery.query('productgrid')[0].refresh();
+            //   Ext.Msg.alert("Masege" , "Dannie uspeshno soxraneni");
+
+            // },
+            // callback: function(record, operation, success) {
+            // do something whether the save succeeded or failed
+            // }
+            //}      );
 
 
 
 
+    },
+
+    onDialogBeforeShow: function(component, eOpts) {
+        let me = this,
+        refs = me.getReferences(),
+        vm = me.getViewModel();
+
+        refs.form.validate();
     }
 
 });

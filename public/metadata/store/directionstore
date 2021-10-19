@@ -1,5 +1,5 @@
 {
-    "type": "Ext.data.Store",
+    "type": "Ext.data.TreeStore",
     "reference": {
         "name": "items",
         "type": "array"
@@ -8,15 +8,83 @@
     "userConfig": {
         "autoLoad": true,
         "designer|userClassName": "directionstore",
-        "model": "directionmodel",
+        "root": [
+            "{",
+            "    expanded: true,",
+            "    loaded: true,",
+            "    children: [{",
+            "        text: 'Направления',",
+            "        hash: 'directions',",
+            "        leaf: true",
+            "    }]",
+            "}"
+        ],
         "storeId": "directionstore"
     },
     "configAlternates": {
         "autoLoad": "boolean",
         "designer|userClassName": "string",
-        "model": "model",
+        "root": "object",
         "storeId": "string"
     },
-    "name": "MyStore2",
-    "designerId": "f6139f31-8f43-4f13-8dfa-8ef071adafb2"
+    "name": "MyTreeStore",
+    "designerId": "85064275-3bd2-4d94-a15a-9939a1b9f428",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "url": "directionlist"
+            },
+            "configAlternates": {
+                "url": "string"
+            },
+            "name": "MyAjaxProxy",
+            "designerId": "36816279-214b-4322-bc02-fce49f220a0c",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "rootProperty": "children"
+                    },
+                    "configAlternates": {
+                        "rootProperty": "string"
+                    },
+                    "name": "MyJsonReader7",
+                    "designerId": "f9413713-dbca-4173-b4b4-ec1ffa3ce340"
+                }
+            ]
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onTreeStoreDataChangeD",
+                "implHandler": [
+                    " store.setRootVisible(false);"
+                ],
+                "name": "datachanged"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string"
+            },
+            "name": "onTreeStoreDataChangeD",
+            "designerId": "157ce7ed-5ba6-4d23-8b07-107e0e625ce2"
+        }
+    ]
 }

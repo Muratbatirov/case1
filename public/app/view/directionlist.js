@@ -33,7 +33,6 @@ Ext.define('Case.view.directionlist', {
     itemTpl: [
         '<div>{name}</div>'
     ],
-    store: 'directionstore',
 
     listeners: {
         select: 'onListSelect'
